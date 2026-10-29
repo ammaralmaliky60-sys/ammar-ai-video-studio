@@ -13,7 +13,7 @@ h2{font-size:18px;margin:0 0 15px}.card{background:var(--panel);border:1px solid
 label{display:block;font-size:14px;margin-bottom:7px;font-weight:600}textarea,select{width:100%;background:#101428;border:1px solid #4c5574;color:white;border-radius:12px;font:inherit;padding:13px;margin-bottom:16px}textarea{min-height:115px;resize:vertical;line-height:1.7}select{height:48px}textarea:focus,select:focus,button:focus-visible{outline:2px solid #ad94ff;outline-offset:2px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid label{font-size:13px}.grid select{font-size:14px}
 button{font:inherit;cursor:pointer;border-radius:12px;padding:14px 12px;border:1px solid var(--line);color:white;background:#303751;font-weight:700}
-.primary{width:100%;background:linear-gradient(110deg,#7042ed,#cc428f);border:0;font-size:16px}
+.primary:disabled{opacity:.65;cursor:wait}.primary{width:100%;background:linear-gradient(110deg,#7042ed,#cc428f);border:0;font-size:16px}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions button{font-size:13px}
 .note{color:var(--muted);font-size:13px;line-height:1.8}.pill{display:inline-block;font-size:12px;color:#d6c9ff;border:1px solid #66559d;background:#292246;padding:5px 9px;border-radius:99px;margin-bottom:13px}
 .scene{border-right:3px solid #956eff;background:#11152b;margin:12px 0;padding:12px;border-radius:10px}.scene strong{display:block;margin-bottom:6px}.scene p{margin:5px 0;line-height:1.7;font-size:14px}.scene small{color:var(--muted)}#output[hidden]{display:none}footer{color:var(--muted);font-size:12px;text-align:center;margin-top:20px;line-height:1.8}
@@ -22,7 +22,7 @@ button{font:inherit;cursor:pointer;border-radius:12px;padding:14px 12px;border:1
 </head>
 <body>
 <main>
-<header><img src="./icon.svg" alt="شعار AMMAR STUDIO"><div><h1>AMMAR AI VIDEO STUDIO</h1><p>استوديو الفيديو — نسخة الهاتف 1.1</p></div></header>
+<header><img src="./icon.svg" alt="شعار AMMAR STUDIO"><div><h1>AMMAR AI VIDEO STUDIO</h1><p>استوديو الفيديو — نسخة الهاتف 1.2</p></div></header>
 <section class="card">
 <span class="pill">مخطط إنتاج محلي • بدون رسوم أو API</span>
 <h2>مشروع فيديو جديد</h2>
@@ -32,7 +32,8 @@ button{font:inherit;cursor:pointer;border-radius:12px;padding:14px 12px;border:1
 <div><label for="ratio">الأبعاد</label><select id="ratio"><option value="9:16">عمودي 9:16</option><option value="16:9">أفقي 16:9</option></select></div>
 <div><label for="voice">لغة الراوي</label><select id="voice"><option value="عراقي">اللهجة العراقية</option><option value="فصيح">العربية الفصحى</option></select></div>
 <div><label for="style">الأسلوب</label><select id="style"><option value="وثائقي سينمائي">وثائقي سينمائي</option><option value="غموض وتشويق">غموض وتشويق</option><option value="تاريخي">تاريخي</option></select></div></div>
-<button class="primary" id="generate">إنشاء مخطط المشاهد</button>
+<button class="primary" type="button" id="generate">إنشاء مخطط المشاهد</button>
+<p id="actionStatus" class="note" role="status" aria-live="polite">اضغط الزر لإنشاء مخطط من ستة مشاهد، ثم تظهر النتيجة أمامك مباشرة.</p>
 <p class="note">هذا الزر ينشئ مخططاً أولياً بقواعد جاهزة، وليس فيديوً أو سيناريو مولداً بالذكاء الاصطناعي. إنتاج MP4 والصوت العراقي يحتاج خدمة سحابية لاحقاً.</p>
 </section>
 <section class="card" id="output" hidden aria-live="polite">
@@ -67,7 +68,23 @@ render();safeStore();
 function makeText(){if(!project)return '';return [project.title,'المدة: '+project.duration+' ثانية','الأبعاد: '+project.ratio,'الصوت: '+project.voice,'الأسلوب: '+project.style,'الحالة: '+project.status,...project.scenes.map(s=>'المشهد '+s.number+' ('+s.start+'–'+s.end+'ث): '+s.title+'\n'+s.visual+'\nالتعليق: '+s.narration)].join('\n\n')}
 function node(tag,content,cls){const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=content;return el}
 function render(){if(!project)return;$('output').hidden=false;$('overview').replaceChildren(node('p','المدة: '+project.duration+' ثانية | '+project.ratio+' | '+project.voice,'note'),node('p',project.status,'pill'));const holder=$('scenes');holder.replaceChildren();project.scenes.forEach(s=>{const box=node('div','','scene');box.append(node('strong','المشهد '+s.number+' — '+s.title),node('small',s.start+' إلى '+s.end+' ثانية'),node('p',s.visual),node('p','التعليق: '+s.narration));holder.append(box)})}
-$('generate').addEventListener('click',create);
+$('generate').addEventListener('click', () => {
+  const btn=$('generate'), status=$('actionStatus');
+  try {
+    btn.disabled=true;
+    status.textContent='جاري إعداد مخطط المشاهد...';
+    create();
+    if (project) {
+      status.textContent='تم إنشاء '+project.scenes.length+' مشاهد بنجاح. انتقلت إلى النتيجة.';
+      $('output').scrollIntoView({behavior:'smooth',block:'start'});
+    } else {
+      status.textContent='يرجى كتابة الفكرة أولاً.';
+    }
+  } catch(error) {
+    status.textContent='تعذّر إنشاء المخطط. حدّث الصفحة ثم حاول مرة ثانية.';
+    console.error('AMMAR create:',error);
+  } finally {btn.disabled=false}
+});
 $('copy').addEventListener('click',async()=>{const content=makeText();try{await navigator.clipboard.writeText(content);alert('تم نسخ المخطط')}catch(e){alert('تعذر النسخ التلقائي، جرب من المتصفح مرة ثانية')}});
 $('download').addEventListener('click',()=>{if(!project)return;const blob=new Blob([JSON.stringify(project,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='ammar-video-project.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
 ids.forEach(id=>$(id).addEventListener('change',safeStore));
