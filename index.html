@@ -16,13 +16,13 @@ button{font:inherit;cursor:pointer;border-radius:12px;padding:14px 12px;border:1
 .primary:disabled{opacity:.65;cursor:wait}.primary{width:100%;background:linear-gradient(110deg,#7042ed,#cc428f);border:0;font-size:16px}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions button{font-size:13px}
 .note{color:var(--muted);font-size:13px;line-height:1.8}.pill{display:inline-block;font-size:12px;color:#d6c9ff;border:1px solid #66559d;background:#292246;padding:5px 9px;border-radius:99px;margin-bottom:13px}
-.scene{border-right:3px solid #956eff;background:#11152b;margin:12px 0;padding:12px;border-radius:10px}.scene strong{display:block;margin-bottom:6px}.scene p{margin:5px 0;line-height:1.7;font-size:14px}.scene small{color:var(--muted)}#output[hidden]{display:none}footer{color:var(--muted);font-size:12px;text-align:center;margin-top:20px;line-height:1.8}
+.narration-panel{margin-top:22px;border-top:1px solid var(--line);padding-top:20px}.scene{border-right:3px solid #956eff;background:#11152b;margin:12px 0;padding:12px;border-radius:10px}.scene strong{display:block;margin-bottom:6px}.scene p{margin:5px 0;line-height:1.7;font-size:14px}.scene small{color:var(--muted)}#output[hidden]{display:none}footer{color:var(--muted);font-size:12px;text-align:center;margin-top:20px;line-height:1.8}
 @media(min-width:680px){main{padding-top:35px}}@media(max-width:360px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <main>
-<header><img src="./icon.svg" alt="شعار AMMAR STUDIO"><div><h1>AMMAR AI VIDEO STUDIO</h1><p>استوديو الفيديو — نسخة الهاتف 1.2</p></div></header>
+<header><img src="./icon.svg" alt="شعار AMMAR STUDIO"><div><h1>AMMAR AI VIDEO STUDIO</h1><p>استوديو الفيديو — نسخة الهاتف 1.3</p></div></header>
 <section class="card">
 <span class="pill">مخطط إنتاج محلي • بدون رسوم أو API</span>
 <h2>مشروع فيديو جديد</h2>
@@ -38,9 +38,16 @@ button{font:inherit;cursor:pointer;border-radius:12px;padding:14px 12px;border:1
 </section>
 <section class="card" id="output" hidden aria-live="polite">
 <h2>لوحة المشروع</h2><div id="overview"></div><div id="scenes"></div>
-<div class="actions"><button id="copy">نسخ المخطط</button><button id="download">حفظ ملف المشروع</button></div>
+<div class="actions"><button type="button" id="copy">نسخ المخطط</button><button type="button" id="download">حفظ ملف المشروع</button></div>
+<div class="narration-panel">
+  <h2>تجربة التعليق الصوتي من الهاتف</h2>
+  <label for="narrationText">نص الراوي (اكتبه أو الصقه هنا)</label>
+  <textarea id="narrationText" placeholder="مثال: في يوم من الأيام، بدأت حكاية غير متوقعة في العراق..."></textarea>
+  <div class="actions"><button type="button" id="speak">▶ استمع للتعليق</button><button type="button" id="stopVoice">■ إيقاف الصوت</button></div>
+  <p id="voiceStatus" class="note" aria-live="polite">يستخدم صوت النطق العربي الموجود على هاتفك إذا كان متاحاً. اللهجة العراقية غير مضمونة.</p>
+</div>
 </section>
-<section class="card"><h2>حالة الإنتاج الحقيقي</h2><p class="note">✓ واجهة متوافقة مع الهاتف وحفظ المخطط محلياً.<br>✓ تنزيل بيانات المشروع بصيغة JSON.<br>○ إنشاء صور ومقاطع سينمائية حقيقية: غير متصل.<br>○ تعليق صوتي عراقي: غير متصل.<br>○ تصدير MP4: غير متصل في نسخة GitHub Pages.</p></section>
+<section class="card"><h2>حالة الإنتاج الحقيقي</h2><p class="note">✓ واجهة متوافقة مع الهاتف وحفظ المخطط محلياً.<br>✓ تنزيل بيانات المشروع بصيغة JSON.<br>✓ الاستماع إلى نص الراوي عبر تقنية النطق في المتصفح (بحسب دعم الهاتف).<br>○ إنشاء صور ومقاطع سينمائية حقيقية: غير متصل.<br>○ تعليق صوتي عراقي: غير متصل.<br>○ تصدير MP4: غير متصل في نسخة GitHub Pages.</p></section>
 <footer>AMMAR AI VIDEO STUDIO • لا تضع مفاتيح API في هذا الموقع العام.</footer>
 </main>
 <script>
@@ -62,12 +69,12 @@ function create(){
 const idea=$('idea').value.trim(); if(!idea){alert('اكتب فكرة الفيديو أولاً');$('idea').focus();return;}
 const duration=Number($('duration').value), count=Math.ceil(duration/10);
 const scenes=Array.from({length:count},(_,i)=>{const step=prompts[Math.min(5,Math.floor(i*6/count))];return {number:i+1,start:i*10,end:Math.min(duration,(i+1)*10),title:step[0],visual:step[1],narration:'يُكتب نص التعليق بعد التحقق من تفاصيل القصة ومصادرها.'}});
-project={title:idea,duration,ratio:$('ratio').value,voice:$('voice').value,style:$('style').value,status:'مخطط تجريبي — لم يتم توليد فيديو أو صوت',scenes};
+project={title:idea,duration,ratio:$('ratio').value,voice:$('voice').value,style:$('style').value,narrationText:'',status:'مخطط تجريبي — لم يتم توليد فيديو أو صوت',scenes};
 render();safeStore();
 }
-function makeText(){if(!project)return '';return [project.title,'المدة: '+project.duration+' ثانية','الأبعاد: '+project.ratio,'الصوت: '+project.voice,'الأسلوب: '+project.style,'الحالة: '+project.status,...project.scenes.map(s=>'المشهد '+s.number+' ('+s.start+'–'+s.end+'ث): '+s.title+'\n'+s.visual+'\nالتعليق: '+s.narration)].join('\n\n')}
+function makeText(){if(!project)return '';return [project.title,'المدة: '+project.duration+' ثانية','الأبعاد: '+project.ratio,'الصوت: '+project.voice,'الأسلوب: '+project.style,'الحالة: '+project.status,'نص الراوي:\n'+(project.narrationText||'لم يكتب بعد'),...project.scenes.map(s=>'المشهد '+s.number+' ('+s.start+'–'+s.end+'ث): '+s.title+'\n'+s.visual+'\nالتعليق: '+s.narration)].join('\n\n')}
 function node(tag,content,cls){const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=content;return el}
-function render(){if(!project)return;$('output').hidden=false;$('overview').replaceChildren(node('p','المدة: '+project.duration+' ثانية | '+project.ratio+' | '+project.voice,'note'),node('p',project.status,'pill'));const holder=$('scenes');holder.replaceChildren();project.scenes.forEach(s=>{const box=node('div','','scene');box.append(node('strong','المشهد '+s.number+' — '+s.title),node('small',s.start+' إلى '+s.end+' ثانية'),node('p',s.visual),node('p','التعليق: '+s.narration));holder.append(box)})}
+function render(){if(!project)return;$('output').hidden=false;$('narrationText').value=project.narrationText||'';$('overview').replaceChildren(node('p','المدة: '+project.duration+' ثانية | '+project.ratio+' | '+project.voice,'note'),node('p',project.status,'pill'));const holder=$('scenes');holder.replaceChildren();project.scenes.forEach(s=>{const box=node('div','','scene');box.append(node('strong','المشهد '+s.number+' — '+s.title),node('small',s.start+' إلى '+s.end+' ثانية'),node('p',s.visual),node('p','التعليق: '+s.narration));holder.append(box)})}
 $('generate').addEventListener('click', () => {
   const btn=$('generate'), status=$('actionStatus');
   try {
@@ -84,6 +91,33 @@ $('generate').addEventListener('click', () => {
     status.textContent='تعذّر إنشاء المخطط. حدّث الصفحة ثم حاول مرة ثانية.';
     console.error('AMMAR create:',error);
   } finally {btn.disabled=false}
+});
+$('narrationText').addEventListener('input',()=>{if(!project)return;project.narrationText=$('narrationText').value;safeStore()});
+$('speak').addEventListener('click',()=>{
+  const status=$('voiceStatus');
+  const content=$('narrationText').value.trim();
+  if(!content){status.textContent='اكتب نص الراوي أولاً، ثم اضغط استمع للتعليق.';return}
+  if(!('speechSynthesis' in window)||typeof SpeechSynthesisUtterance==='undefined'){
+    status.textContent='النطق الصوتي غير مدعوم في المتصفح الحالي. افتح الموقع من Chrome.';return
+  }
+  try{
+    window.speechSynthesis.cancel();
+    const utterance=new SpeechSynthesisUtterance(content);
+    utterance.lang='ar-IQ';
+    utterance.rate=.9;
+    const voices=window.speechSynthesis.getVoices();
+    const arabic=voices.find(v=>v.lang.toLowerCase()==='ar-iq')||voices.find(v=>v.lang.toLowerCase().startsWith('ar'));
+    if(arabic)utterance.voice=arabic;
+    utterance.onstart=()=>{status.textContent='يتم تشغيل التعليق عبر صوت الجهاز. هذا ليس تسجيل MP3.'};
+    utterance.onend=()=>{status.textContent='انتهى تشغيل التعليق الصوتي.'};
+    utterance.onerror=()=>{status.textContent='تعذر تشغيل الصوت. تأكد من تفعيل الصوت وتوفر صوت عربي على جهازك.'};
+    status.textContent='جاري تشغيل الصوت...';
+    window.speechSynthesis.speak(utterance);
+  }catch(error){status.textContent='تعذر بدء النطق عبر هذا المتصفح.';console.error('AMMAR speech:',error)}
+});
+$('stopVoice').addEventListener('click',()=>{
+  if('speechSynthesis' in window)window.speechSynthesis.cancel();
+  $('voiceStatus').textContent='تم إيقاف التعليق الصوتي.';
 });
 $('copy').addEventListener('click',async()=>{const content=makeText();try{await navigator.clipboard.writeText(content);alert('تم نسخ المخطط')}catch(e){alert('تعذر النسخ التلقائي، جرب من المتصفح مرة ثانية')}});
 $('download').addEventListener('click',()=>{if(!project)return;const blob=new Blob([JSON.stringify(project,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='ammar-video-project.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
