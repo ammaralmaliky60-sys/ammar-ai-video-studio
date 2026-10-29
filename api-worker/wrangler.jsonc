@@ -1,0 +1,19 @@
+{
+  "name": "ammar-ai-director",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "ai": {
+    "binding": "AI"
+  },
+  "ratelimits": [
+    {
+      "name": "STUDIO_LIMITER",
+      "namespace_id": "10521",
+      "simple": {
+        "limit": 3,
+        "period": 60
+      }
+    }
+  ]
+}
