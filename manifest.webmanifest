@@ -1,0 +1,21 @@
+{
+  "name": "AMMAR AI VIDEO STUDIO",
+  "short_name": "AMMAR STUDIO",
+  "description": "استوديو إنشاء مخططات الفيديو الوثائقية وإدارة مشاريع الإنتاج",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d1020",
+  "theme_color": "#0d1020",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
