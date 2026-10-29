@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101024">
+  <title>AMMAR AI VIDEO STUDIO</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #101024;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px 0;
+    }
+
+    h1 { color: #b69cff; }
+
+    .card {
+      background: #1e1e38;
+      border: 1px solid #393956;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    textarea, select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #555575;
+      background: #101024;
+      color: white;
+      margin: 10px 0 18px;
+      font-size: 16px;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(
+        120deg, #743bff, #d348a5
+      );
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #result {
+      white-space: pre-wrap;
+      line-height: 1.9;
+    }
+
+    .note {
+      color: #b8b8d0;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <header>
+      <h1>AMMAR AI VIDEO STUDIO</h1>
+      <p>استوديو صناعة الفيديو بالذكاء الاصطناعي</p>
+    </header>
+
+    <section class="card">
+      <h2>إنشاء فيديو جديد</h2>
+
+      <label for="idea">فكرة الفيديو</label>
+      <textarea id="idea">أنشئ فيديو وثائقياً مشوقاً عن قصة عراقية بمشاهد سينمائية واقعية وتعليق صوتي باللهجة العراقية.</textarea>
+
+      <label for="duration">مدة الفيديو</label>
+      <select id="duration">
+        <option value="60">60 ثانية</option>
+        <option value="30">30 ثانية</option>
+        <option value="180">3 دقائق</option>
+      </select>
+
+      <label for="ratio">أبعاد الفيديو</label>
+      <select id="ratio">
+        <option value="9:16">عمودي 9:16</option>
+        <option value="16:9">أفقي 16:9</option>
+      </select>
+
+      <label for="voice">صوت الراوي</label>
+      <select id="voice">
+        <option value="عراقي">اللهجة العراقية</option>
+        <option value="فصيح">العربية الفصحى</option>
+      </select>
+
+      <button onclick="createPlan()">
+        إنشاء مخطط الفيديو
+      </button>
+    </section>
+
+    <section class="card">
+      <h2>مركز الإنتاج</h2>
+      <p class="note">
+        الإصدار التجريبي: إنشاء مخطط محلي للمشاهد.
+        توليد الفيديو والصوت الحقيقي يحتاج ربط
+        خدمات الذكاء الاصطناعي لاحقاً.
+      </p>
+      <div id="result" aria-live="polite">
+        لم يبدأ أي مشروع بعد.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function createPlan() {
+      const idea = document.getElementById("idea").value.trim();
+      const duration = document.getElementById("duration").value;
+      const ratio = document.getElementById("ratio").value;
+      const voice = document.getElementById("voice").value;
+
+      if (!idea) {
+        alert("يرجى كتابة فكرة الفيديو أولاً");
+        return;
+      }
+
+      const count = Math.max(1, Math.ceil(Number(duration) / 10));
+      let output = "تم إنشاء مخطط تجريبي\n\n";
+      output += "الفكرة: " + idea + "\n";
+      output += "المدة: " + duration + " ثانية\n";
+      output += "الأبعاد: " + ratio + "\n";
+      output += "الصوت المطلوب: " + voice + "\n\n";
+
+      for (let i = 1; i <= count; i++) {
+        output += "المشهد " + i + ": ";
+        output += "مقطع مقترح مدته حتى 10 ثوانٍ\n";
+      }
+
+      output += "\nالحالة: مخطط أولي فقط، لم يُنتج فيديو أو صوت.";
+      document.getElementById("result").textContent = output;
+    }
+  </script>
+</body>
+</html>
