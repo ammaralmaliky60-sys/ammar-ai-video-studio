@@ -1,0 +1,156 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #08080b;
+      font-family: "Inter", sans-serif;
+      color: #f4f1ea;
+    }
+    /* Background world: a slow warm glow that drifts across the frame. */
+    #tc-glow {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1400px;
+      height: 1400px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(232, 180, 74, 0.28) 0%,
+        rgba(232, 180, 74, 0.08) 38%,
+        rgba(232, 180, 74, 0) 70%
+      );
+    }
+    #tc-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 120px 120px;
+    }
+    #tc-stack {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+    }
+    #tc-name {
+      display: flex;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 220px;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: #f4f1ea;
+    }
+    #tc-name span {
+      display: inline-block;
+    }
+    #tc-rule {
+      width: 980px;
+      height: 4px;
+      background: var(--accent, #e8b44a);
+      transform-origin: 50% 50%;
+    }
+    #tc-sub {
+      display: flex;
+      gap: 0.5em;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: 0.32em;
+      color: #f4f1ea;
+    }
+    #tc-sub .tc-accent {
+      color: var(--accent, #e8b44a);
+    }
+    #tc-tagline {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 30px;
+      letter-spacing: 0.4em;
+      color: #b9b4a9;
+    }
+  </style>
+
+  <div id="root" data-composition-id="title-card" data-width="1920" data-height="1080">
+    <div id="tc-glow" data-layout-ignore></div>
+    <div id="tc-grid" data-layout-ignore></div>
+
+    <div id="tc-stack">
+      <h1 id="tc-name" class="clip" data-start="0" data-duration="5" aria-label="AMMAR">
+        <span>A</span><span>M</span><span>M</span><span>A</span><span>R</span>
+      </h1>
+      <div id="tc-rule" class="clip" data-start="0" data-duration="5"></div>
+      <h2 id="tc-sub" class="clip" data-start="0" data-duration="5">
+        <span>CREATIVE</span><span class="tc-accent">STUDIO</span>
+      </h2>
+      <p id="tc-tagline" class="clip" data-start="0" data-duration="5" data-var-text="tagline">
+        MOTION · DESIGN · FILM
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // World: the glow drifts left→right for the whole shot (continuous, behind the type).
+      tl.fromTo(
+        "#tc-glow",
+        { x: -260, y: -380 },
+        { x: 780, y: -220, duration: 5, ease: "none" },
+        0,
+      );
+
+      // Accent rule draws out from the centre.
+      tl.fromTo(
+        "#tc-rule",
+        { scaleX: 0 },
+        { scaleX: 1, duration: 0.55, ease: "expo.out" },
+        0.15,
+      );
+
+      // AMMAR: already on screen (soft) at frame 0 for the thumbnail, then focuses letter by letter.
+      tl.fromTo(
+        "#tc-name span",
+        { opacity: 0.35, filter: "blur(10px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out", stagger: 0.067 },
+        0.1,
+      );
+
+      // CREATIVE STUDIO: word by word from near-invisible to full ink, no position change.
+      // (Colour stays in CSS so the `accent` variable keeps driving STUDIO.)
+      tl.fromTo(
+        "#tc-sub span",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.22, ease: "power2.out", stagger: 0.09 },
+        0.95,
+      );
+
+      // Tagline: whole line blurs in.
+      tl.fromTo(
+        "#tc-tagline",
+        { opacity: 0, filter: "blur(8px)" },
+        { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power3.out" },
+        1.45,
+      );
+
+      // Hold dead still ~2.9 s, then exit word by word with a blur-out.
+      tl.to(
+        ["#tc-tagline", "#tc-sub span", "#tc-name span"],
+        { opacity: 0, filter: "blur(10px)", duration: 0.2, ease: "power2.in", stagger: 0.03 },
+        4.4,
+      );
+      tl.to("#tc-rule", { scaleX: 0, duration: 0.25, ease: "power3.in" }, 4.5);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["title-card"] = tl;
+    })();
+  </script>
+</template>

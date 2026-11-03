@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+
+# HyperFrames local working state (snapshots, check reports, history locks)
+projects/*/.hyperframes/
+
+# Renders are build output: ignored by default, except the verified test render kept as proof.
+projects/*/renders/*
+!projects/*/renders/.gitkeep
+!projects/ammar-creative-studio-test/renders/ammar-creative-studio-test.mp4
