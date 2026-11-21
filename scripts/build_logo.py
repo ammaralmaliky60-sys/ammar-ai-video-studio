@@ -433,5 +433,16 @@ if __name__ == "__main__":
     open(os.path.join(OUT, "horizontal", "khaybar-horizontal.svg"), "w").write(horizontal_svg("flat"))
     open(os.path.join(OUT, "horizontal", "khaybar-horizontal-cinematic.svg"), "w").write(horizontal_svg("cinematic"))
     meta["wordmark_grid"] = wordmark()["grid"]
+    # geometry as data for the Remotion components (src/brand/logoPaths.json)
+    paths = {}
+    for v in ("full", "avatar", "small"):
+        gg = geometry(v)
+        gg = {k: gg[k] for k in ("R", "disc", "ring", "dots", "arch", "opening", "threshold", "word_body", "kha_dot", "turq")}
+        gg["ring_width"] = SPEC[v]["ring"]
+        gg["arch_top"] = ARCH["top"]
+        gg["arch_leg"] = ARCH["leg"]
+        paths[v] = gg
+    os.makedirs(os.path.join(ROOT, "src", "brand"), exist_ok=True)
+    json.dump(paths, open(os.path.join(ROOT, "src", "brand", "logoPaths.json"), "w"), indent=1)
     json.dump(meta, open(os.path.join(OUT, "logo-geometry.json"), "w"), indent=2)
     print(json.dumps(meta, indent=1))
