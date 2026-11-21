@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1033 612" width="1033" height="612">
+<title>KHAYBAR wordmark</title>
+<defs>
+  <radialGradient id="k-disc" cx="50%" cy="44%" r="58%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset=".72" stop-color="#0C2A32"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <linearGradient id="k-gold" gradientUnits="userSpaceOnUse" x1="250" y1="150" x2="760" y2="800">
+    <stop offset="0" stop-color="#F2DCA6"/>
+    <stop offset=".34" stop-color="#D4AA61"/>
+    <stop offset=".62" stop-color="#A9803F"/>
+    <stop offset=".82" stop-color="#E6C682"/>
+    <stop offset="1" stop-color="#D4AA61"/>
+  </linearGradient>
+  <linearGradient id="k-ring" gradientUnits="userSpaceOnUse" x1="120" y1="80" x2="880" y2="920">
+    <stop offset="0" stop-color="#F2DCA6"/>
+    <stop offset=".3" stop-color="#D4AA61"/>
+    <stop offset=".55" stop-color="#A9803F"/>
+    <stop offset=".78" stop-color="#E6C682"/>
+    <stop offset="1" stop-color="#A9803F"/>
+  </linearGradient>
+  <linearGradient id="k-ivory" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#FBF6EC"/>
+    <stop offset="1" stop-color="#E6D5B3"/>
+  </linearGradient>
+  <linearGradient id="k-turq" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#5FD3CF"/>
+    <stop offset=".55" stop-color="#2DB9B6"/>
+    <stop offset="1" stop-color="#1D8F8D"/>
+  </linearGradient>
+  <radialGradient id="k-glow" cx="50%" cy="46%" r="62%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".20"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="k-pattern" width="80" height="80" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="#D4AA61" stroke-width="1.2">
+      <rect x="20" y="20" width="40" height="40"/>
+      <rect x="20" y="20" width="40" height="40" transform="rotate(45 40 40)"/>
+      <path d="M0 0 L20 20 M80 0 L60 20 M0 80 L20 60 M80 80 L60 60"/>
+    </g>
+  </pattern>
+</defs>
+<path id="word" fill="url(#k-ivory)" d="M948.85 192.01 L948.85 192.00 L696.00 192.00 L696.00 252.00 L804.00 252.00 L696.00 360.00 L588.00 360.00 L588.00 252.00 L528.00 252.00 L528.00 360.00 L420.00 360.00 L420.00 252.00 L360.00 252.00 L360.00 360.00 L252.00 360.00 L84.00 528.00 L168.85 528.00 L276.85 420.00 L720.85 420.00 L888.85 252.00 L948.85 252.00 Z"/>
+<path id="kha-dot" fill="url(#k-ivory)" d="M822.43 84.00 L864.43 126.00 L822.43 168.00 L780.43 126.00 Z"/>
+<g id="turquoise-diamonds" fill="url(#k-turq)"><path d="M390.00 444.00 L432.00 486.00 L390.00 528.00 L348.00 486.00 Z"/><path d="M502.00 444.00 L544.00 486.00 L502.00 528.00 L460.00 486.00 Z"/><path d="M614.00 444.00 L656.00 486.00 L614.00 528.00 L572.00 486.00 Z"/></g>
+</svg>

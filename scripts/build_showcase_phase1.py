@@ -6,7 +6,7 @@ import os
 import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LOGO = os.path.join(ROOT, "brand", "logo", "phase-1")
+LOGO = os.path.join(ROOT, "brand", "logo", "archive", "phase-1-proposals")
 OUT = os.path.join(ROOT, "showcase", "phase-1", "index.html")
 
 

@@ -1,0 +1,60 @@
+{
+ "files": {
+  "brand/logo/avatar/khaybar-avatar.svg": {
+   "paths": 10,
+   "bytes": 1678
+  },
+  "brand/logo/horizontal/khaybar-horizontal-cinematic.svg": {
+   "paths": 16,
+   "bytes": 6103
+  },
+  "brand/logo/horizontal/khaybar-horizontal.svg": {
+   "paths": 14,
+   "bytes": 4108
+  },
+  "brand/logo/mark/khaybar-mark-on-image.svg": {
+   "paths": 10,
+   "bytes": 1628
+  },
+  "brand/logo/mono/khaybar-logo-mono-dark.svg": {
+   "paths": 10,
+   "bytes": 8724
+  },
+  "brand/logo/mono/khaybar-logo-mono-ivory.svg": {
+   "paths": 10,
+   "bytes": 8725
+  },
+  "brand/logo/official/khaybar-logo-cinematic.svg": {
+   "paths": 13,
+   "bytes": 11060
+  },
+  "brand/logo/official/khaybar-logo-flat.svg": {
+   "paths": 11,
+   "bytes": 8852
+  },
+  "brand/logo/small/khaybar-logo-small.svg": {
+   "paths": 10,
+   "bytes": 1620
+  },
+  "brand/logo/wordmark/khaybar-wordmark-cinematic.svg": {
+   "paths": 6,
+   "bytes": 2719
+  },
+  "brand/logo/wordmark/khaybar-wordmark-latin.svg": {
+   "paths": 6,
+   "bytes": 2531
+  },
+  "brand/logo/wordmark/khaybar-wordmark.svg": {
+   "paths": 5,
+   "bytes": 849
+  }
+ },
+ "flat_cinematic_identical": true,
+ "contrast": {
+  "#D4AA61 on #071F26": 7.88,
+  "#F4E9D3 on #071F26": 14.15,
+  "#2DB9B6 on #071F26": 7.08,
+  "#F4E9D3 word vs #D4AA61 arch": 1.79
+ },
+ "failures": []
+}

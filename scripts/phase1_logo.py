@@ -15,7 +15,7 @@ from shapely.geometry import Polygon, box
 from shapely.ops import unary_union
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "brand", "logo", "phase-1")
+OUT = os.path.join(ROOT, "brand", "logo", "archive", "phase-1-proposals")
 os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------------------
