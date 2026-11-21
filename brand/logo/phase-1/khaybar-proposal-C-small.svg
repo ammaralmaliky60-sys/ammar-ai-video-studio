@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="5" opacity="1"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M723.20 454.42 L581.44 454.42 L581.44 484.58 L650.38 484.58 L590.49 544.47 L590.49 537.06 L529.26 537.06 L529.26 490.61 L499.10 490.61 L499.10 537.06 L446.61 537.06 L446.61 490.61 L416.45 490.61 L416.45 537.06 L362.16 537.06 L276.80 622.42 L319.46 622.42 L374.65 567.22 L610.39 567.22 L693.04 484.58 L723.20 484.58 Z"/><path class="wm" fill="#F4E9D3" d="M646.59 406.76 L661.37 421.54 L646.59 436.32 L631.81 421.54 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M431.83 587.13 L453.25 608.54 L431.83 629.96 L410.42 608.54 Z"/><path d="M487.03 587.13 L508.45 608.54 L487.03 629.96 L465.62 608.54 Z"/><path d="M542.23 587.13 L563.64 608.54 L542.23 629.96 L520.81 608.54 Z"/></g></g>
+</svg>
