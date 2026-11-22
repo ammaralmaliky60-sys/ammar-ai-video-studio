@@ -31,7 +31,7 @@ export const outroDefaults: KhaybarOutroProps = {
   showTagline: true,
   tagline: "بالعقل نقرأ… وبالبصيرة نرى",
   showHandle: true,
-  platforms: "TIKTOK · INSTAGRAM",
+  platforms: "TIKTOK",
   handle: "@bab.5aybar",
   timing: {
     threshold: [0.0, 0.28],
