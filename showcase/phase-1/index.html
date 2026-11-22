@@ -1,0 +1,675 @@
+<title>خيبر · المرحلة الأولى</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Noto+Kufi+Arabic:wght@500;700&display=swap">
+<style>
+/* Layout: a single dark review board; reference first, then three proposal plates, then the size test and the decision. */
+:root {
+  --bg: #071F26; --surface: #153840; --surface-2: #0d2a32; --line: #24505a;
+  --gold: #D4AA61; --ivory: #F4E9D3; --muted: #a9b9b6; --turq: #2DB9B6;
+  --display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ivory); font: 16px/1.75 var(--body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 40px 80px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); line-height: 1.35; text-wrap: balance; margin: 0 }
+h1 { font-size: clamp(28px, 5vw, 44px); color: var(--gold) }
+h2 { font-size: clamp(21px, 3vw, 28px); color: var(--ivory) }
+h3 { font-size: 23px; color: var(--gold) }
+h4 { margin: 0 0 4px; font-size: 14px; color: var(--muted); font-weight: 600 }
+p { margin: 0; max-width: 68ch }
+.eyebrow { font-size: 13px; color: var(--turq); letter-spacing: .02em }
+[lang="en"] { font-family: var(--mono); font-size: .92em }
+header { display: grid; gap: 12px; padding-bottom: 28px; border-bottom: 1px solid var(--line) }
+.status { display: inline-flex; gap: 8px; align-items: center; width: fit-content; font-size: 14px;
+  padding: 4px 12px; border: 1px solid var(--gold); color: var(--gold); border-radius: 999px }
+.status::before { content: ""; width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg) }
+section { display: grid; gap: 20px; padding-block: 44px; border-bottom: 1px solid var(--line) }
+.lead { color: var(--muted) }
+.strip { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px }
+.strip img { display: block; max-width: none; height: 260px; width: auto }
+.ref-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: start }
+.ref-grid img { border-radius: 6px; border: 1px solid var(--line); width: 100% }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px }
+.tbl { overflow-x: auto; min-width: 0 }
+th, td { text-align: right; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { color: var(--gold); font-weight: 600; white-space: nowrap }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; direction: ltr; text-align: left; white-space: nowrap; color: var(--ivory) }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px }
+.two > div { min-width: 0 }
+ul { margin: 0; padding-inline-start: 20px }
+li { margin-block: 4px }
+li::marker { color: var(--gold) }
+.key { background: var(--surface-2); border-inline-start: 3px solid var(--turq); padding: 14px 18px; border-radius: 4px }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px }
+.sw { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; font-size: 13.5px }
+.sw i { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line) }
+.sw b { display: block; font-weight: 500 }
+.sw span { font-family: var(--mono); color: var(--muted); direction: ltr; display: block; text-align: right }
+.word-cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 16px }
+.word-cmp figure { margin: 0; display: grid; gap: 8px; min-width: 0 }
+.word-cmp img, .word-cmp svg { width: 100%; height: auto; display: block; border-radius: 6px; border: 1px solid var(--line) }
+figcaption { font-size: 13px; color: var(--muted) }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden }
+.seg button { font: inherit; font-size: 14px; color: var(--muted); background: none; border: 0; padding: 6px 14px; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--gold); color: var(--bg) }
+.seg button:focus-visible { outline: 2px solid var(--turq); outline-offset: -2px }
+.props { display: grid; gap: 28px }
+.prop { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center;
+  padding: 24px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px }
+.prop-art svg { width: 100%; height: auto; display: block; border-radius: 50% }
+.prop-body { display: grid; gap: 14px; min-width: 0 }
+.rec { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--bg); background: var(--turq); padding: 2px 10px; border-radius: 999px; vertical-align: middle; margin-inline-start: 6px }
+.specs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0 }
+.specs div { border: 1px solid var(--line); border-radius: 4px; padding: 8px }
+.specs dt { font-size: 12px; color: var(--muted) }
+.specs dd { margin: 0; font-family: var(--mono); font-size: 18px; color: var(--gold); font-variant-numeric: tabular-nums }
+.unit { font-size: 12.5px; color: var(--muted); margin-top: -6px }
+.pc { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 14.5px }
+.files { font-family: var(--mono); font-size: 12px; color: var(--muted); direction: ltr; text-align: right }
+body.gold-word .wm { fill: var(--gold) }
+.sizes { display: grid; gap: 18px; overflow-x: auto }
+.bgswitch { padding: 20px; border-radius: 8px; background: #F4E9D3; transition: background .2s }
+.bgswitch.dark { background: #0b0f10 }
+.bgswitch.mid { background: #6f7f7c }
+.srow { display: flex; align-items: end; gap: 22px; min-width: max-content }
+.slabel { width: 150px; font-size: 14px; color: #1d2a2c; align-self: center }
+.bgswitch.dark .slabel, .bgswitch.mid .slabel { color: #e9efee }
+.srow figure { margin: 0; display: grid; justify-items: center; gap: 4px }
+.srow figcaption { font-family: var(--mono); font-size: 11px; color: inherit; opacity: .7 }
+.bgswitch figcaption { color: #1d2a2c }
+.bgswitch.dark figcaption, .bgswitch.mid figcaption { color: #e9efee }
+.disc, .discbox svg { border-radius: 50%; display: block }
+.discbox svg { width: 100%; height: 100% }
+.decide ol { margin: 0; padding-inline-start: 22px; display: grid; gap: 10px }
+.decide li::marker { color: var(--gold); font-family: var(--mono) }
+@media (max-width: 860px) {
+  .ref-grid, .prop, .two, .pc { grid-template-columns: 1fr }
+  .specs { grid-template-columns: repeat(2, minmax(0, 1fr)) }
+  .prop { padding: 16px; gap: 20px }
+  .word-cmp { grid-template-columns: 1fr }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+
+<div class="wrap" dir="rtl" lang="ar">
+<header>
+  <p class="eyebrow">خَيبر | <span lang="en">KHAYBAR</span> · <span lang="en" dir="ltr">@bab.5aybar</span></p>
+  <h1>المرحلة الأولى: تحليل المرجع وإعادة هندسة الشعار</h1>
+  <p class="lead">ثلاثة مقترحات متجهة حقيقية، كلها بالقوس الأصلي المطوّر والدائرة الذهبية الكاملة والاسم داخل القوس، وبالألوان المعتمدة. النسخة هنا هي «الذهبي الرسمي المسطّح»، والنسخة المعدنية مؤجلة إلى المرحلة الثالثة.</p>
+  <span class="status">بانتظار اختيارك</span>
+</header>
+
+<section aria-labelledby="s-ref">
+  <p class="eyebrow">المرجع الأصلي · <span lang="en" dir="ltr">references/khaybar-original.mp4</span></p>
+  <h2 id="s-ref">ما يقوله الفيديو الأصلي</h2>
+  <p class="lead">الملف 1080×1920، مدته 5.1 ثانية، 30 إطاراً في الثانية، بلا صوت. الشريط التالي لقطات كل نصف ثانية، تبدأ من اليمين.</p>
+  <div class="strip"><img src="assets/original-motion-strip.jpg" alt="لقطات متتابعة من فيديو الهوية الأصلية كل نصف ثانية" width="2700" height="480"></div>
+  <div class="two">
+    <div>
+      <h4>تسلسل الحركة الحالية</h4>
+      <ul>
+        <li><b>0.0–0.5ث</b> شرارة ذهبية ترسم الدائرة.</li>
+        <li><b>0.5–1.0ث</b> القوس ينمو من العتبة: التاج نصف الدائري ثم الساقان.</li>
+        <li><b>1.0–1.5ث</b> النجمة الثمانية تظهر بتوهج داخل الباب.</li>
+        <li><b>1.5–2.5ث</b> كلمة «خيبر» تُكتب من اليمين إلى اليسار، ثم الماسات.</li>
+        <li><b>2.5–3.0ث</b> <span lang="en">KHAYBAR</span> ثم سطر المنصات واسم الحساب.</li>
+        <li><b>3.0–5.1ث</b> ثبات مع لمعان نقاط الدائرة.</li>
+      </ul>
+    </div>
+    <div class="key">
+      <h4>اكتشاف أساسي</h4>
+      <p>الماسات الفيروزية الثلاث ليست زخرفة منفصلة، بل هي <b>نقاط الحروف</b>: نقطتا الياء ونقطة الباء. نقطة الخاء ماسة عاجية فوق الكلمة. لذلك حافظت المقترحات الثلاثة على الماسات في موضعها الإملائي تحت الكلمة، ولم تنقلها إلى مكان آخر.</p>
+    </div>
+  </div>
+
+  <div class="ref-grid">
+    <figure style="margin:0;display:grid;gap:8px">
+      <img src="assets/original-mark.jpg" alt="الشعار الأصلي في الإطار الأخير" width="800" height="800">
+      <figcaption>الإطار عند 4.5ث، مقصوصاً على الدائرة.</figcaption>
+    </figure>
+    <div class="tbl">
+      <table>
+        <caption class="eyebrow" style="text-align:right;padding-bottom:6px">القياسات بالبكسل داخل إطار 1080×1920</caption>
+        <tr><th>العنصر</th><th>القياس</th><th>الملاحظة</th></tr>
+        <tr><td>الدائرة</td><td class="num">r 486 · stroke ≈3</td><td>مركزها (540، 892). خط رفيع جداً (0.3% من القطر) يختفي عند 48 بكسل.</td></tr>
+        <tr><td>حلقات داخلية</td><td class="num">r 463 dots · r 445</td><td>نقاط متلألئة وخط شعري، غير مقروءة في الأحجام الصغيرة.</td></tr>
+        <tr><td>القوس</td><td class="num">272 × 287</td><td>تاج نصف دائري تام (R=136)، ساقان مستقيمتان. النسبة ارتفاع/عرض ≈1.05.</td></tr>
+        <tr><td>الشريطان</td><td class="num">24 + 3 + 25</td><td>شريطان ذهبيان بينهما خط داكن 3 بكسل. الفتحة 168.</td></tr>
+        <tr><td>العتبة</td><td class="num">350→431 × 22</td><td>شبه منحرف أعرض من القوس بنسبة 1.6، تفصله فجوة 8 بكسل.</td></tr>
+        <tr><td>النجمة</td><td class="num">≈92 / 46</td><td>نجمة ثمانية عاجية بقلب داكن، وتحتها ماسة فيروزية صغيرة (22).</td></tr>
+        <tr><td>الكلمة</td><td class="num">500 × 250</td><td>كوفي هندسي، سماكة الحرف 35، كل المائلات بزاوية 45° تماماً.</td></tr>
+        <tr><td>الماسات</td><td class="num">50 · pitch 64</td><td>نقاط الياء والباء. نقطة الخاء عاجية (34).</td></tr>
+        <tr><td><span lang="en">KHAYBAR</span></td><td class="num">cap ≈12</td><td>مقروءة فقط فوق 256 بكسل.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="two">
+    <div>
+      <h4>مواطن القوة</h4>
+      <ul>
+        <li>كلمة «خيبر» الكوفية مميزة فعلاً، بنظام صارم: سماكة واحدة وزاوية واحدة (45°).</li>
+        <li>استخدام الماسات نقاطاً للحروف فكرة ذكية تربط الرمز بالكتابة.</li>
+        <li>القوس نصف الدائري بسيط ومقروء ويحمل دلالة الباب.</li>
+        <li>لوحة الألوان متماسكة.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>مواطن الضعف</h4>
+      <ul>
+        <li>الشعار من طابقين منفصلين (القوس فوق، الكلمة تحت)، فيصبح طويلاً ويصغر كلاهما داخل الدائرة.</li>
+        <li>الدائرة رفيعة جداً، والنقاط والخط الشعري واسم <span lang="en">KHAYBAR</span> تختفي في صورة الحساب.</li>
+        <li>الماسة الصغيرة تحت النجمة تنافس الماسات الثلاث وتكرر عنصرها.</li>
+        <li>الألوان أكثر تشبعاً من اللوحة المعتمدة، وفيها تدرجات وتوهج قوي.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="s-word">
+  <p class="eyebrow">ثابت في المقترحات الثلاثة</p>
+  <h2 id="s-word">الكلمة: إعادة بناء متجهة للأصل (R0)</h2>
+  <p class="lead">أعدت رسم «خيبر» من القياسات مساراً متجهاً نظيفاً: سماكة 10 وحدات، وكل المائلات 45°، والنقاط في مواضعها. استخدمت النسخة نفسها في المقترحات الثلاثة حتى تكون المقارنة على هندسة القوس والتكوين فقط. تحسين الكلمة وتطويرها إلى توقيع نهائي هو عمل المرحلة الثانية.</p>
+  <div class="word-cmp">
+    <figure><img src="assets/original-word.jpg" alt="كلمة خيبر في الفيديو الأصلي" width="560" height="300"><figcaption>الأصل: لقطة من الفيديو.</figcaption></figure>
+    <figure><svg class="" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1032 588">
+<title>KHAYBAR wordmark — R0 reconstruction of the original</title>
+<rect width="100%" height="100%" fill="#071F26"/>
+<path fill="#F4E9D3" d="M960.00 166.80 L678.00 166.80 L678.00 226.80 L815.15 226.80 L696.00 345.95 L696.00 331.20 L574.20 331.20 L574.20 238.80 L514.20 238.80 L514.20 331.20 L409.80 331.20 L409.80 238.80 L349.80 238.80 L349.80 331.20 L241.80 331.20 L72.00 501.00 L156.85 501.00 L266.65 391.20 L735.60 391.20 L900.00 226.80 L960.00 226.80 Z"/>
+<path fill="#F4E9D3" d="M807.60 72.00 L837.00 101.40 L807.60 130.80 L778.20 101.40 Z"/>
+<g fill="#2DB9B6"><path d="M380.40 430.80 L423.00 473.40 L380.40 516.00 L337.80 473.40 Z"/><path d="M490.20 430.80 L532.80 473.40 L490.20 516.00 L447.60 473.40 Z"/><path d="M600.00 430.80 L642.60 473.40 L600.00 516.00 L557.40 473.40 Z"/></g>
+</svg>
+<figcaption>R0: مسار متجه، بلا خط جاهز ولا صورة نقطية.</figcaption></figure>
+  </div>
+  <div class="swatches" aria-label="الألوان المعتمدة المستخدمة">
+    <div class="sw"><i style="background:#071F26"></i><div><b>الخلفية الأساسية</b><span>#071F26</span></div></div>
+    <div class="sw"><i style="background:#D4AA61"></i><div><b>الذهبي التراثي</b><span>#D4AA61 · 7.9:1</span></div></div>
+    <div class="sw"><i style="background:#F4E9D3"></i><div><b>العاجي</b><span>#F4E9D3 · 14.2:1</span></div></div>
+    <div class="sw"><i style="background:#2DB9B6"></i><div><b>فيروزي البصيرة</b><span>#2DB9B6 · 7.1:1</span></div></div>
+    <div class="sw"><i style="background:#153840"></i><div><b>السطح الثانوي</b><span>#153840</span></div></div>
+  </div>
+  <p class="unit">النسب هي التباين مقابل الخلفية الأساسية. الثلاثة تتجاوز 7:1.</p>
+</section>
+
+<section aria-labelledby="s-props">
+  <p class="eyebrow">ثلاثة مقترحات هندسية</p>
+  <h2 id="s-props">القوس والاسم داخله</h2>
+  <div class="toolbar">
+    <span class="lead" style="font-size:14px">لون الكلمة للمعاينة:</span>
+    <div class="seg" role="group" aria-label="لون الكلمة">
+      <button type="button" id="wm-ivory" aria-pressed="true">عاجي (كالأصل)</button>
+      <button type="button" id="wm-gold" aria-pressed="false">ذهبي</button>
+    </div>
+  </div>
+  <div class="props">
+    <article class="prop" id="prop-A">
+      <div class="prop-art"><svg class="mark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal A (Faithful Portal)</title>
+<defs>
+  <radialGradient id="bgA" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discA"><circle cx="500" cy="500" r="470"/></clipPath>
+  <pattern id="patA" width="80" height="80" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="#D4AA61" stroke-width="1.2" opacity=".55">
+      <rect x="20" y="20" width="40" height="40"/>
+      <rect x="20" y="20" width="40" height="40" transform="rotate(45 40 40)"/>
+      <path d="M0 0 L20 20 M80 0 L60 20 M0 80 L20 60 M80 80 L60 60"/>
+    </g>
+  </pattern>
+  <radialGradient id="glowA" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgA)"/>
+<g clip-path="url(#discA)" opacity=".09"><rect width="1000" height="1000" fill="url(#patA)"/></g>
+<circle id="ring" cx="500" cy="500" r="466.50" fill="none" stroke="#D4AA61" stroke-width="7.00"/>
+<g id="ring-dots" fill="#D4AA61" opacity=".85"><circle cx="946.00" cy="500.00" r="2.6"/><circle cx="945.39" cy="523.34" r="2.6"/><circle cx="943.56" cy="546.62" r="2.6"/><circle cx="940.51" cy="569.77" r="2.6"/><circle cx="936.25" cy="592.73" r="2.6"/><circle cx="930.80" cy="615.43" r="2.6"/><circle cx="924.17" cy="637.82" r="2.6"/><circle cx="916.38" cy="659.83" r="2.6"/><circle cx="907.44" cy="681.40" r="2.6"/><circle cx="897.39" cy="702.48" r="2.6"/><circle cx="886.25" cy="723.00" r="2.6"/><circle cx="874.05" cy="742.91" r="2.6"/><circle cx="860.82" cy="762.15" r="2.6"/><circle cx="846.61" cy="780.68" r="2.6"/><circle cx="831.44" cy="798.43" r="2.6"/><circle cx="815.37" cy="815.37" r="2.6"/><circle cx="798.43" cy="831.44" r="2.6"/><circle cx="780.68" cy="846.61" r="2.6"/><circle cx="762.15" cy="860.82" r="2.6"/><circle cx="742.91" cy="874.05" r="2.6"/><circle cx="723.00" cy="886.25" r="2.6"/><circle cx="702.48" cy="897.39" r="2.6"/><circle cx="681.40" cy="907.44" r="2.6"/><circle cx="659.83" cy="916.38" r="2.6"/><circle cx="637.82" cy="924.17" r="2.6"/><circle cx="615.43" cy="930.80" r="2.6"/><circle cx="592.73" cy="936.25" r="2.6"/><circle cx="569.77" cy="940.51" r="2.6"/><circle cx="546.62" cy="943.56" r="2.6"/><circle cx="523.34" cy="945.39" r="2.6"/><circle cx="500.00" cy="946.00" r="2.6"/><circle cx="476.66" cy="945.39" r="2.6"/><circle cx="453.38" cy="943.56" r="2.6"/><circle cx="430.23" cy="940.51" r="2.6"/><circle cx="407.27" cy="936.25" r="2.6"/><circle cx="384.57" cy="930.80" r="2.6"/><circle cx="362.18" cy="924.17" r="2.6"/><circle cx="340.17" cy="916.38" r="2.6"/><circle cx="318.60" cy="907.44" r="2.6"/><circle cx="297.52" cy="897.39" r="2.6"/><circle cx="277.00" cy="886.25" r="2.6"/><circle cx="257.09" cy="874.05" r="2.6"/><circle cx="237.85" cy="860.82" r="2.6"/><circle cx="219.32" cy="846.61" r="2.6"/><circle cx="201.57" cy="831.44" r="2.6"/><circle cx="184.63" cy="815.37" r="2.6"/><circle cx="168.56" cy="798.43" r="2.6"/><circle cx="153.39" cy="780.68" r="2.6"/><circle cx="139.18" cy="762.15" r="2.6"/><circle cx="125.95" cy="742.91" r="2.6"/><circle cx="113.75" cy="723.00" r="2.6"/><circle cx="102.61" cy="702.48" r="2.6"/><circle cx="92.56" cy="681.40" r="2.6"/><circle cx="83.62" cy="659.83" r="2.6"/><circle cx="75.83" cy="637.82" r="2.6"/><circle cx="69.20" cy="615.43" r="2.6"/><circle cx="63.75" cy="592.73" r="2.6"/><circle cx="59.49" cy="569.77" r="2.6"/><circle cx="56.44" cy="546.62" r="2.6"/><circle cx="54.61" cy="523.34" r="2.6"/><circle cx="54.00" cy="500.00" r="2.6"/><circle cx="54.61" cy="476.66" r="2.6"/><circle cx="56.44" cy="453.38" r="2.6"/><circle cx="59.49" cy="430.23" r="2.6"/><circle cx="63.75" cy="407.27" r="2.6"/><circle cx="69.20" cy="384.57" r="2.6"/><circle cx="75.83" cy="362.18" r="2.6"/><circle cx="83.62" cy="340.17" r="2.6"/><circle cx="92.56" cy="318.60" r="2.6"/><circle cx="102.61" cy="297.52" r="2.6"/><circle cx="113.75" cy="277.00" r="2.6"/><circle cx="125.95" cy="257.09" r="2.6"/><circle cx="139.18" cy="237.85" r="2.6"/><circle cx="153.39" cy="219.32" r="2.6"/><circle cx="168.56" cy="201.57" r="2.6"/><circle cx="184.63" cy="184.63" r="2.6"/><circle cx="201.57" cy="168.56" r="2.6"/><circle cx="219.32" cy="153.39" r="2.6"/><circle cx="237.85" cy="139.18" r="2.6"/><circle cx="257.09" cy="125.95" r="2.6"/><circle cx="277.00" cy="113.75" r="2.6"/><circle cx="297.52" cy="102.61" r="2.6"/><circle cx="318.60" cy="92.56" r="2.6"/><circle cx="340.17" cy="83.62" r="2.6"/><circle cx="362.18" cy="75.83" r="2.6"/><circle cx="384.57" cy="69.20" r="2.6"/><circle cx="407.27" cy="63.75" r="2.6"/><circle cx="430.23" cy="59.49" r="2.6"/><circle cx="453.38" cy="56.44" r="2.6"/><circle cx="476.66" cy="54.61" r="2.6"/><circle cx="500.00" cy="54.00" r="2.6"/><circle cx="523.34" cy="54.61" r="2.6"/><circle cx="546.62" cy="56.44" r="2.6"/><circle cx="569.77" cy="59.49" r="2.6"/><circle cx="592.73" cy="63.75" r="2.6"/><circle cx="615.43" cy="69.20" r="2.6"/><circle cx="637.82" cy="75.83" r="2.6"/><circle cx="659.83" cy="83.62" r="2.6"/><circle cx="681.40" cy="92.56" r="2.6"/><circle cx="702.48" cy="102.61" r="2.6"/><circle cx="723.00" cy="113.75" r="2.6"/><circle cx="742.91" cy="125.95" r="2.6"/><circle cx="762.15" cy="139.18" r="2.6"/><circle cx="780.68" cy="153.39" r="2.6"/><circle cx="798.43" cy="168.56" r="2.6"/><circle cx="815.37" cy="184.63" r="2.6"/><circle cx="831.44" cy="201.57" r="2.6"/><circle cx="846.61" cy="219.32" r="2.6"/><circle cx="860.82" cy="237.85" r="2.6"/><circle cx="874.05" cy="257.09" r="2.6"/><circle cx="886.25" cy="277.00" r="2.6"/><circle cx="897.39" cy="297.52" r="2.6"/><circle cx="907.44" cy="318.60" r="2.6"/><circle cx="916.38" cy="340.17" r="2.6"/><circle cx="924.17" cy="362.18" r="2.6"/><circle cx="930.80" cy="384.57" r="2.6"/><circle cx="936.25" cy="407.27" r="2.6"/><circle cx="940.51" cy="430.23" r="2.6"/><circle cx="943.56" cy="453.38" r="2.6"/><circle cx="945.39" cy="476.66" r="2.6"/></g>
+<circle cx="500" cy="500" r="428" fill="none" stroke="#D4AA61" stroke-width="1.4" opacity=".35"/>
+<path d="M285.00 740.00 V432.00 A215.00 215.00 0 0 1 715.00 432.00 V740.00 Z" fill="url(#glowA)"/>
+<g id="arch" fill="#D4AA61"><path d="M228.00 740.00 V432.00 A272.00 272.00 0 0 1 772.00 432.00 V740.00 H746.00 V432.00 A246.00 246.00 0 0 0 254.00 432.00 V740.00 Z"/><path d="M259.00 740.00 V432.00 A241.00 241.00 0 0 1 741.00 432.00 V740.00 H715.00 V432.00 A215.00 215.00 0 0 0 285.00 432.00 V740.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M182.00 750.00 H818.00 L838.00 774.00 H162.00 Z"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M529.70 342.30 L529.70 324.90 L512.30 324.90 L500.00 312.60 L487.70 324.90 L470.30 324.90 L470.30 342.30 L458.00 354.60 L470.30 366.90 L470.30 384.30 L487.70 384.30 L500.00 396.60 L512.30 384.30 L529.70 384.30 L529.70 366.90 L542.00 354.60 Z M510.91 365.51 L507.71 373.23 L500.00 370.03 L492.29 373.23 L489.09 365.51 L481.37 362.31 L484.57 354.60 L481.37 346.89 L489.09 343.69 L492.29 335.97 L500.00 339.17 L507.71 335.97 L510.91 343.69 L518.63 346.89 L515.43 354.60 L518.63 362.31 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M681.00 551.65 L566.04 551.65 L566.04 576.11 L621.95 576.11 L573.38 624.68 L573.38 618.66 L523.73 618.66 L523.73 581.00 L499.27 581.00 L499.27 618.66 L456.71 618.66 L456.71 581.00 L432.25 581.00 L432.25 618.66 L388.22 618.66 L319.00 687.89 L353.59 687.89 L398.35 643.12 L589.52 643.12 L656.54 576.11 L681.00 576.11 Z"/><path class="wm" fill="#F4E9D3" d="M618.87 513.00 L630.86 524.99 L618.87 536.97 L606.89 524.99 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M444.72 659.27 L462.09 676.63 L444.72 694.00 L427.36 676.63 Z"/><path d="M489.48 659.27 L506.85 676.63 L489.48 694.00 L472.12 676.63 Z"/><path d="M534.24 659.27 L551.61 676.63 L534.24 694.00 L516.88 676.63 Z"/></g></g>
+</svg>
+</div>
+      <div class="prop-body">
+        <p class="eyebrow">المقترح A · <span lang="en">Faithful Portal</span></p>
+        <h3>الباب الأصيل</h3>
+        <p>أقرب المقترحات إلى المرجع. القوس طويل بنسبة قريبة من الأصل، بشريطين ذهبيين بينهما خط داكن، وعتبة شبه منحرفة أسفله، والنجمة الثمانية في تاج القوس، والاسم في الجزء السفلي من الفتحة.</p>
+        <dl class="specs">
+          <div><dt>عرض القوس الخارجي</dt><dd>544</dd></div>
+          <div><dt>عرض الفتحة</dt><dd>430</dd></div>
+          <div><dt>سماكة الشريط</dt><dd>26</dd></div>
+          <div><dt>سماكة حرف الكلمة</dt><dd>26.1</dd></div>
+        </dl>
+        <p class="unit">الوحدات من لوحة 1000×1000.</p>
+        <div class="pc">
+          <div><h4>نقاط القوة</h4><ul><li>أعلى درجة استمرارية مع الهوية الحالية.</li><li>النجمة تحتفظ بمكانها داخل الباب.</li><li>العتبة الأصلية باقية كما هي.</li></ul></div>
+          <div><h4>نقاط الضعف</h4><ul><li>أصغر حجم للكلمة بين المقترحات الثلاثة، فتكون أضعفها في صورة الحساب الصغيرة.</li><li>طول القوس يترك فراغاً بين النجمة والكلمة.</li></ul></div>
+        </div>
+        <p class="files" lang="en" dir="ltr">brand/logo/phase-1/khaybar-proposal-A.svg · -small.svg</p>
+      </div>
+    </article>
+    <article class="prop" id="prop-B">
+      <div class="prop-art"><svg class="mark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal B (Wide Mihrab)</title>
+<defs>
+  <radialGradient id="bgB" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discB"><circle cx="500" cy="500" r="470"/></clipPath>
+  <pattern id="patB" width="80" height="80" patternUnits="userSpaceOnUse">
+    <g fill="none" stroke="#D4AA61" stroke-width="1.2" opacity=".55">
+      <rect x="20" y="20" width="40" height="40"/>
+      <rect x="20" y="20" width="40" height="40" transform="rotate(45 40 40)"/>
+      <path d="M0 0 L20 20 M80 0 L60 20 M0 80 L20 60 M80 80 L60 60"/>
+    </g>
+  </pattern>
+  <radialGradient id="glowB" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgB)"/>
+<g clip-path="url(#discB)" opacity=".09"><rect width="1000" height="1000" fill="url(#patB)"/></g>
+<circle id="ring" cx="500" cy="500" r="466.50" fill="none" stroke="#D4AA61" stroke-width="7.00"/>
+<g id="ring-dots" fill="#D4AA61" opacity=".85"><circle cx="946.00" cy="500.00" r="2.6"/><circle cx="945.39" cy="523.34" r="2.6"/><circle cx="943.56" cy="546.62" r="2.6"/><circle cx="940.51" cy="569.77" r="2.6"/><circle cx="936.25" cy="592.73" r="2.6"/><circle cx="930.80" cy="615.43" r="2.6"/><circle cx="924.17" cy="637.82" r="2.6"/><circle cx="916.38" cy="659.83" r="2.6"/><circle cx="907.44" cy="681.40" r="2.6"/><circle cx="897.39" cy="702.48" r="2.6"/><circle cx="886.25" cy="723.00" r="2.6"/><circle cx="874.05" cy="742.91" r="2.6"/><circle cx="860.82" cy="762.15" r="2.6"/><circle cx="846.61" cy="780.68" r="2.6"/><circle cx="831.44" cy="798.43" r="2.6"/><circle cx="815.37" cy="815.37" r="2.6"/><circle cx="798.43" cy="831.44" r="2.6"/><circle cx="780.68" cy="846.61" r="2.6"/><circle cx="762.15" cy="860.82" r="2.6"/><circle cx="742.91" cy="874.05" r="2.6"/><circle cx="723.00" cy="886.25" r="2.6"/><circle cx="702.48" cy="897.39" r="2.6"/><circle cx="681.40" cy="907.44" r="2.6"/><circle cx="659.83" cy="916.38" r="2.6"/><circle cx="637.82" cy="924.17" r="2.6"/><circle cx="615.43" cy="930.80" r="2.6"/><circle cx="592.73" cy="936.25" r="2.6"/><circle cx="569.77" cy="940.51" r="2.6"/><circle cx="546.62" cy="943.56" r="2.6"/><circle cx="523.34" cy="945.39" r="2.6"/><circle cx="500.00" cy="946.00" r="2.6"/><circle cx="476.66" cy="945.39" r="2.6"/><circle cx="453.38" cy="943.56" r="2.6"/><circle cx="430.23" cy="940.51" r="2.6"/><circle cx="407.27" cy="936.25" r="2.6"/><circle cx="384.57" cy="930.80" r="2.6"/><circle cx="362.18" cy="924.17" r="2.6"/><circle cx="340.17" cy="916.38" r="2.6"/><circle cx="318.60" cy="907.44" r="2.6"/><circle cx="297.52" cy="897.39" r="2.6"/><circle cx="277.00" cy="886.25" r="2.6"/><circle cx="257.09" cy="874.05" r="2.6"/><circle cx="237.85" cy="860.82" r="2.6"/><circle cx="219.32" cy="846.61" r="2.6"/><circle cx="201.57" cy="831.44" r="2.6"/><circle cx="184.63" cy="815.37" r="2.6"/><circle cx="168.56" cy="798.43" r="2.6"/><circle cx="153.39" cy="780.68" r="2.6"/><circle cx="139.18" cy="762.15" r="2.6"/><circle cx="125.95" cy="742.91" r="2.6"/><circle cx="113.75" cy="723.00" r="2.6"/><circle cx="102.61" cy="702.48" r="2.6"/><circle cx="92.56" cy="681.40" r="2.6"/><circle cx="83.62" cy="659.83" r="2.6"/><circle cx="75.83" cy="637.82" r="2.6"/><circle cx="69.20" cy="615.43" r="2.6"/><circle cx="63.75" cy="592.73" r="2.6"/><circle cx="59.49" cy="569.77" r="2.6"/><circle cx="56.44" cy="546.62" r="2.6"/><circle cx="54.61" cy="523.34" r="2.6"/><circle cx="54.00" cy="500.00" r="2.6"/><circle cx="54.61" cy="476.66" r="2.6"/><circle cx="56.44" cy="453.38" r="2.6"/><circle cx="59.49" cy="430.23" r="2.6"/><circle cx="63.75" cy="407.27" r="2.6"/><circle cx="69.20" cy="384.57" r="2.6"/><circle cx="75.83" cy="362.18" r="2.6"/><circle cx="83.62" cy="340.17" r="2.6"/><circle cx="92.56" cy="318.60" r="2.6"/><circle cx="102.61" cy="297.52" r="2.6"/><circle cx="113.75" cy="277.00" r="2.6"/><circle cx="125.95" cy="257.09" r="2.6"/><circle cx="139.18" cy="237.85" r="2.6"/><circle cx="153.39" cy="219.32" r="2.6"/><circle cx="168.56" cy="201.57" r="2.6"/><circle cx="184.63" cy="184.63" r="2.6"/><circle cx="201.57" cy="168.56" r="2.6"/><circle cx="219.32" cy="153.39" r="2.6"/><circle cx="237.85" cy="139.18" r="2.6"/><circle cx="257.09" cy="125.95" r="2.6"/><circle cx="277.00" cy="113.75" r="2.6"/><circle cx="297.52" cy="102.61" r="2.6"/><circle cx="318.60" cy="92.56" r="2.6"/><circle cx="340.17" cy="83.62" r="2.6"/><circle cx="362.18" cy="75.83" r="2.6"/><circle cx="384.57" cy="69.20" r="2.6"/><circle cx="407.27" cy="63.75" r="2.6"/><circle cx="430.23" cy="59.49" r="2.6"/><circle cx="453.38" cy="56.44" r="2.6"/><circle cx="476.66" cy="54.61" r="2.6"/><circle cx="500.00" cy="54.00" r="2.6"/><circle cx="523.34" cy="54.61" r="2.6"/><circle cx="546.62" cy="56.44" r="2.6"/><circle cx="569.77" cy="59.49" r="2.6"/><circle cx="592.73" cy="63.75" r="2.6"/><circle cx="615.43" cy="69.20" r="2.6"/><circle cx="637.82" cy="75.83" r="2.6"/><circle cx="659.83" cy="83.62" r="2.6"/><circle cx="681.40" cy="92.56" r="2.6"/><circle cx="702.48" cy="102.61" r="2.6"/><circle cx="723.00" cy="113.75" r="2.6"/><circle cx="742.91" cy="125.95" r="2.6"/><circle cx="762.15" cy="139.18" r="2.6"/><circle cx="780.68" cy="153.39" r="2.6"/><circle cx="798.43" cy="168.56" r="2.6"/><circle cx="815.37" cy="184.63" r="2.6"/><circle cx="831.44" cy="201.57" r="2.6"/><circle cx="846.61" cy="219.32" r="2.6"/><circle cx="860.82" cy="237.85" r="2.6"/><circle cx="874.05" cy="257.09" r="2.6"/><circle cx="886.25" cy="277.00" r="2.6"/><circle cx="897.39" cy="297.52" r="2.6"/><circle cx="907.44" cy="318.60" r="2.6"/><circle cx="916.38" cy="340.17" r="2.6"/><circle cx="924.17" cy="362.18" r="2.6"/><circle cx="930.80" cy="384.57" r="2.6"/><circle cx="936.25" cy="407.27" r="2.6"/><circle cx="940.51" cy="430.23" r="2.6"/><circle cx="943.56" cy="453.38" r="2.6"/><circle cx="945.39" cy="476.66" r="2.6"/></g>
+<circle cx="500" cy="500" r="428" fill="none" stroke="#D4AA61" stroke-width="1.4" opacity=".35"/>
+<path d="M235.00 742.00 V458.00 A265.00 265.00 0 0 1 765.00 458.00 V742.00 Z" fill="url(#glowB)"/>
+<g id="arch" fill="#D4AA61"><path d="M182.00 742.00 V458.00 A318.00 318.00 0 0 1 818.00 458.00 V742.00 H794.00 V458.00 A294.00 294.00 0 0 0 206.00 458.00 V742.00 Z"/><path d="M211.00 742.00 V458.00 A289.00 289.00 0 0 1 789.00 458.00 V742.00 H765.00 V458.00 A265.00 265.00 0 0 0 235.00 458.00 V742.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M155.00 751.00 H845.00 L860.00 771.00 H140.00 Z"/>
+<path fill="#071F26" d="M539.00 166.50 L527.58 155.08 L527.58 138.92 L511.42 138.92 L500.00 127.50 L488.58 138.92 L472.42 138.92 L472.42 155.08 L461.00 166.50 L472.42 177.92 L472.42 194.08 L488.58 194.08 L500.00 205.50 L511.42 194.08 L527.58 194.08 L527.58 177.92 Z"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M521.21 157.71 L521.21 145.29 L508.79 145.29 L500.00 136.50 L491.21 145.29 L478.79 145.29 L478.79 157.71 L470.00 166.50 L478.79 175.29 L478.79 187.71 L491.21 187.71 L500.00 196.50 L508.79 187.71 L521.21 187.71 L521.21 175.29 L530.00 166.50 Z M507.47 173.97 L505.28 179.25 L500.00 177.06 L494.72 179.25 L492.53 173.97 L487.25 171.78 L489.44 166.50 L487.25 161.22 L492.53 159.03 L494.72 153.75 L500.00 155.94 L505.28 153.75 L507.47 159.03 L512.75 161.22 L510.56 166.50 L512.75 171.78 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M734.00 509.96 L585.38 509.96 L585.38 541.58 L657.66 541.58 L594.86 604.38 L594.86 596.61 L530.67 596.61 L530.67 547.91 L499.05 547.91 L499.05 596.61 L444.03 596.61 L444.03 547.91 L412.41 547.91 L412.41 596.61 L355.49 596.61 L266.00 686.09 L310.72 686.09 L368.59 628.23 L615.74 628.23 L702.38 541.58 L734.00 541.58 Z"/><path class="wm" fill="#F4E9D3" d="M653.68 460.00 L669.18 475.49 L653.68 490.99 L638.19 475.49 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M428.54 649.10 L450.99 671.55 L428.54 694.00 L406.08 671.55 Z"/><path d="M486.40 649.10 L508.85 671.55 L486.40 694.00 L463.95 671.55 Z"/><path d="M544.27 649.10 L566.72 671.55 L544.27 694.00 L521.82 671.55 Z"/></g></g>
+</svg>
+</div>
+      <div class="prop-body">
+        <p class="eyebrow">المقترح B · <span lang="en">Wide Mihrab</span></p>
+        <h3>المحراب المتّسع <span class="rec">ترشيحي</span></h3>
+        <p>قوس أعرض يتحول إلى محراب يحتضن الاسم. النجمة انتقلت إلى حجر التاج في قمة القوس، مقطوعة من الشريطين الذهبيين، فتحررت الفتحة كلها للكلمة.</p>
+        <dl class="specs">
+          <div><dt>عرض القوس الخارجي</dt><dd>636</dd></div>
+          <div><dt>عرض الفتحة</dt><dd>530</dd></div>
+          <div><dt>سماكة الشريط</dt><dd>24</dd></div>
+          <div><dt>سماكة حرف الكلمة</dt><dd>32.2</dd></div>
+        </dl>
+        <p class="unit">الوحدات من لوحة 1000×1000.</p>
+        <div class="pc">
+          <div><h4>نقاط القوة</h4><ul><li>أكبر حضور للكلمة: عرضها نصف قطر الدائرة تقريباً، مثل الأصل تماماً.</li><li>الشريط المزدوج والعتبة باقيان.</li><li>شكل المحراب ينسجم مع بطاقة الحديث المعتمدة «المحراب المعرفي».</li></ul></div>
+          <div><h4>نقاط الضعف</h4><ul><li>النجمة أصغر، وتتحول إلى نقطة عند 48 بكسل.</li><li>تغيير موضع النجمة يحتاج موافقتك.</li></ul></div>
+        </div>
+        <p class="files" lang="en" dir="ltr">brand/logo/phase-1/khaybar-proposal-B.svg · -small.svg</p>
+      </div>
+    </article>
+    <article class="prop" id="prop-C">
+      <div class="prop-art"><svg class="mark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="4" opacity="0.9"/>
+<path d="M252.00 748.00 V440.00 A248.00 248.00 0 0 1 748.00 440.00 V748.00 Z" fill="url(#glowC)"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M525.46 317.86 L525.46 302.94 L510.54 302.94 L500.00 292.40 L489.46 302.94 L474.54 302.94 L474.54 317.86 L464.00 328.40 L474.54 338.94 L474.54 353.86 L489.46 353.86 L500.00 364.40 L510.54 353.86 L525.46 353.86 L525.46 338.94 L536.00 328.40 Z M508.57 336.97 L506.06 343.03 L500.00 340.52 L493.94 343.03 L491.43 336.97 L485.37 334.46 L487.88 328.40 L485.37 322.34 L491.43 319.83 L493.94 313.77 L500.00 316.28 L506.06 313.77 L508.57 319.83 L514.63 322.34 L512.12 328.40 L514.63 334.46 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M708.00 540.41 L575.89 540.41 L575.89 568.52 L640.14 568.52 L584.32 624.34 L584.32 617.43 L527.26 617.43 L527.26 574.14 L499.16 574.14 L499.16 617.43 L450.25 617.43 L450.25 574.14 L422.14 574.14 L422.14 617.43 L371.55 617.43 L292.00 696.97 L331.75 696.97 L383.19 645.54 L602.88 645.54 L679.89 568.52 L708.00 568.52 Z"/><path class="wm" fill="#F4E9D3" d="M636.61 496.00 L650.38 509.77 L636.61 523.55 L622.83 509.77 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M436.48 664.09 L456.43 684.04 L436.48 704.00 L416.52 684.04 Z"/><path d="M487.91 664.09 L507.87 684.04 L487.91 704.00 L467.96 684.04 Z"/><path d="M539.35 664.09 L559.31 684.04 L539.35 704.00 L519.39 684.04 Z"/></g></g>
+</svg>
+</div>
+      <div class="prop-body">
+        <p class="eyebrow">المقترح C · <span lang="en">Sealed Gate</span></p>
+        <h3>البوابة المحكمة</h3>
+        <p>بوابة مغلقة: شريط ذهبي واحد سميك يلتف من القوس إلى قاعدة متصلة، ودائرة سميكة مع خط داخلي رفيع، بلا نقاط ولا زخرفة خلفية.</p>
+        <dl class="specs">
+          <div><dt>عرض القوس الخارجي</dt><dd>580</dd></div>
+          <div><dt>عرض الفتحة</dt><dd>496</dd></div>
+          <div><dt>سماكة الشريط</dt><dd>42</dd></div>
+          <div><dt>سماكة حرف الكلمة</dt><dd>30.2</dd></div>
+        </dl>
+        <p class="unit">الوحدات من لوحة 1000×1000.</p>
+        <div class="pc">
+          <div><h4>نقاط القوة</h4><ul><li>الأوضح في الأحجام الصغيرة والعلامة المائية.</li><li>الأسهل في التحريك: مسار واحد يُرسم ثم يُغلق.</li><li>أقل تفاصيل قابلة للضياع.</li></ul></div>
+          <div><h4>نقاط الضعف</h4><ul><li>يفقد الشريط المزدوج، وهو من سمات القوس الأصلي.</li><li>الإطار المغلق أبرد وأقرب إلى اللوحة منه إلى الباب.</li></ul></div>
+        </div>
+        <p class="files" lang="en" dir="ltr">brand/logo/phase-1/khaybar-proposal-C.svg · -small.svg</p>
+      </div>
+    </article></div>
+</section>
+
+<section aria-labelledby="s-sizes">
+  <p class="eyebrow">اختبار الأحجام الصغيرة · قص دائري</p>
+  <h2 id="s-sizes">48 و64 و128 و256 بكسل</h2>
+  <p class="lead">هذه نسخ الأحجام الصغيرة من كل مقترح: تُحذف النقاط والزخرفة الخلفية، وتُحذف نجمة التاج في A وC، وتكبر الكلمة لتملأ الفتحة. الأصل معروض للمقارنة من الفيديو نفسه.</p>
+  <div class="toolbar">
+    <span class="lead" style="font-size:14px">خلفية الاختبار:</span>
+    <div class="seg" role="group" aria-label="خلفية الاختبار">
+      <button type="button" data-bg="" aria-pressed="true">فاتحة</button>
+      <button type="button" data-bg="mid" aria-pressed="false">رمادية</button>
+      <button type="button" data-bg="dark" aria-pressed="false">داكنة</button>
+    </div>
+  </div>
+  <div class="bgswitch" id="bgswitch"><div class="sizes"><div class="srow"><div class="slabel">الأصل</div><figure><img class="disc" src="assets/original-mark.jpg" width="48" height="48" alt="الشعار الأصلي بحجم 48"><figcaption>48</figcaption></figure><figure><img class="disc" src="assets/original-mark.jpg" width="64" height="64" alt="الشعار الأصلي بحجم 64"><figcaption>64</figcaption></figure><figure><img class="disc" src="assets/original-mark.jpg" width="128" height="128" alt="الشعار الأصلي بحجم 128"><figcaption>128</figcaption></figure><figure><img class="disc" src="assets/original-mark.jpg" width="256" height="256" alt="الشعار الأصلي بحجم 256"><figcaption>256</figcaption></figure></div><div class="srow"><div class="slabel">A · الباب الأصيل</div><figure><div class="discbox" style="width:48px;height:48px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal A (Faithful Portal)</title>
+<defs>
+  <radialGradient id="bgA" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discA"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowA" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgA)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M228.00 740.00 V432.00 A272.00 272.00 0 0 1 772.00 432.00 V740.00 H746.00 V432.00 A246.00 246.00 0 0 0 254.00 432.00 V740.00 Z"/><path d="M259.00 740.00 V432.00 A241.00 241.00 0 0 1 741.00 432.00 V740.00 H715.00 V432.00 A215.00 215.00 0 0 0 285.00 432.00 V740.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M182.00 750.00 H818.00 L838.00 774.00 H162.00 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M693.50 464.99 L570.60 464.99 L570.60 491.14 L630.37 491.14 L578.45 543.06 L578.45 536.64 L525.36 536.64 L525.36 496.37 L499.22 496.37 L499.22 536.64 L453.72 536.64 L453.72 496.37 L427.57 496.37 L427.57 536.64 L380.50 536.64 L306.50 610.64 L343.48 610.64 L391.33 562.79 L595.70 562.79 L667.35 491.14 L693.50 491.14 Z"/><path class="wm" fill="#F4E9D3" d="M627.08 423.67 L639.90 436.49 L627.08 449.30 L614.27 436.49 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M440.90 580.04 L459.47 598.61 L440.90 617.17 L422.34 598.61 Z"/><path d="M488.76 580.04 L507.32 598.61 L488.76 617.17 L470.19 598.61 Z"/><path d="M536.61 580.04 L555.17 598.61 L536.61 617.17 L518.04 598.61 Z"/></g></g>
+</svg>
+</div><figcaption>48</figcaption></figure><figure><div class="discbox" style="width:64px;height:64px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal A (Faithful Portal)</title>
+<defs>
+  <radialGradient id="bgA" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discA"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowA" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgA)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M228.00 740.00 V432.00 A272.00 272.00 0 0 1 772.00 432.00 V740.00 H746.00 V432.00 A246.00 246.00 0 0 0 254.00 432.00 V740.00 Z"/><path d="M259.00 740.00 V432.00 A241.00 241.00 0 0 1 741.00 432.00 V740.00 H715.00 V432.00 A215.00 215.00 0 0 0 285.00 432.00 V740.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M182.00 750.00 H818.00 L838.00 774.00 H162.00 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M693.50 464.99 L570.60 464.99 L570.60 491.14 L630.37 491.14 L578.45 543.06 L578.45 536.64 L525.36 536.64 L525.36 496.37 L499.22 496.37 L499.22 536.64 L453.72 536.64 L453.72 496.37 L427.57 496.37 L427.57 536.64 L380.50 536.64 L306.50 610.64 L343.48 610.64 L391.33 562.79 L595.70 562.79 L667.35 491.14 L693.50 491.14 Z"/><path class="wm" fill="#F4E9D3" d="M627.08 423.67 L639.90 436.49 L627.08 449.30 L614.27 436.49 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M440.90 580.04 L459.47 598.61 L440.90 617.17 L422.34 598.61 Z"/><path d="M488.76 580.04 L507.32 598.61 L488.76 617.17 L470.19 598.61 Z"/><path d="M536.61 580.04 L555.17 598.61 L536.61 617.17 L518.04 598.61 Z"/></g></g>
+</svg>
+</div><figcaption>64</figcaption></figure><figure><div class="discbox" style="width:128px;height:128px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal A (Faithful Portal)</title>
+<defs>
+  <radialGradient id="bgA" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discA"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowA" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgA)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M228.00 740.00 V432.00 A272.00 272.00 0 0 1 772.00 432.00 V740.00 H746.00 V432.00 A246.00 246.00 0 0 0 254.00 432.00 V740.00 Z"/><path d="M259.00 740.00 V432.00 A241.00 241.00 0 0 1 741.00 432.00 V740.00 H715.00 V432.00 A215.00 215.00 0 0 0 285.00 432.00 V740.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M182.00 750.00 H818.00 L838.00 774.00 H162.00 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M693.50 464.99 L570.60 464.99 L570.60 491.14 L630.37 491.14 L578.45 543.06 L578.45 536.64 L525.36 536.64 L525.36 496.37 L499.22 496.37 L499.22 536.64 L453.72 536.64 L453.72 496.37 L427.57 496.37 L427.57 536.64 L380.50 536.64 L306.50 610.64 L343.48 610.64 L391.33 562.79 L595.70 562.79 L667.35 491.14 L693.50 491.14 Z"/><path class="wm" fill="#F4E9D3" d="M627.08 423.67 L639.90 436.49 L627.08 449.30 L614.27 436.49 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M440.90 580.04 L459.47 598.61 L440.90 617.17 L422.34 598.61 Z"/><path d="M488.76 580.04 L507.32 598.61 L488.76 617.17 L470.19 598.61 Z"/><path d="M536.61 580.04 L555.17 598.61 L536.61 617.17 L518.04 598.61 Z"/></g></g>
+</svg>
+</div><figcaption>128</figcaption></figure><figure><div class="discbox" style="width:256px;height:256px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal A (Faithful Portal)</title>
+<defs>
+  <radialGradient id="bgA" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discA"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowA" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgA)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M228.00 740.00 V432.00 A272.00 272.00 0 0 1 772.00 432.00 V740.00 H746.00 V432.00 A246.00 246.00 0 0 0 254.00 432.00 V740.00 Z"/><path d="M259.00 740.00 V432.00 A241.00 241.00 0 0 1 741.00 432.00 V740.00 H715.00 V432.00 A215.00 215.00 0 0 0 285.00 432.00 V740.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M182.00 750.00 H818.00 L838.00 774.00 H162.00 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M693.50 464.99 L570.60 464.99 L570.60 491.14 L630.37 491.14 L578.45 543.06 L578.45 536.64 L525.36 536.64 L525.36 496.37 L499.22 496.37 L499.22 536.64 L453.72 536.64 L453.72 496.37 L427.57 496.37 L427.57 536.64 L380.50 536.64 L306.50 610.64 L343.48 610.64 L391.33 562.79 L595.70 562.79 L667.35 491.14 L693.50 491.14 Z"/><path class="wm" fill="#F4E9D3" d="M627.08 423.67 L639.90 436.49 L627.08 449.30 L614.27 436.49 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M440.90 580.04 L459.47 598.61 L440.90 617.17 L422.34 598.61 Z"/><path d="M488.76 580.04 L507.32 598.61 L488.76 617.17 L470.19 598.61 Z"/><path d="M536.61 580.04 L555.17 598.61 L536.61 617.17 L518.04 598.61 Z"/></g></g>
+</svg>
+</div><figcaption>256</figcaption></figure></div><div class="srow"><div class="slabel">B · المحراب المتّسع</div><figure><div class="discbox" style="width:48px;height:48px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal B (Wide Mihrab)</title>
+<defs>
+  <radialGradient id="bgB" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discB"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowB" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgB)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M182.00 742.00 V458.00 A318.00 318.00 0 0 1 818.00 458.00 V742.00 H794.00 V458.00 A294.00 294.00 0 0 0 206.00 458.00 V742.00 Z"/><path d="M211.00 742.00 V458.00 A289.00 289.00 0 0 1 789.00 458.00 V742.00 H765.00 V458.00 A265.00 265.00 0 0 0 235.00 458.00 V742.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M155.00 751.00 H845.00 L860.00 771.00 H140.00 Z"/>
+<path fill="#071F26" d="M539.00 166.50 L527.58 155.08 L527.58 138.92 L511.42 138.92 L500.00 127.50 L488.58 138.92 L472.42 138.92 L472.42 155.08 L461.00 166.50 L472.42 177.92 L472.42 194.08 L488.58 194.08 L500.00 205.50 L511.42 194.08 L527.58 194.08 L527.58 177.92 Z"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M521.21 157.71 L521.21 145.29 L508.79 145.29 L500.00 136.50 L491.21 145.29 L478.79 145.29 L478.79 157.71 L470.00 166.50 L478.79 175.29 L478.79 187.71 L491.21 187.71 L500.00 196.50 L508.79 187.71 L521.21 187.71 L521.21 175.29 L530.00 166.50 Z M507.47 173.97 L505.28 179.25 L500.00 177.06 L494.72 179.25 L492.53 173.97 L487.25 171.78 L489.44 166.50 L487.25 161.22 L492.53 159.03 L494.72 153.75 L500.00 155.94 L505.28 153.75 L507.47 159.03 L512.75 161.22 L510.56 166.50 L512.75 171.78 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M738.50 424.35 L587.02 424.35 L587.02 456.58 L660.69 456.58 L596.69 520.58 L596.69 512.66 L531.26 512.66 L531.26 463.02 L499.03 463.02 L499.03 512.66 L442.95 512.66 L442.95 463.02 L410.72 463.02 L410.72 512.66 L352.71 512.66 L261.50 603.87 L307.08 603.87 L366.06 544.89 L617.96 544.89 L706.27 456.58 L738.50 456.58 Z"/><path class="wm" fill="#F4E9D3" d="M656.64 373.43 L672.43 389.22 L656.64 405.01 L640.84 389.22 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M427.16 566.16 L450.04 589.04 L427.16 611.93 L404.28 589.04 Z"/><path d="M486.14 566.16 L509.02 589.04 L486.14 611.93 L463.26 589.04 Z"/><path d="M545.12 566.16 L568.00 589.04 L545.12 611.93 L522.24 589.04 Z"/></g></g>
+</svg>
+</div><figcaption>48</figcaption></figure><figure><div class="discbox" style="width:64px;height:64px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal B (Wide Mihrab)</title>
+<defs>
+  <radialGradient id="bgB" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discB"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowB" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgB)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M182.00 742.00 V458.00 A318.00 318.00 0 0 1 818.00 458.00 V742.00 H794.00 V458.00 A294.00 294.00 0 0 0 206.00 458.00 V742.00 Z"/><path d="M211.00 742.00 V458.00 A289.00 289.00 0 0 1 789.00 458.00 V742.00 H765.00 V458.00 A265.00 265.00 0 0 0 235.00 458.00 V742.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M155.00 751.00 H845.00 L860.00 771.00 H140.00 Z"/>
+<path fill="#071F26" d="M539.00 166.50 L527.58 155.08 L527.58 138.92 L511.42 138.92 L500.00 127.50 L488.58 138.92 L472.42 138.92 L472.42 155.08 L461.00 166.50 L472.42 177.92 L472.42 194.08 L488.58 194.08 L500.00 205.50 L511.42 194.08 L527.58 194.08 L527.58 177.92 Z"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M521.21 157.71 L521.21 145.29 L508.79 145.29 L500.00 136.50 L491.21 145.29 L478.79 145.29 L478.79 157.71 L470.00 166.50 L478.79 175.29 L478.79 187.71 L491.21 187.71 L500.00 196.50 L508.79 187.71 L521.21 187.71 L521.21 175.29 L530.00 166.50 Z M507.47 173.97 L505.28 179.25 L500.00 177.06 L494.72 179.25 L492.53 173.97 L487.25 171.78 L489.44 166.50 L487.25 161.22 L492.53 159.03 L494.72 153.75 L500.00 155.94 L505.28 153.75 L507.47 159.03 L512.75 161.22 L510.56 166.50 L512.75 171.78 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M738.50 424.35 L587.02 424.35 L587.02 456.58 L660.69 456.58 L596.69 520.58 L596.69 512.66 L531.26 512.66 L531.26 463.02 L499.03 463.02 L499.03 512.66 L442.95 512.66 L442.95 463.02 L410.72 463.02 L410.72 512.66 L352.71 512.66 L261.50 603.87 L307.08 603.87 L366.06 544.89 L617.96 544.89 L706.27 456.58 L738.50 456.58 Z"/><path class="wm" fill="#F4E9D3" d="M656.64 373.43 L672.43 389.22 L656.64 405.01 L640.84 389.22 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M427.16 566.16 L450.04 589.04 L427.16 611.93 L404.28 589.04 Z"/><path d="M486.14 566.16 L509.02 589.04 L486.14 611.93 L463.26 589.04 Z"/><path d="M545.12 566.16 L568.00 589.04 L545.12 611.93 L522.24 589.04 Z"/></g></g>
+</svg>
+</div><figcaption>64</figcaption></figure><figure><div class="discbox" style="width:128px;height:128px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal B (Wide Mihrab)</title>
+<defs>
+  <radialGradient id="bgB" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discB"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowB" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgB)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M182.00 742.00 V458.00 A318.00 318.00 0 0 1 818.00 458.00 V742.00 H794.00 V458.00 A294.00 294.00 0 0 0 206.00 458.00 V742.00 Z"/><path d="M211.00 742.00 V458.00 A289.00 289.00 0 0 1 789.00 458.00 V742.00 H765.00 V458.00 A265.00 265.00 0 0 0 235.00 458.00 V742.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M155.00 751.00 H845.00 L860.00 771.00 H140.00 Z"/>
+<path fill="#071F26" d="M539.00 166.50 L527.58 155.08 L527.58 138.92 L511.42 138.92 L500.00 127.50 L488.58 138.92 L472.42 138.92 L472.42 155.08 L461.00 166.50 L472.42 177.92 L472.42 194.08 L488.58 194.08 L500.00 205.50 L511.42 194.08 L527.58 194.08 L527.58 177.92 Z"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M521.21 157.71 L521.21 145.29 L508.79 145.29 L500.00 136.50 L491.21 145.29 L478.79 145.29 L478.79 157.71 L470.00 166.50 L478.79 175.29 L478.79 187.71 L491.21 187.71 L500.00 196.50 L508.79 187.71 L521.21 187.71 L521.21 175.29 L530.00 166.50 Z M507.47 173.97 L505.28 179.25 L500.00 177.06 L494.72 179.25 L492.53 173.97 L487.25 171.78 L489.44 166.50 L487.25 161.22 L492.53 159.03 L494.72 153.75 L500.00 155.94 L505.28 153.75 L507.47 159.03 L512.75 161.22 L510.56 166.50 L512.75 171.78 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M738.50 424.35 L587.02 424.35 L587.02 456.58 L660.69 456.58 L596.69 520.58 L596.69 512.66 L531.26 512.66 L531.26 463.02 L499.03 463.02 L499.03 512.66 L442.95 512.66 L442.95 463.02 L410.72 463.02 L410.72 512.66 L352.71 512.66 L261.50 603.87 L307.08 603.87 L366.06 544.89 L617.96 544.89 L706.27 456.58 L738.50 456.58 Z"/><path class="wm" fill="#F4E9D3" d="M656.64 373.43 L672.43 389.22 L656.64 405.01 L640.84 389.22 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M427.16 566.16 L450.04 589.04 L427.16 611.93 L404.28 589.04 Z"/><path d="M486.14 566.16 L509.02 589.04 L486.14 611.93 L463.26 589.04 Z"/><path d="M545.12 566.16 L568.00 589.04 L545.12 611.93 L522.24 589.04 Z"/></g></g>
+</svg>
+</div><figcaption>128</figcaption></figure><figure><div class="discbox" style="width:256px;height:256px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal B (Wide Mihrab)</title>
+<defs>
+  <radialGradient id="bgB" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discB"><circle cx="500" cy="500" r="470"/></clipPath>
+  <radialGradient id="glowB" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="470" fill="url(#bgB)"/>
+<circle id="ring" cx="500" cy="500" r="465.27" fill="none" stroke="#D4AA61" stroke-width="9.45"/>
+<g id="arch" fill="#D4AA61"><path d="M182.00 742.00 V458.00 A318.00 318.00 0 0 1 818.00 458.00 V742.00 H794.00 V458.00 A294.00 294.00 0 0 0 206.00 458.00 V742.00 Z"/><path d="M211.00 742.00 V458.00 A289.00 289.00 0 0 1 789.00 458.00 V742.00 H765.00 V458.00 A265.00 265.00 0 0 0 235.00 458.00 V742.00 Z"/></g>
+<path id="threshold" fill="#D4AA61" d="M155.00 751.00 H845.00 L860.00 771.00 H140.00 Z"/>
+<path fill="#071F26" d="M539.00 166.50 L527.58 155.08 L527.58 138.92 L511.42 138.92 L500.00 127.50 L488.58 138.92 L472.42 138.92 L472.42 155.08 L461.00 166.50 L472.42 177.92 L472.42 194.08 L488.58 194.08 L500.00 205.50 L511.42 194.08 L527.58 194.08 L527.58 177.92 Z"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M521.21 157.71 L521.21 145.29 L508.79 145.29 L500.00 136.50 L491.21 145.29 L478.79 145.29 L478.79 157.71 L470.00 166.50 L478.79 175.29 L478.79 187.71 L491.21 187.71 L500.00 196.50 L508.79 187.71 L521.21 187.71 L521.21 175.29 L530.00 166.50 Z M507.47 173.97 L505.28 179.25 L500.00 177.06 L494.72 179.25 L492.53 173.97 L487.25 171.78 L489.44 166.50 L487.25 161.22 L492.53 159.03 L494.72 153.75 L500.00 155.94 L505.28 153.75 L507.47 159.03 L512.75 161.22 L510.56 166.50 L512.75 171.78 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M738.50 424.35 L587.02 424.35 L587.02 456.58 L660.69 456.58 L596.69 520.58 L596.69 512.66 L531.26 512.66 L531.26 463.02 L499.03 463.02 L499.03 512.66 L442.95 512.66 L442.95 463.02 L410.72 463.02 L410.72 512.66 L352.71 512.66 L261.50 603.87 L307.08 603.87 L366.06 544.89 L617.96 544.89 L706.27 456.58 L738.50 456.58 Z"/><path class="wm" fill="#F4E9D3" d="M656.64 373.43 L672.43 389.22 L656.64 405.01 L640.84 389.22 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M427.16 566.16 L450.04 589.04 L427.16 611.93 L404.28 589.04 Z"/><path d="M486.14 566.16 L509.02 589.04 L486.14 611.93 L463.26 589.04 Z"/><path d="M545.12 566.16 L568.00 589.04 L545.12 611.93 L522.24 589.04 Z"/></g></g>
+</svg>
+</div><figcaption>256</figcaption></figure></div><div class="srow"><div class="slabel">C · البوابة المحكمة</div><figure><div class="discbox" style="width:48px;height:48px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="5" opacity="1"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M723.20 454.42 L581.44 454.42 L581.44 484.58 L650.38 484.58 L590.49 544.47 L590.49 537.06 L529.26 537.06 L529.26 490.61 L499.10 490.61 L499.10 537.06 L446.61 537.06 L446.61 490.61 L416.45 490.61 L416.45 537.06 L362.16 537.06 L276.80 622.42 L319.46 622.42 L374.65 567.22 L610.39 567.22 L693.04 484.58 L723.20 484.58 Z"/><path class="wm" fill="#F4E9D3" d="M646.59 406.76 L661.37 421.54 L646.59 436.32 L631.81 421.54 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M431.83 587.13 L453.25 608.54 L431.83 629.96 L410.42 608.54 Z"/><path d="M487.03 587.13 L508.45 608.54 L487.03 629.96 L465.62 608.54 Z"/><path d="M542.23 587.13 L563.64 608.54 L542.23 629.96 L520.81 608.54 Z"/></g></g>
+</svg>
+</div><figcaption>48</figcaption></figure><figure><div class="discbox" style="width:64px;height:64px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="5" opacity="1"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M723.20 454.42 L581.44 454.42 L581.44 484.58 L650.38 484.58 L590.49 544.47 L590.49 537.06 L529.26 537.06 L529.26 490.61 L499.10 490.61 L499.10 537.06 L446.61 537.06 L446.61 490.61 L416.45 490.61 L416.45 537.06 L362.16 537.06 L276.80 622.42 L319.46 622.42 L374.65 567.22 L610.39 567.22 L693.04 484.58 L723.20 484.58 Z"/><path class="wm" fill="#F4E9D3" d="M646.59 406.76 L661.37 421.54 L646.59 436.32 L631.81 421.54 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M431.83 587.13 L453.25 608.54 L431.83 629.96 L410.42 608.54 Z"/><path d="M487.03 587.13 L508.45 608.54 L487.03 629.96 L465.62 608.54 Z"/><path d="M542.23 587.13 L563.64 608.54 L542.23 629.96 L520.81 608.54 Z"/></g></g>
+</svg>
+</div><figcaption>64</figcaption></figure><figure><div class="discbox" style="width:128px;height:128px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="5" opacity="1"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M723.20 454.42 L581.44 454.42 L581.44 484.58 L650.38 484.58 L590.49 544.47 L590.49 537.06 L529.26 537.06 L529.26 490.61 L499.10 490.61 L499.10 537.06 L446.61 537.06 L446.61 490.61 L416.45 490.61 L416.45 537.06 L362.16 537.06 L276.80 622.42 L319.46 622.42 L374.65 567.22 L610.39 567.22 L693.04 484.58 L723.20 484.58 Z"/><path class="wm" fill="#F4E9D3" d="M646.59 406.76 L661.37 421.54 L646.59 436.32 L631.81 421.54 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M431.83 587.13 L453.25 608.54 L431.83 629.96 L410.42 608.54 Z"/><path d="M487.03 587.13 L508.45 608.54 L487.03 629.96 L465.62 608.54 Z"/><path d="M542.23 587.13 L563.64 608.54 L542.23 629.96 L520.81 608.54 Z"/></g></g>
+</svg>
+</div><figcaption>128</figcaption></figure><figure><div class="discbox" style="width:256px;height:256px"><svg class="disc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="5" opacity="1"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M723.20 454.42 L581.44 454.42 L581.44 484.58 L650.38 484.58 L590.49 544.47 L590.49 537.06 L529.26 537.06 L529.26 490.61 L499.10 490.61 L499.10 537.06 L446.61 537.06 L446.61 490.61 L416.45 490.61 L416.45 537.06 L362.16 537.06 L276.80 622.42 L319.46 622.42 L374.65 567.22 L610.39 567.22 L693.04 484.58 L723.20 484.58 Z"/><path class="wm" fill="#F4E9D3" d="M646.59 406.76 L661.37 421.54 L646.59 436.32 L631.81 421.54 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M431.83 587.13 L453.25 608.54 L431.83 629.96 L410.42 608.54 Z"/><path d="M487.03 587.13 L508.45 608.54 L487.03 629.96 L465.62 608.54 Z"/><path d="M542.23 587.13 L563.64 608.54 L542.23 629.96 L520.81 608.54 Z"/></g></g>
+</svg>
+</div><figcaption>256</figcaption></figure></div></div></div>
+  <div class="two">
+    <div>
+      <h4>النتيجة</h4>
+      <ul>
+        <li>وضع الاسم داخل القوس يجعل الكلمة أصغر من الأصل عند 48 بكسل في A. في B يعادل عرض الكلمة نصف قطر الدائرة، مثل الأصل.</li>
+        <li>C الأوضح في الإطار والدائرة، وB الأوضح في الكلمة.</li>
+        <li>الماسات الفيروزية تبقى مرئية في الثلاثة حتى 64 بكسل، وعند 48 تصبح خطاً منقطاً.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>ما سيُعالج لاحقاً</h4>
+      <ul>
+        <li>صورة الحساب النهائية (المرحلة 4) ستكبّر التكوين داخل الدائرة على نموذج «الحضور الواضح».</li>
+        <li>سماكة الكلمة ونقطة الخاء تُضبطان للأحجام الصغيرة في المرحلة 2.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="s-decide" class="decide" style="border-bottom:0">
+  <p class="eyebrow">المطلوب منك</p>
+  <h2 id="s-decide">قرار الاعتماد</h2>
+  <ol>
+    <li>اختر مقترحاً: A أو B أو C. يمكنك أيضاً طلب تعديل محدد عليه، مثل B بقاعدة C.</li>
+    <li>النجمة الثمانية: في تاج القوس (A وC)، أم حجر تاج في القمة (B)، أم تُحذف؟ لم تكن ضمن العناصر الإلزامية في الوثيقة، لذا القرار لك.</li>
+    <li>الماسة الفيروزية الصغيرة تحت النجمة حذفتها في الثلاثة لأنها تكرر الماسات. هل توافق؟</li>
+    <li>لون الكلمة: عاجي كالأصل، أم ذهبي؟ جرّب المفتاح أعلى المقترحات.</li>
+  </ol>
+  <p class="lead">ترشيحي B: يعطي الكلمة أكبر حضور ممكن داخل القوس، ويبقي النجمة والشريط المزدوج والعتبة، ويتسق مع بطاقة الحديث «المحراب المعرفي».</p>
+</section>
+</div>
+
+<script>
+(() => {
+  const ivory = document.getElementById('wm-ivory'), gold = document.getElementById('wm-gold');
+  function setWord(isGold) {
+    document.body.classList.toggle('gold-word', isGold);
+    ivory.setAttribute('aria-pressed', String(!isGold));
+    gold.setAttribute('aria-pressed', String(isGold));
+  }
+  ivory.addEventListener('click', () => setWord(false));
+  gold.addEventListener('click', () => setWord(true));
+  const box = document.getElementById('bgswitch');
+  document.querySelectorAll('[data-bg]').forEach(b => b.addEventListener('click', () => {
+    box.className = 'bgswitch ' + b.dataset.bg;
+    document.querySelectorAll('[data-bg]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  }));
+})();
+</script>

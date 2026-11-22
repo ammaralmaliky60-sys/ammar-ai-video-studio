@@ -1,0 +1,35 @@
+{
+  "A": {
+    "name_ar": "الباب الأصيل",
+    "name_en": "Faithful Portal",
+    "word_scale": 2.615,
+    "word_stroke_px": 26.1,
+    "band_px": 26,
+    "opening_width": 430,
+    "arch_outer_width": 544,
+    "arch_height": 580,
+    "leg_bottom": 740
+  },
+  "B": {
+    "name_ar": "المحراب المتّسع",
+    "name_en": "Wide Mihrab",
+    "word_scale": 3.223,
+    "word_stroke_px": 32.2,
+    "band_px": 24,
+    "opening_width": 530,
+    "arch_outer_width": 636,
+    "arch_height": 602,
+    "leg_bottom": 742
+  },
+  "C": {
+    "name_ar": "البوابة المحكمة",
+    "name_en": "Sealed Gate",
+    "word_scale": 3.016,
+    "word_stroke_px": 30.2,
+    "band_px": 42,
+    "opening_width": 496,
+    "arch_outer_width": 580,
+    "arch_height": 598,
+    "leg_bottom": 748
+  }
+}

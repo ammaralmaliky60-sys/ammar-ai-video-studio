@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+<title>KHAYBAR — Proposal C (Sealed Gate)</title>
+<defs>
+  <radialGradient id="bgC" cx="50%" cy="46%" r="55%">
+    <stop offset="0" stop-color="#153840"/>
+    <stop offset="1" stop-color="#071F26"/>
+  </radialGradient>
+  <clipPath id="discC"><circle cx="500" cy="500" r="468"/></clipPath>
+  <radialGradient id="glowC" cx="50%" cy="38%" r="65%">
+    <stop offset="0" stop-color="#D4AA61" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#D4AA61" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1000" height="1000" fill="#071F26"/>
+<circle cx="500" cy="500" r="468" fill="url(#bgC)"/>
+<circle id="ring" cx="500" cy="500" r="461.00" fill="none" stroke="#D4AA61" stroke-width="14.00"/>
+<circle cx="500" cy="500" r="434" fill="none" stroke="#D4AA61" stroke-width="4" opacity="0.9"/>
+<path d="M252.00 748.00 V440.00 A248.00 248.00 0 0 1 748.00 440.00 V748.00 Z" fill="url(#glowC)"/>
+<g id="arch" fill="#D4AA61"><path d="M210.00 748.00 V440.00 A290.00 290.00 0 0 1 790.00 440.00 V748.00 H748.00 V440.00 A248.00 248.00 0 0 0 252.00 440.00 V748.00 Z"/></g>
+<rect id="threshold" x="210.00" y="747.50" width="580.00" height="42.5" fill="#D4AA61"/>
+<path id="star" fill="#F4E9D3" fill-rule="evenodd" d="M525.46 317.86 L525.46 302.94 L510.54 302.94 L500.00 292.40 L489.46 302.94 L474.54 302.94 L474.54 317.86 L464.00 328.40 L474.54 338.94 L474.54 353.86 L489.46 353.86 L500.00 364.40 L510.54 353.86 L525.46 353.86 L525.46 338.94 L536.00 328.40 Z M508.57 336.97 L506.06 343.03 L500.00 340.52 L493.94 343.03 L491.43 336.97 L485.37 334.46 L487.88 328.40 L485.37 322.34 L491.43 319.83 L493.94 313.77 L500.00 316.28 L506.06 313.77 L508.57 319.83 L514.63 322.34 L512.12 328.40 L514.63 334.46 Z"/>
+<g id="wordmark"><path class="wm" fill="#F4E9D3" d="M708.00 540.41 L575.89 540.41 L575.89 568.52 L640.14 568.52 L584.32 624.34 L584.32 617.43 L527.26 617.43 L527.26 574.14 L499.16 574.14 L499.16 617.43 L450.25 617.43 L450.25 574.14 L422.14 574.14 L422.14 617.43 L371.55 617.43 L292.00 696.97 L331.75 696.97 L383.19 645.54 L602.88 645.54 L679.89 568.52 L708.00 568.52 Z"/><path class="wm" fill="#F4E9D3" d="M636.61 496.00 L650.38 509.77 L636.61 523.55 L622.83 509.77 Z"/><g id="turquoise-diamonds" fill="#2DB9B6"><path d="M436.48 664.09 L456.43 684.04 L436.48 704.00 L416.52 684.04 Z"/><path d="M487.91 664.09 L507.87 684.04 L487.91 704.00 L467.96 684.04 Z"/><path d="M539.35 664.09 L559.31 684.04 L539.35 704.00 L519.39 684.04 Z"/></g></g>
+</svg>
