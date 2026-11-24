@@ -3,7 +3,7 @@
 | البند | الحالة |
 |---|---|
 | Project Status | Pre-production |
-| Current Phase | GATE 3A — V2 (مرجعي) منجز → **GATE 3A — VISUAL REFINEMENT / AWAITING USER APPROVAL** |
+| Current Phase | GATE 3A — V3 منجز → **GATE 3A — V3 VISUAL REVIEW / AWAITING USER APPROVAL** |
 | Approval Status | GATE 0: ✅ · GATE 1: ✅ **مُغلق** (السيناريو V2.2 معتمد رسمياً؛ المصادر متحققة مع قيود موثقة) · GATE 2: ✅ **مُغلق** (2026-11-24 — مراجعة المالك البشرية: نطق 03/04/06 سليم؛ لا إعادة توليد) · GATE 3: ⏳ |
 | Render Status | لا رندر. لا npm install. |
 | Script | **V2.2 — APPROVED** (`SCRIPT.md`) |
@@ -37,6 +37,12 @@
 - الطباعة المقدسة: Amiri Quran / Amiri — عرض تقني متحقق (Chromium = HarfBuzz/raqm، بلا glyphs مفقودة)؛ الاعتماد البصري النهائي لك (`previews/animatic/typography-test.png`).
 - Animatic Remotion حتمي (SVG/2.5D) + الصوت الأصلي + خاتمة خيبر الرسمية (mp4 مرجعي).
 - معاينات فعلية: `previews/animatic/animatic-full-540x960.mp4` (8550 إطاراً، 285.013ث، H.264+AAC، 286ث رندر على CPU بتزامن 4) · `previews/animatic/opening-preview-540x960.mp4` (12.13ث، مقتطع من الكامل) · `previews/animatic/typography-test.png`.
+
+## GATE 3A — V3 (2026-11-24) — نقطة الاستئناف الحالية
+- **Git:** المراجع الـ20 محلية فقط (`.gitignore`: `public/references/*` + `*KHAYBAR_VISUAL_REFERENCES*.zip`)؛ الـ commit المحلي `ce3a7ce` عُدّل إلى `f5d2461` بلا صور مرجعية (لم يكن مرفوعاً). آخر commit مرفوع: `dff19e3`. **لا Push دون إذن صريح.**
+- **V3:** `previews/lookdev/frame-{A,B,C}-V3-1080x1920.png` (A 340ث · B 367ث · C 464ث) + `v1-v2-v3-comparison.png` + `memories/M1–M3.png`. التفاصيل والمشكلات المتبقية: `docs/LOOKDEV.md` (قسم V3).
+- **لإعادة الإنتاج:** Blender 4.2.23 + MPFB 2.0.18 + suits01/hair01 (CC0) + Poly Haven (CC0) — المصادر والتحقق في LOOKDEV.md §4؛ تُنزّل إلى scratchpad (ليست في Git). Frame B يحتاج أولاً رندر M1–M3 (`-- M1|M2|M3`) في `<texdir>/../memories/` أو نسخها من `previews/lookdev/memories/`.
+- **التالي بعد اعتماد V3 فقط:** اختبارات الحركة الأربعة (حركة الشخصية، تحطم المرآة وعبور الشظايا، جدار الأعذار، المطرقة→المرآة). لا تبدأ قبلها.
 
 ## GATE 3A — V2 (2026-11-24)
 - الحزمة المرجعية النهائية: 20 صورة + REFERENCE_GUIDE.md → `public/references/` (WebP بامتداد .jpg، دون تعديل)؛ التدقيق في REFERENCE_AUDIT.md.

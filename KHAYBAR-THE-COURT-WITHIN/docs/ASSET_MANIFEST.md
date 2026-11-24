@@ -85,3 +85,11 @@ SFX / Ambience / Foley (لا يوجد أي ملف في المشروع أو ال�
 | `src/lookdev/lookdev_frames_v2.py` | مشهد V2 |
 | `previews/lookdev/frame-{A,B,C}-V2-1080x1920.png`, `v1-vs-v2-comparison.png` | مراجعة |
 حزمة الشعر `hair01` (CC0، 227.8 MB) خارج المستودع.
+
+## GATE 3A V3
+| المسار | المحتوى |
+|---|---|
+| `src/lookdev/lookdev_frames_v3.py` | مشهد V3 + وضع رندر الذكريات M1–M3 |
+| `previews/lookdev/frame-{A,B,C}-V3-1080x1920.png`, `v1-v2-v3-comparison.png` | مراجعة |
+| `previews/lookdev/memories/M1–M3.png` | لقطات ذكريات مولدة محلياً (أصول المشروع) تُستخدم داخل شظايا الإطار B |
+**المراجع البصرية:** محلية فقط ومستثناة من Git (حقوق غير مثبتة).

@@ -1,6 +1,6 @@
 # LOOK DEVELOPMENT — GATE 3A (Cinematic Visual Look)
 
-**Status:** V2 frames rendered (reference-driven) — **GATE 3A — VISUAL REFINEMENT / AWAITING USER APPROVAL**. V1 = development base only (owner).
+**Status:** V3 frames rendered — **GATE 3A — V3 VISUAL REVIEW / AWAITING USER APPROVAL**. V1/V2 = development history only (owner).
 **Scope:** three still frames only (A Mirror, B Fracture, C Courtroom). No film production, no long render, audio/script untouched.
 **Animatic v0.1:** kept as a **timing & sync reference only** — its flat SVG look is NOT a visual reference (owner directive).
 
@@ -82,3 +82,22 @@ Outputs: `previews/lookdev/frame-{A,B,C}-V2-1080x1920.png`, comparison `previews
 - **Hybrid:** ~56 shots × ~2 plates/passes × ~7 min ≈ **~13 h** of plates + Remotion compositing of the whole film ≈ **~45 min** + re-renders.
 - **Animated hero moments in Cycles** (character/shards/gavel actually moving): ~45–60 s/frame at 540×960 → 10 s of motion ≈ **4–5 h** at preview res, far more at 1080. → hero motion must come from **Three.js real-time POC** (not yet measured for quality) or very short Cycles segments.
 - **Not yet demonstrated:** Three.js quality/speed for the hero shots, depth-pass parallax on real plates, character animation. These are the GATE 4 POCs.
+
+
+---
+## V3 — Targeted refinement (owner directive "GATE 3A — V3")
+Script: `src/lookdev/lookdev_frames_v3.py` (V1/V2 scripts unchanged). Outputs: `previews/lookdev/frame-{A,B,C}-V3-1080x1920.png`,
+comparison `previews/lookdev/v1-v2-v3-comparison.png` (A1 A2 A3 · B1 B2 B3 · C1 C2 C3), memory vignettes `previews/lookdev/memories/M1–M3.png`.
+Workflow followed: all composition tests at 540×960 (16 spp, 25–40 s each); 1080×1920 only after approval of the low-res look.
+
+| Frame | 1080×1920 render (64 spp) | Changes vs V2 | Remaining problems (unvarnished) |
+|---|---|---|---|
+| A Mirror | **340 s**, peak 252 MB | Real mirror: brighter silvered glass reflects a lit wall *behind the camera* with a warm KHAYBAR doorway → the figure's front appears as a **dark silhouette against light** (faceless by design, no light on the face); 3/4 camera so reflection perspective reads; gold/teal rim lights separate figure/mirror; visible side arcades with fluted columns; lights hidden from camera | Upper third very dark on a phone; arcades still read mainly as dark shapes; reflected silhouette is slightly small; floor stones a bit too uniform |
+| B Shattered Memories | **367 s**, peak 230 MB | Rebuilt: three large hero shards carry readable CH02 memories (M1 hurtful word, M2 silence, M3 backbiting with an empty chair) rendered as separate Cycles vignettes and set behind real coated glass with refractive rims; debris reduced to support; foreground defocused shards; fire-like orange glow removed (ivory light only in the background cracks) | **Glass still reads more like printed cards than thick glass** (reflections/edge glints weak); background broken mirror shows a pale panel; debris almost invisible; M2's meaning is the least clear; vignette poses are stiff |
+| C Courtroom | **464 s**, peak 317 MB | Camera closer and tilted up (visible floor ≈ 20–25 %, partly covered by pews); bench, window arch and two flanking arches dominate; six texture variants with procedural grime (two walnut, two stone, panel, floor) break repetition; larger papers in mid-ground shafts; bench face light; identities kept hidden | Floor still slightly above the 15–20 % target; papers remain small at phone scale; pews in the foreground look plain/boxy; chandeliers simple |
+
+**Memory vignettes (M1–M3):** 720×900, 32 spp, 44–73 s each; MPFB humans, back/rim light only (all faces in shadow).
+
+### Benchmark update
+Measured V3 finals 340–464 s/frame at 1080×1920 (unchanged range vs V2: 372–468 s). The production estimate in the V2 section is unchanged:
+hybrid ≈ ~13 h of Cycles plates + ~45 min Remotion compositing; hero motion still requires the Three.js / short-Cycles POCs (not measured yet).
