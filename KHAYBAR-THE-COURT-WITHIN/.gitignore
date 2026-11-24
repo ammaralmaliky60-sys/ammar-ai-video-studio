@@ -1,0 +1,6 @@
+node_modules/
+out/
+.remotion/
+renders/*.mp4
+previews/*.mp4
+.env*

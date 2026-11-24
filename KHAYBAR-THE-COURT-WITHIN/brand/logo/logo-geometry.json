@@ -1,0 +1,66 @@
+{
+  "official/khaybar-logo-flat.svg": {
+    "word_scale": 3.1358,
+    "word_stroke": 31.36,
+    "opening": 522.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 777.0,
+    "threshold_w": 688.0
+  },
+  "official/khaybar-logo-cinematic.svg": {
+    "word_scale": 3.1358,
+    "word_stroke": 31.36,
+    "opening": 522.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 777.0,
+    "threshold_w": 688.0
+  },
+  "avatar/khaybar-avatar.svg": {
+    "word_scale": 3.2607,
+    "word_stroke": 32.61,
+    "opening": 512.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 779.0,
+    "threshold_w": 692.0
+  },
+  "small/khaybar-logo-small.svg": {
+    "word_scale": 3.2607,
+    "word_stroke": 32.61,
+    "opening": 490.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 784.0,
+    "threshold_w": 700.0
+  },
+  "mono/khaybar-logo-mono-ivory.svg": {
+    "word_scale": 3.1358,
+    "word_stroke": 31.36,
+    "opening": 522.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 777.0,
+    "threshold_w": 688.0
+  },
+  "mono/khaybar-logo-mono-dark.svg": {
+    "word_scale": 3.1358,
+    "word_stroke": 31.36,
+    "opening": 522.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 777.0,
+    "threshold_w": 688.0
+  },
+  "mark/khaybar-mark-on-image.svg": {
+    "word_scale": 3.2607,
+    "word_stroke": 32.61,
+    "opening": 512.0,
+    "arch_outer": 628.0,
+    "threshold_bottom": 779.0,
+    "threshold_w": 692.0
+  },
+  "wordmark_grid": {
+    "xr": 28.0,
+    "t1": 46.0,
+    "t2": 74.0,
+    "kj": 102.0,
+    "tip_x": 144.14213562373095,
+    "pitch": 18.666666666666668
+  }
+}

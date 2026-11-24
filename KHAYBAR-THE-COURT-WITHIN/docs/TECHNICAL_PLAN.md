@@ -72,3 +72,28 @@ KHAYBAR-THE-COURT-WITHIN/
 - تثبيت الاعتماديات مرة واحدة بإصدارات مثبتة.
 - اختبارات 540×960 ومقاطع قصيرة؛ لا رندر كامل قبل PHASE 8.
 - PROGRESS.md نقطة استئناف لكل جلسة.
+
+## 8. تحديثات GATE 0
+### 8.1 نسخ الهوية (منفَّذ)
+نُسخت الملفات بمساراتها الأصلية لتبقى الاستيرادات النسبية صالحة دون تعديل، وتم التحقق من تطابقها بايت-ببايت (`git hash-object` = blob الفرع المصدر):
+`brand/design-tokens/tokens.json`, `brand/logo/logo-geometry.json`, `brand/logo/official/*.svg`, `brand/logo/mono/*.svg`, `brand/logo/mark/khaybar-mark-on-image.svg`, `src/brand/{tokens.ts,fonts.ts,logoPaths.json}`, `src/components/KhaybarLogo.tsx`, `src/compositions/KhaybarOutro.tsx`, `tsconfig.json`, `remotion.config.ts`, `docs/brand/{logo-final.md,outro.md}`, `public/brand/reference/khaybar-outro-short.mp4` (ffprobe: 1080×1920, 30fps, H.264, 2.500ث).
+`package.json` جديد بنفس الإصدارات المثبتة (Remotion 4.0.541). **لم يُنفَّذ `npm install` ولا typecheck بعد** — مؤجل إلى PHASE 4. لم يُنشأ `src/index.ts`/`Root.tsx` بعد.
+
+### 8.2 Hybrid Cinematic Rendering Architecture
+| نوع اللقطة | التقنية |
+|---|---|
+| اختراق الشظية، دوران كشف التشابه، انهيار الكتل، تحول المطرقة | Three.js (`@remotion/three`) |
+| لقطات المحكمة الواسعة الثابتة/البطيئة | Style frame مرندر مرة واحدة (أو طبقات عمق) + 2.5D Parallax في Remotion |
+| المحراب المعرفي والنصوص الدينية | Remotion HTML/CSS فقط |
+| الجزيئات/الغبار/الحبيبات/التوهج | طبقات Compositing خفيفة فوق المشهد |
+| الإضاءة الحجمية | Baked أو Billboards بشفافية بدل Raymarching حين يكفي |
+
+### 8.3 مقاييس POC الإلزامية (لم تُقَس بعد)
+لكل اختبار، عند 540×960 ثم عينة ممثلة عند 1080×1920:
+Average Render Time / Frame · Peak Memory (`/usr/bin/time -v` + مراقبة RSS لـ Chromium) · Asset Loading Time · Render Stability (رندر مزدوج ومقارنة هاش الإطارات للحتمية) · Estimated Full Render Duration (من عدد إطارات كل نوع لقطة × زمنه، لا من نجاح WebGL).
+
+### 8.4 النص العربي المحفور (Canvas Texture)
+اختبارات القبول: RTL (`ctx.direction='rtl'`)، اتصال الحروف، `document.fonts.load` قبل الرسم ضمن `delayRender`، دقة الخامة (≥2048px للكتل القريبة + mipmaps + anisotropy)، الوضوح أثناء حركة الكاميرا، ثبات الإطارات (مقارنة هاش).
+
+### 8.5 الشخصية
+مرشحات مجانية بترخيص CC0/CC-BY تُبحث في POC (مثل نماذج Mixamo/Quaternius/Poly Pizza/Sketchfab CC) — يُعرض الترخيص والحجم وعدد المضلعات قبل الاستخدام. لا شراء دون إذن.
