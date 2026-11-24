@@ -69,3 +69,10 @@ SFX / Ambience / Foley (لا يوجد أي ملف في المشروع أو ال�
 
 **خطوط جديدة (npm، OFL-1.1، محلية):** `@fontsource/ibm-plex-sans-arabic@5.3.0`، `@fontsource/amiri@5.3.0`، `@fontsource/amiri-quran@5.3.0`. `node_modules/` مستثنى من Git.
 **لم يُضف** Three.js ولا نماذج ولا خامات في هذه المرحلة.
+
+## GATE 3A — Look Development
+| المسار | المحتوى |
+|---|---|
+| `src/lookdev/lookdev_frames.py` | مشهد Blender/Cycles الحتمي للإطارات A/B/C |
+| `previews/lookdev/frame-{A,B,C}-1080x1920.png`, `lookdev-contact-sheet.png` | إطارات تجريبية للمراجعة |
+الأدوات والأصول الخارجية (Blender، MPFB، suits01 CC0، Poly Haven CC0) موثقة مع مصادرها وتراخيصها وتحقق السلامة في `docs/LOOKDEV.md` §4 — **غير مضافة إلى المستودع**.

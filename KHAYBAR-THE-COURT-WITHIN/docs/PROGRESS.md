@@ -3,7 +3,7 @@
 | البند | الحالة |
 |---|---|
 | Project Status | Pre-production |
-| Current Phase | PHASE 3 — CINEMATIC ANIMATIC (منجز v0.1) → **GATE 3 — AWAITING USER CREATIVE APPROVAL** |
+| Current Phase | GATE 3A — Look Development (3 إطارات منجزة) → **GATE 3A — AWAITING CINEMATIC VISUAL APPROVAL** |
 | Approval Status | GATE 0: ✅ · GATE 1: ✅ **مُغلق** (السيناريو V2.2 معتمد رسمياً؛ المصادر متحققة مع قيود موثقة) · GATE 2: ✅ **مُغلق** (2026-11-24 — مراجعة المالك البشرية: نطق 03/04/06 سليم؛ لا إعادة توليد) · GATE 3: ⏳ |
 | Render Status | لا رندر. لا npm install. |
 | Script | **V2.2 — APPROVED** (`SCRIPT.md`) |
@@ -42,6 +42,10 @@
 - **المالك لا يعتمد المستوى البصري للـ Animatic** (رسوم هندسية مسطحة). Animatic v0.1 = **مرجع توقيت ومزامنة فقط**، لا مرجع للمظهر.
 - التقدم متوقف عند GATE 3. المطلوب: 3 إطارات سينمائية تجريبية (A المرآة، B الكسر، C المحكمة) بمستوى واقعي بعد بيان الجدوى التقنية.
 - عائق: الصور المرجعية الـ17 ما زالت غير موجودة في البيئة.
+- قرار المالك: Blender 4.2.23 LTS (Cycles CPU) + شخصية MakeHuman/MPFB CC0. التفاصيل والتراخيص: `docs/LOOKDEV.md`.
+- **الإطارات المنجزة (1080×1920، 64 عينة + OIDN):** `previews/lookdev/frame-A-1080x1920.png` (228ث) · `frame-B-1080x1920.png` (303ث) · `frame-C-1080x1920.png` (371ث) · `lookdev-contact-sheet.png`. ذروة الذاكرة ≤ 287MB.
+- المصدر: `src/lookdev/lookdev_frames.py` (حتمي). الأدوات والأصول المنزّلة في scratchpad وغير مرفوعة إلى Git.
+- تقدير إنتاجي (للتخطيط فقط): ~4–6 دقائق/إطار ⇒ مسار Cycles الكامل للفيلم غير عملي على هذا الجهاز ⇒ مسار هجين مقترح (LOOKDEV.md §2).
 
 ## Decisions Requiring User Approval (GATE 3)
 1. الإيقاع والسرد في Animatic (56 لقطة).
