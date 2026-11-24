@@ -217,7 +217,7 @@ def camera(loc, target, lens, focus_obj=None, fstop=2.0, shift_y=0.0):
         c.data.dof.focus_distance = d.length
     return c
 
-def human(loc, rot_z, arms_down=62, head_bow=0.0):
+def human(loc, rot_z, arms_down=62, head_bow=0.0, pose=None):
     addon_utils.enable("bl_ext.user_default.mpfb", default_set=True)
     S = "bl_ext.user_default.mpfb.services."
     HS = importlib.import_module(S + "humanservice").HumanService
@@ -248,6 +248,11 @@ def human(loc, rot_z, arms_down=62, head_bow=0.0):
     if head_bow:
         for n in ("neck01", "head"):
             if n in pb: pb[n].rotation_mode = "XYZ"; pb[n].rotation_euler = Euler((math.radians(head_bow), 0, 0))
+    if pose:   # extra per-bone rotations in degrees (XYZ, local), e.g. {"lowerarm01.L": (-40, 0, 0)}
+        for bn, (rx, ry, rz) in pose.items():
+            if bn in pb:
+                pb[bn].rotation_mode = "XYZ"; e = pb[bn].rotation_euler
+                pb[bn].rotation_euler = Euler((e.x + math.radians(rx), e.y + math.radians(ry), e.z + math.radians(rz)))
     rig.location = loc; rig.rotation_euler = (0, 0, math.radians(rot_z))
     h.data.materials.clear(); h.data.materials.append(M_SKIN)
     for p in h.data.polygons: p.use_smooth = True
@@ -400,10 +405,40 @@ def irregular(seed, rx, rz, n=7):
         pts.append((math.cos(a) * rx * k, math.sin(a) * rz * k))
     return pts
 
+
+def real_glass():
+    m, nt, b = node_mat("RealGlass")   # clear float glass, faint green body tint, perfectly smooth
+    b.inputs["Base Color"].default_value = srgb("#f3f9f5"); b.inputs["Transmission Weight"].default_value = 1.0
+    b.inputs["IOR"].default_value = 1.52; b.inputs["Roughness"].default_value = 0.0; m.use_fake_user = True
+    return m
+M_GLASS = real_glass()
+
+def memory_shard_glass(name, verts2d, img_path, loc, rot, grade):
+    """V3.1: memory print BEHIND a separate thick glass slab (refraction, Fresnel reflections, bevel glints)."""
+    o = memory_shard(name, verts2d, img_path, loc, rot, grade)
+    mat = o.data.materials[0]; bb = mat.node_tree.nodes["Principled BSDF"]
+    bb.inputs["Coat Weight"].default_value = 0.0; bb.inputs["Roughness"].default_value = 0.6; bb.inputs["Emission Strength"].default_value = 0.5
+    bm = bmesh.new(); vs = [bm.verts.new((x * 1.03, 0, z * 1.03)) for x, z in verts2d]; bm.faces.new(vs)
+    me = bpy.data.meshes.new(name + "_slab"); bm.to_mesh(me); bm.free()
+    g = bpy.data.objects.new(name + "_slab", me); bpy.context.collection.objects.link(g)
+    g.parent = o; g.location = (0, -0.022, 0)
+    g.data.materials.append(M_GLASS)
+    so = g.modifiers.new("thick", "SOLIDIFY"); so.thickness = 0.018; so.offset = 0
+    bv = g.modifiers.new("bev", "BEVEL"); bv.width = 0.004; bv.segments = 3; bv.limit_method = "ANGLE"
+    return o
+
 MEM = f"{TEX}/../memories"
 
 # ======================================================================
-if FRAME in ("M1", "M2", "M3"):   # memory vignettes for Frame B (CH02 evidence #1–#3); faceless silhouettes, back/rim light only
+if FRAME == "PROBE":   # bone-axis probe (dev aid): each figure = one test rotation on the LEFT arm / spine
+    sc.render.resolution_x, sc.render.resolution_y = 1400, 600
+    ref_floor(M_STONE)
+    tests = [("upperarm01.L", (-50, 0, 0)), ("upperarm01.L", (50, 0, 0)), ("upperarm01.L", (0, -50, 0)), ("upperarm01.L", (0, 50, 0)),
+             ("lowerarm01.L", (-60, 0, 0)), ("lowerarm01.L", (0, 0, 60)), ("spine03", (15, 0, 0))]
+    for i, (bn, r) in enumerate(tests): human((-2.4 + i * 0.8, 2.0, 0), 180, arms_down=64, pose={bn: r})
+    area("Key", (0, -3, 4), (math.radians(50), 0, 0), 4, 800, IVORY)
+    camera((0, -5.5, 1.2), (0, 2, 1.0), 24); sc.camera.data.dof.use_dof = False
+elif FRAME in ("M1", "M2", "M3"):   # memory vignettes for Frame B (CH02 evidence #1–#3); faceless silhouettes, back/rim light only
     sc.render.resolution_x, sc.render.resolution_y = 720, 900
     ref_floor(M_STONE)
     box("Wall", (0, 4.0, 3), (12, 0.3, 6), M_PANEL)
@@ -419,6 +454,35 @@ if FRAME in ("M1", "M2", "M3"):   # memory vignettes for Frame B (CH02 evidence 
     else:               # «حچيت على إنسان بغيابه» — two lean together whispering; the absent one is an empty chair in light
         human((-0.55, 1.7, 0), 50, arms_down=60, head_bow=12)
         human((-0.05, 1.75, 0), -60, arms_down=60, head_bow=12)
+        box("ChairSeat", (1.1, 2.3, 0.45), (0.45, 0.45, 0.05), M_WALNUT); box("ChairBack", (1.1, 2.5, 0.75), (0.45, 0.05, 0.6), M_WALNUT)
+        for cx in (-0.2, 0.2):
+            for cy in (-0.2, 0.2): box(f"Leg{cx}{cy}", (1.1 + cx, 2.3 + cy, 0.22), (0.04, 0.04, 0.45), M_WALNUT)
+        spot("ChairLight", (1.1, 2.3, 4.5), (1.1, 2.3, 0), 600, srgb("#f2dca6"), angle=18, blend=0.4)
+        area("Back", (-0.3, 3.6, 2.6), (math.radians(-110), 0, 0), 2.0, 160, srgb("#f2dca6"))
+    fog(0.05, anis=0.4, loc=(0, 2, 3), scl=(8, 6, 6), col=(0.92, 0.89, 0.84, 1))
+    camera((0.0, -2.8, 1.45), (0.0, 2.0, 1.1), 40, fstop=4.0)
+    sc.view_settings.exposure = 1.0
+
+elif FRAME in ("N1", "N2", "N3"):   # V3.1 memory vignettes: natural poses + explicit body language (faceless: back/rim light only)
+    sc.render.resolution_x, sc.render.resolution_y = 720, 900
+    ref_floor(M_STONE)
+    box("Wall", (0, 4.0, 3), (12, 0.3, 6), M_PANEL)
+    REST = {"lowerarm01.L": (-14, 0, 0), "lowerarm01.R": (-14, 0, 0), "spine03": (3, 0, 0)}
+    def P(**k):
+        d = dict(REST); d.update({kk.replace("__", "."): vv for kk, vv in k.items()}); return d
+    if FRAME == "N1":   # hurtful word: speaker leans in, arm thrust forward; the other turns away, head down, hand to chest
+        human((-0.45, 1.6, 0), 90 - 15, arms_down=62, pose=P(upperarm01__R=(70, 0, 0), lowerarm01__R=(-10, 0, 0), spine03=(10, 0, 0)))
+        human((0.6, 1.8, 0), 180 + 70, arms_down=66, head_bow=28, pose=P(upperarm01__L=(45, 0, 0), lowerarm01__L=(-95, 0, 0), spine03=(12, 0, 0)))
+        area("Back", (0.2, 3.6, 2.6), (math.radians(-110), 0, 0), 2.0, 260, srgb("#f2dca6"))
+    elif FRAME == "N2":  # silence over the truth: accuser points at a bowed victim; protagonist apart, turned away, hand at mouth
+        human((0.15, 2.2, 0), 90 + 25, arms_down=62, pose=P(upperarm01__R=(75, 0, 0), lowerarm01__R=(-5, 0, 0), spine03=(8, 0, 0)))
+        human((1.05, 2.0, 0), 270 - 20, arms_down=67, head_bow=35, pose=P(spine03=(18, 0, 0), spine02=(10, 0, 0)))
+        human((-1.15, 1.1, 0), 180 + 150, arms_down=64, head_bow=10, pose=P(upperarm01__R=(55, 0, 0), lowerarm01__R=(-125, 0, 0)))
+        spot("VictimLight", (1.05, 2.0, 4.6), (1.05, 2.0, 0), 520, srgb("#bcd6dc"), angle=16, blend=0.4)
+        area("Back", (0.6, 3.6, 2.6), (math.radians(-110), 0, 0), 2.0, 200, srgb("#bcd6dc"))
+    else:               # backbiting: two lean in, hands near mouth; the absent one = empty chair in light
+        human((-0.55, 1.7, 0), 50, arms_down=62, head_bow=14, pose=P(spine03=(10, 0, 0), upperarm01__R=(40, 0, 0), lowerarm01__R=(-110, 0, 0)))
+        human((-0.08, 1.75, 0), -60, arms_down=63, head_bow=14, pose=P(spine03=(10, 0, 0)))
         box("ChairSeat", (1.1, 2.3, 0.45), (0.45, 0.45, 0.05), M_WALNUT); box("ChairBack", (1.1, 2.5, 0.75), (0.45, 0.05, 0.6), M_WALNUT)
         for cx in (-0.2, 0.2):
             for cy in (-0.2, 0.2): box(f"Leg{cx}{cy}", (1.1 + cx, 2.3 + cy, 0.22), (0.04, 0.04, 0.45), M_WALNUT)
@@ -501,6 +565,57 @@ elif FRAME == "B":  # THE SHATTERED MEMORIES V3 — 3 hero shards carrying reada
     area("IvoryKey", (-1.6, 1.0, 3.8), (math.radians(55), 0, math.radians(-125)), 1.0, 300, srgb("#f4e9d3"))
     no_reflect(area("GoldGraze", (1.8, 1.4, 3.4), (math.radians(60), 0, math.radians(115)), 0.8, 120, GOLD))
     area("TealAccent", (2.4, 2.0, 1.6), (math.radians(85), 0, math.radians(110)), 0.6, 90, srgb("#2DB9B6"))
+    fog(0.005, anis=0.5, loc=(0, 2, 4), scl=(10, 9, 8), col=(0.92, 0.89, 0.84, 1))
+    focus = bpy.data.objects.new("Focus", None); bpy.context.collection.objects.link(focus); focus.location = (-0.38, 2.2, 2.45)
+    camera((0.1, 0.35, 2.35), (0.12, 3.0, 2.35), 30, focus_obj=focus, fstop=2.0)
+    sc.view_settings.exposure = 0.95
+    glare(0.9, 7, -0.85)
+
+elif FRAME == "B31":  # THE SHATTERED MEMORIES V3.1 — real glass slabs over memories, natural poses (N1–N3), debris in 3 depth bands — 3 hero shards carrying readable memories, supporting debris, clear depth planes
+    M_BAS2 = tex_variant("BasaltB", "volcanic_rock_tiles", 0.6, srgb("#4f5355"), 1.0, rot=0.7)
+    ref_floor(M_STONE)
+    box("BackWall", (0, 6.0, 4), (16, 0.3, 8), M_BAS2)
+    for sx in (-1, 1): box(f"BPier{sx}", (sx * 1.6, 5.6, 3.0), (0.6, 0.5, 6.0), M_BAS2, 0.02)
+    # background: the broken mirror frame (out of focus), ivory-gold light only in the cracks (no fire glow)
+    mirror_w, mirror_h = 1.8, 3.4
+    arch_curve("MirrorFrame", mirror_w + 0.1, mirror_h + 0.05, 0.07, 0.1, M_GOLD, (0.2, 5.4, 0.27))
+    arch_panel("Backing", mirror_w, mirror_h, (0.2, 5.5, 0.3), M_WALNUT)
+    crack = arch_panel("CrackGlass", mirror_w * 0.98, mirror_h * 0.98, (0.2, 5.38, 0.3), M_SHARD2)
+    me = crack.data; bm = bmesh.new(); bm.from_mesh(me); imp = Vector((0.0, 0, 2.0))
+    for i in range(12):
+        a = i / 12 * 2 * math.pi + RNG.uniform(-0.2, 0.2)
+        bmesh.ops.bisect_plane(bm, geom=bm.verts[:] + bm.edges[:] + bm.faces[:], plane_co=imp, plane_no=Vector((-math.sin(a), 0, math.cos(a))))
+    bmesh.ops.split_edges(bm, edges=bm.edges[:])
+    for f in bm.faces:
+        c = f.calc_center_median()
+        for v in f.verts: v.co = c + (v.co - c) * 0.993
+    bm.to_mesh(me); bm.free()
+    bpy.ops.object.light_add(type="POINT", location=(0.2, 5.46, 2.0)); pl = bpy.context.object; pl.data.energy = 18; pl.data.color = srgb("#f4e9d3")[:3]; pl.data.shadow_soft_size = 0.4
+    # midground: three hero memory shards (REF_15), deliberate triangle composition, each a CH02 evidence
+    memory_shard_glass("Mem1", irregular(11, 0.62, 0.78), f"{MEM}/N1.png", (-0.38, 2.2, 2.45), (math.radians(6), math.radians(-14), math.radians(8)), srgb("#f2dca6"))
+    memory_shard_glass("Mem2", irregular(22, 0.48, 0.6), f"{MEM}/N2.png", (0.62, 3.0, 1.55), (math.radians(-8), math.radians(18), math.radians(-12)), srgb("#bcd6dc"))
+    memory_shard_glass("Mem3", irregular(33, 0.42, 0.52), f"{MEM}/N3.png", (0.55, 3.4, 3.35), (math.radians(10), math.radians(22), math.radians(14)), srgb("#e8d3b0"))
+    # supporting debris in three depth bands: near (bokeh), mid (around hero shards), far (in front of the frame) — mirror + glass mix
+    bands = [((0.9, 1.4), (0.07, 0.13), 7), ((1.9, 3.4), (0.05, 0.11), 16), ((3.8, 5.0), (0.04, 0.08), 12)]
+    k = 0
+    for (y0, y1), (r0, r1), n in bands:
+        for i in range(n):
+            o = shard_mesh(f"Deb{k}", RNG.uniform(r0, r1), 500 + k); k += 1
+            o.data.materials.clear(); o.data.materials.append(M_SHARD2 if RNG.random() < 0.6 else M_GLASS); o.data.materials.append(M_EDGE)
+            o.modifiers["thick"].material_offset_rim = 1; o.modifiers["thick"].thickness = 0.012
+            o.location = (RNG.uniform(-1.1, 1.3), RNG.uniform(y0, y1), RNG.uniform(1.0, 3.9)); o.rotation_euler = (RNG.uniform(-1.5, 1.5), RNG.uniform(-1.5, 1.5), RNG.uniform(0, 6.28))
+    # foreground: two large defocused shards framing the shot
+    for i, (x, z) in enumerate([(-0.55, 3.55), (0.75, 1.15)]):
+        o = shard_mesh(f"FG{i}", 0.22, 950 + i); o.data.materials.clear(); o.data.materials.append(M_SHARD2); o.data.materials.append(M_EDGE)
+        o.modifiers["thick"].material_offset_rim = 1; o.location = (x, 0.95, z); o.rotation_euler = (RNG.uniform(-0.6, 0.6), RNG.uniform(-0.6, 0.6), RNG.uniform(0, 6.28))
+    # lit front environment for shard reflections; ivory/gold key + controlled teal accents
+    box("FrontWall", (0, -2.5, 4), (14, 0.3, 8), M_PANEL)
+    no_reflect(area("FrontWash", (0, -1.0, 3.5), (math.radians(-90), 0, 0), 4.0, 70, srgb("#e9dcc3")))
+    _g = area("GlintStrip", (-0.2, -0.3, 3.2), (math.radians(-100), 0, 0), 0.25, 160, srgb("#fff6e6")); _g.data.shape = "RECTANGLE"; _g.data.size_y = 2.0   # sharp specular glints on the glass (visible in reflections only)
+    area("IvoryKey", (-1.6, 1.0, 3.8), (math.radians(55), 0, math.radians(-125)), 1.0, 300, srgb("#f4e9d3"))
+    no_reflect(area("GoldGraze", (1.8, 1.4, 3.4), (math.radians(60), 0, math.radians(115)), 0.8, 120, GOLD))
+    area("TealAccent", (2.4, 2.0, 1.6), (math.radians(85), 0, math.radians(110)), 0.6, 90, srgb("#2DB9B6"))
+    area("EdgeLight", (-2.0, 3.6, 3.2), (math.radians(80), 0, math.radians(-60)), 0.4, 140, srgb("#fff3dc"))   # back-edge light: rims of glass slabs glow
     fog(0.005, anis=0.5, loc=(0, 2, 4), scl=(10, 9, 8), col=(0.92, 0.89, 0.84, 1))
     focus = bpy.data.objects.new("Focus", None); bpy.context.collection.objects.link(focus); focus.location = (-0.38, 2.2, 2.45)
     camera((0.1, 0.35, 2.35), (0.12, 3.0, 2.35), 30, focus_obj=focus, fstop=2.0)
