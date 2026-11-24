@@ -3,7 +3,7 @@
 | البند | الحالة |
 |---|---|
 | Project Status | Pre-production |
-| Current Phase | GATE 3A — Look Development (3 إطارات منجزة) → **GATE 3A — AWAITING CINEMATIC VISUAL APPROVAL** |
+| Current Phase | GATE 3A — V2 (مرجعي) منجز → **GATE 3A — VISUAL REFINEMENT / AWAITING USER APPROVAL** |
 | Approval Status | GATE 0: ✅ · GATE 1: ✅ **مُغلق** (السيناريو V2.2 معتمد رسمياً؛ المصادر متحققة مع قيود موثقة) · GATE 2: ✅ **مُغلق** (2026-11-24 — مراجعة المالك البشرية: نطق 03/04/06 سليم؛ لا إعادة توليد) · GATE 3: ⏳ |
 | Render Status | لا رندر. لا npm install. |
 | Script | **V2.2 — APPROVED** (`SCRIPT.md`) |
@@ -37,6 +37,11 @@
 - الطباعة المقدسة: Amiri Quran / Amiri — عرض تقني متحقق (Chromium = HarfBuzz/raqm، بلا glyphs مفقودة)؛ الاعتماد البصري النهائي لك (`previews/animatic/typography-test.png`).
 - Animatic Remotion حتمي (SVG/2.5D) + الصوت الأصلي + خاتمة خيبر الرسمية (mp4 مرجعي).
 - معاينات فعلية: `previews/animatic/animatic-full-540x960.mp4` (8550 إطاراً، 285.013ث، H.264+AAC، 286ث رندر على CPU بتزامن 4) · `previews/animatic/opening-preview-540x960.mp4` (12.13ث، مقتطع من الكامل) · `previews/animatic/typography-test.png`.
+
+## GATE 3A — V2 (2026-11-24)
+- الحزمة المرجعية النهائية: 20 صورة + REFERENCE_GUIDE.md → `public/references/` (WebP بامتداد .jpg، دون تعديل)؛ التدقيق في REFERENCE_AUDIT.md.
+- الإطارات V2: `previews/lookdev/frame-{A,B,C}-V2-1080x1920.png` + `v1-vs-v2-comparison.png`. الأزمنة: A 372ث · B 413ث · C 468ث.
+- قياس الأداء والتقدير الهجين: `docs/LOOKDEV.md` (Eevee غير متاح؛ Cycles كامل ≈ 41 يوماً مرفوض؛ هجين ≈ 13 ساعة لوحات + 45 دقيقة تركيب، باستثناء لقطات الحركة البطولية غير المقاسة بعد).
 
 ## ⛔ GATE 3A — CINEMATIC VISUAL LOOK DEVELOPMENT (أُضيف بتوجيه المالك، 2026-11-24)
 - **المالك لا يعتمد المستوى البصري للـ Animatic** (رسوم هندسية مسطحة). Animatic v0.1 = **مرجع توقيت ومزامنة فقط**، لا مرجع للمظهر.

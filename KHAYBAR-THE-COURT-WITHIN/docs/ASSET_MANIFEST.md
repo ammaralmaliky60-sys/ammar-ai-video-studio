@@ -76,3 +76,12 @@ SFX / Ambience / Foley (لا يوجد أي ملف في المشروع أو ال�
 | `src/lookdev/lookdev_frames.py` | مشهد Blender/Cycles الحتمي للإطارات A/B/C |
 | `previews/lookdev/frame-{A,B,C}-1080x1920.png`, `lookdev-contact-sheet.png` | إطارات تجريبية للمراجعة |
 الأدوات والأصول الخارجية (Blender، MPFB، suits01 CC0، Poly Haven CC0) موثقة مع مصادرها وتراخيصها وتحقق السلامة في `docs/LOOKDEV.md` §4 — **غير مضافة إلى المستودع**.
+
+## GATE 3A V2
+| المسار | المحتوى |
+|---|---|
+| `public/references/REF_01.jpg … REF_20.jpg` | مراجع بصرية (WebP) — **للتحليل فقط، حقوق الرندر غير مثبتة**؛ لا تدخل أي إطار أو فيديو |
+| `docs/REFERENCE_GUIDE.md` | دليل المالك للمراجع |
+| `src/lookdev/lookdev_frames_v2.py` | مشهد V2 |
+| `previews/lookdev/frame-{A,B,C}-V2-1080x1920.png`, `v1-vs-v2-comparison.png` | مراجعة |
+حزمة الشعر `hair01` (CC0، 227.8 MB) خارج المستودع.

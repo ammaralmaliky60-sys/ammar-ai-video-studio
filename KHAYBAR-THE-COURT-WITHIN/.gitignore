@@ -4,3 +4,7 @@ out/
 renders/*.mp4
 previews/*.mp4
 .env*
+# Owner reference images: analysis only, usage rights unproven -> keep local, never commit
+public/references/*
+!public/references/.gitkeep
+*KHAYBAR_VISUAL_REFERENCES*.zip
