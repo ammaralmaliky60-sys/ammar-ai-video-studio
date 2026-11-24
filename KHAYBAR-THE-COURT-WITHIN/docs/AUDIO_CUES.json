@@ -510,7 +510,7 @@
       11.12
      ],
      "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
-     "status": "AUTO_ESTIMATE (Whisper word timestamps) — MANDATORY HUMAN LISTENING REVIEW",
+     "status": "Interval = automated estimate; pronunciation human-approved by owner",
      "label": "بَلِ الْإِنسَانُ … مَعَاذِيرَهُ (القيامة 14–15)",
      "speech_interval_local_s": [
       5.02,
@@ -532,7 +532,7 @@
       73.333,
       79.933
      ],
-     "human_review": "PENDING — not approved"
+     "human_review": "USER CONFIRMED — pronunciation sound (owner listening review, GATE 2 approval 2026-11-24)"
     }
    ],
    "sfx_cues": [],
@@ -734,7 +734,7 @@
       36.2
      ],
      "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
-     "status": "AUTO_ESTIMATE (Whisper word timestamps) — MANDATORY HUMAN LISTENING REVIEW",
+     "status": "Interval = automated estimate; pronunciation human-approved by owner",
      "label": "كُونُوا … أَنفُسِكُمْ (النساء 135 — مقتطف)",
      "speech_interval_local_s": [
       30.42,
@@ -756,7 +756,7 @@
       141.233,
       147.5
      ],
-     "human_review": "PENDING — not approved"
+     "human_review": "USER CONFIRMED — pronunciation sound (owner listening review, GATE 2 approval 2026-11-24)"
     }
    ],
    "sfx_cues": [],
@@ -1221,7 +1221,7 @@
       24.42
      ],
      "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
-     "status": "AUTO_ESTIMATE (Whisper word timestamps) — MANDATORY HUMAN LISTENING REVIEW",
+     "status": "Interval = automated estimate; pronunciation human-approved by owner",
      "label": "لَيْسَ مِنَّا … وَتَابَ إِلَيْهِ (الكافي ج2، باب محاسبة العمل، ح2)",
      "speech_interval_local_s": [
       12.18,
@@ -1243,7 +1243,7 @@
       206.6,
       219.367
      ],
-     "human_review": "PENDING — not approved"
+     "human_review": "USER CONFIRMED — pronunciation sound (owner listening review, GATE 2 approval 2026-11-24)"
     }
    ],
    "sfx_cues": [],
@@ -1513,8 +1513,8 @@
   "audio_technical": "MEASURED",
   "durations": "MEASURED",
   "semantic_anchors": "AUTO_ALIGNED (51/51 located; 8 require manual verification) — automated, not human-verified",
-  "content_vs_script": "AUTOMATED CHECK PASSED (95/95 lines located, 0 unexpected segments) — human listening still required",
-  "sacred_pronunciation": "PENDING — mandatory human listening review (intervals in sacred_text_protection)"
+  "content_vs_script": "AUTOMATED CHECK PASSED; owner approved GATE 2 — no regeneration needed",
+  "sacred_pronunciation": "USER CONFIRMED (03, 04, 06 — owner listening review, GATE 2)"
  },
  "alignment": {
   "tool": "faster-whisper 1.2.1 / ctranslate2 4.9.1 / Python 3.13.18",
@@ -1542,5 +1542,18 @@
    "manual_verification_required": 8
   },
   "caveat": "All anchor timestamps are AUTOMATED ESTIMATES (typical ±0.1–0.3s). None is manually verified. ASR is not evidence of correct Quranic/hadith pronunciation."
- }
+ },
+ "flagged_anchor_review_phase3": {
+  "date": "2026-11-24",
+  "result": "All 8 flagged anchors KEPT with manual_verification_required=true. Animatic uses them as automated estimates; exact timing to be confirmed by owner while reviewing the Animatic (frame shown in overlay with ⚑).",
+  "anchors": [
+   "CH02 «چنت معصّب» F1150 (low confidence — drives excuse block #1 drop)",
+   "CH03 Q01 start F2215 / end F2308",
+   "CH04 Q02 start F4252 / end F4364",
+   "CH06 Imam name F6064",
+   "CH06 H01 start F6213 / end F6479"
+  ],
+  "note": "Sacred-text anchors: pronunciation is now human-approved; only their exact frame boundaries remain automated (protected intervals already padded ±0.5s)."
+ },
+ "shot_list": "docs/SHOT_LIST.json (56 shots, 8550 frames)"
 }

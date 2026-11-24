@@ -56,3 +56,16 @@ SFX / Ambience / Foley (لا يوجد أي ملف في المشروع أو ال�
 | 19 | توقيع صوتي لخيبر | Outro | Optional · Pending Animatic | الخاتمة الحالية صامتة؛ قرارك |
 
 لا يُطلب توليد أي منها الآن. القائمة النهائية بالمدد تُثبت بعد Animatic.
+
+## PHASE 3 — Animatic (منشأة محلياً)
+| المسار | النوع | الحالة |
+|---|---|---|
+| `src/index.ts`, `src/Root.tsx` | Remotion entry (AnimaticFull, AnimaticOpening, TypographyTest) | مصدر |
+| `src/animatic/Animatic.tsx` | Animatic SVG/2.5D حتمي | مصدر — ليس الفيلم النهائي |
+| `src/animatic/TypographyTest.tsx` | لوحة اختبار سلامة الحروف | مصدر |
+| `src/typography/fonts.ts`, `src/typography/sacredText.ts` | تحميل الخطوط + النصوص المقدسة المتحققة | مصدر |
+| `src/config/timeline.json` | خط زمني مضغوط (95 سطراً + 7 فصول + خاتمة) | بيانات مشتقة |
+| `previews/animatic/*` | معاينات منخفضة الدقة | انظر PROGRESS للمسارات الفعلية |
+
+**خطوط جديدة (npm، OFL-1.1، محلية):** `@fontsource/ibm-plex-sans-arabic@5.3.0`، `@fontsource/amiri@5.3.0`، `@fontsource/amiri-quran@5.3.0`. `node_modules/` مستثنى من Git.
+**لم يُضف** Three.js ولا نماذج ولا خامات في هذه المرحلة.

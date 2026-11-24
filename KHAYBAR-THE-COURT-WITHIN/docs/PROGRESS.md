@@ -3,8 +3,8 @@
 | البند | الحالة |
 |---|---|
 | Project Status | Pre-production |
-| Current Phase | PHASE 2 — FINALIZATION (منجز) → **GATE 2 — CONDITIONAL APPROVAL / FINAL HUMAN REVIEW PENDING** |
-| Approval Status | GATE 0: ✅ · GATE 1: ✅ **مُغلق** (السيناريو V2.2 معتمد رسمياً؛ المصادر متحققة مع قيود موثقة) · GATE 2: 🟡 **اعتماد مشروط** (الفحص التقني + المدة + الفواصل معتمدة مؤقتاً؛ المراجعة البشرية للنطق معلقة) |
+| Current Phase | PHASE 3 — CINEMATIC ANIMATIC (منجز v0.1) → **GATE 3 — AWAITING USER CREATIVE APPROVAL** |
+| Approval Status | GATE 0: ✅ · GATE 1: ✅ **مُغلق** (السيناريو V2.2 معتمد رسمياً؛ المصادر متحققة مع قيود موثقة) · GATE 2: ✅ **مُغلق** (2026-11-24 — مراجعة المالك البشرية: نطق 03/04/06 سليم؛ لا إعادة توليد) · GATE 3: ⏳ |
 | Render Status | لا رندر. لا npm install. |
 | Script | **V2.2 — APPROVED** (`SCRIPT.md`) |
 | Narration | 7 ملفات مستوردة ومفحوصة — 270.419591ث |
@@ -29,6 +29,27 @@
 - الفصل 01 أخفض جهارة: −24.4 LUFS (أخفض بـ 3.6 LU من الأعلى) — يُعالج في PHASE 7.
 - `AUDIO_CUES.json`: خط زمني مؤقت = 8550 إطاراً (285.0ث) شامل الخاتمة 2.5ث وفواصل مؤقتة 11.97ث؛ المتبقي حتى 300ث = 15.0ث.
 - كل المراسي الدلالية = `null / PENDING_VERIFICATION` (لا تفريغ آلي ولا استماع).
+
+## PHASE 3 — Animatic v0.1 (2026-11-24)
+- GitHub: `3654fc4` كان مرفوعاً مسبقاً (تحقق `git ls-remote`) — لم يُكرر الرفع.
+- **الصور المرجعية الـ17: لم تصل** (BLOCKED) — موثق في REFERENCE_AUDIT.md؛ لم يُخترع أي وصف.
+- `SHOT_LIST.json`: 56 لقطة، 0 → 8550 إطاراً، متصلة بلا فجوات؛ `STORYBOARD.md` و`SFX_CUE_SHEET.md` مولّدان منها.
+- الطباعة المقدسة: Amiri Quran / Amiri — عرض تقني متحقق (Chromium = HarfBuzz/raqm، بلا glyphs مفقودة)؛ الاعتماد البصري النهائي لك (`previews/animatic/typography-test.png`).
+- Animatic Remotion حتمي (SVG/2.5D) + الصوت الأصلي + خاتمة خيبر الرسمية (mp4 مرجعي).
+- معاينات فعلية: `previews/animatic/animatic-full-540x960.mp4` (8550 إطاراً، 285.013ث، H.264+AAC، 286ث رندر على CPU بتزامن 4) · `previews/animatic/opening-preview-540x960.mp4` (12.13ث، مقتطع من الكامل) · `previews/animatic/typography-test.png`.
+
+## ⛔ GATE 3A — CINEMATIC VISUAL LOOK DEVELOPMENT (أُضيف بتوجيه المالك، 2026-11-24)
+- **المالك لا يعتمد المستوى البصري للـ Animatic** (رسوم هندسية مسطحة). Animatic v0.1 = **مرجع توقيت ومزامنة فقط**، لا مرجع للمظهر.
+- التقدم متوقف عند GATE 3. المطلوب: 3 إطارات سينمائية تجريبية (A المرآة، B الكسر، C المحكمة) بمستوى واقعي بعد بيان الجدوى التقنية.
+- عائق: الصور المرجعية الـ17 ما زالت غير موجودة في البيئة.
+
+## Decisions Requiring User Approval (GATE 3)
+1. الإيقاع والسرد في Animatic (56 لقطة).
+2. تصميم الخطاف: الكسر الرئيسي عند «صار دليل ضدّك» F84 (2.8ث)؛ المحكمة تظهر **داخل الشظية** من ≈F198 (6.6ث، على «رجع حتى يشهد عليك») والدخول الكامل عند «وفجأة» F261 (8.7ث) — أي بعد مرجع «4 ثوانٍ» في الوثيقة الأم، لأن التسجيل الفعلي يضع «وفجأة… بمحكمة غريبة» عند 8.7ث. البديل: تقديم ظهور المحكمة في الشظية إلى ≈F135.
+3. ظهور العنوان «المحكمة التي بداخلك» عند ≈F291 (9.7ث) لمدة 2.5ث.
+4. الطباعة المقدسة (لوحة الاختبار).
+5. تسليم الصور المرجعية الـ17 لمراجعة التأطير.
+6. إذن رفع commit المرحلة الثالثة.
 
 ## PHASE 2 Finalization (2026-11-24)
 - Push `1a0eb88` إلى `ccr-42be31ff-39y1is` — متحقق عبر `git ls-remote` (بعد فحص الفرع والشجرة والمحتوى والأسرار).
@@ -73,9 +94,9 @@
 - `src/index.ts` و`Root.tsx` غير منشأين؛ المشروع غير قابل للتشغيل بعد (متعمد — لا تثبيت قبل PHASE 4).
 
 ## Next Action
-بعد اعتماد GATE 2 فقط: PHASE 3 — Animatic (Storyboard تفصيلي متزامن مع `AUDIO_CUES.json`). لا انتقال تلقائي.
+بعد اعتماد GATE 3 فقط: PHASE 4 — Technical POC (POC 01 Mirror Portal، POC 02 Excuse Wall، POC 03 Gavel→Mirror). لا انتقال تلقائي.
 
 ## Resume Instructions
 1. الفرع `ccr-42be31ff-39y1is`؛ اقرأ هذا الملف ثم `CREATIVE_DIRECTION.md` ثم `SOURCES.md`.
 2. لا تُعِد فحص البيئة (TECHNICAL_PLAN §1) ولا نسخ الهوية (§8.1).
-3. لا تتجاوز GATE 2 دون موافقة. البيانات الصوتية في `AUDIO_AUDIT.md` و`AUDIO_CUES.json` — لا تُعِد القياس.
+3. لا تتجاوز GATE 3 دون موافقة. Animatic: `npx remotion studio src/index.ts` (AnimaticFull / AnimaticOpening). المتصفح: `--browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell`. البيانات الصوتية في `AUDIO_AUDIT.md` و`AUDIO_CUES.json` — لا تُعِد القياس.

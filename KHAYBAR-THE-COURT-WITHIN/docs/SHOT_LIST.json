@@ -1,0 +1,2254 @@
+{
+ "version": "0.1.0-animatic",
+ "fps": 30,
+ "resolution": [
+  1080,
+  1920
+ ],
+ "total_frames": 8550,
+ "total_s": 285.0,
+ "shot_count": 56,
+ "source": "Frames derived from docs/alignment/COMPLETENESS_CHECK.json line times + AUDIO_CUES.json chapter starts (automated estimates; shot cuts land on line starts).",
+ "references_status": "BLOCKED — 17 reference images not received; framing to be revised after reference audit",
+ "shots": [
+  {
+   "id": "S01_01",
+   "chapter": "CH01",
+   "start_frame": 0,
+   "end_frame": 135,
+   "duration_frames": 135,
+   "start_s": 0.0,
+   "end_s": 4.5,
+   "narration": "تخيّل لو كل عذر گُلته بحياتك… صار دليل ضدّك.",
+   "anchors": [
+    {
+     "text": "تخيّل لو كل عذر گُلته بحياتك",
+     "frame": 0,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "صار دليل ضدّك",
+     "frame": 84,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Eye-level, frontal to mirror",
+   "camera_movement": "Slow dolly-in (locked axis); micro-push on major fracture",
+   "focal_length": "50mm",
+   "composition": "Centered mirror (KHAYBAR arch frame), reflection fills 60% height",
+   "blocking": "Faceless figure seen ONLY as reflection, still",
+   "layers": {
+    "fg": "Dust motes",
+    "mg": "Mirror surface + reflection",
+    "bg": "Black void, faint teal rim"
+   },
+   "lighting": {
+    "direction": "Back-rim light behind figure; cold top spill",
+    "phase": "P1 Mirror — cold, deep shadows, teal reflections, gold only inside cracks"
+   },
+   "palette": "#071F26 / #2DB9B6 rim / gold in cracks",
+   "symbols": "Mirror of Insight (cracked)",
+   "typography": "Editorial line low-third (IBM Plex) — optional subtitle",
+   "transition_in": "Cut from frame 0 (no logo, no black)",
+   "sfx": "Hairline crack creep from f15; MAJOR fracture hit on «صار دليل ضدّك»",
+   "technique": "Three.js: pre-fractured glass (Voronoi, seeded) + reflection render target",
+   "notes": "Hook: conflict readable in <2s — reflection + spreading crack + voice",
+   "animatic_scene": "mirror",
+   "lighting_phase": 1
+  },
+  {
+   "id": "S01_02",
+   "chapter": "CH01",
+   "start_frame": 135,
+   "end_frame": 261,
+   "duration_frames": 126,
+   "start_s": 4.5,
+   "end_s": 8.7,
+   "narration": "وكل موقف حاولت تنساه… رجع حتى يشهد عليك.",
+   "anchors": [],
+   "camera_position": "Inside fragment field",
+   "camera_movement": "Controlled fly-through between suspended shards, slight orbit",
+   "focal_length": "35mm",
+   "composition": "Shards at 3 depths; one hero shard center-right",
+   "blocking": "—",
+   "layers": {
+    "fg": "Large out-of-focus shards",
+    "mg": "Hero shard showing memory glints",
+    "bg": "Darkness"
+   },
+   "lighting": {
+    "direction": "Light caught on shard edges",
+    "phase": "P1 Mirror — cold, deep shadows, teal reflections, gold only inside cracks"
+   },
+   "palette": "teal/ivory edge highlights",
+   "symbols": "Floating mirror shards = memories",
+   "typography": "—",
+   "transition_in": "Continuous from fracture",
+   "sfx": "Glass tinkle bed (low), air",
+   "technique": "Three.js instanced shards + rack focus",
+   "notes": "On «رجع حتى يشهد عليك» the courtroom reflection appears inside the hero shard",
+   "animatic_scene": "shards",
+   "lighting_phase": 1
+  },
+  {
+   "id": "S01_03",
+   "chapter": "CH01",
+   "start_frame": 261,
+   "end_frame": 364,
+   "duration_frames": 103,
+   "start_s": 8.7,
+   "end_s": 12.133,
+   "narration": "وفجأة، تلگه نفسك واقف بمحكمة غريبة.",
+   "anchors": [
+    {
+     "text": "وفجأة",
+     "frame": 261,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Into the hero shard",
+   "camera_movement": "Push-in → penetrate shard (T01 Mirror Portal) → crane down into hall",
+   "focal_length": "35mm → 24mm",
+   "composition": "Shard edge wipes frame; hall revealed symmetrical",
+   "blocking": "Figure small, standing at accused platform",
+   "layers": {
+    "fg": "Shard edges flying past",
+    "mg": "Accused platform",
+    "bg": "Monumental columns, high windows"
+   },
+   "lighting": {
+    "direction": "Volumetric shafts from high windows",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "walnut / gold edges / teal shadows",
+   "symbols": "Courtroom",
+   "typography": "TITLE «المحكمة التي بداخلك» (Impact, gold) ~1s after portal, 2.5s hold",
+   "transition_in": "T01 Mirror Portal",
+   "sfx": "Portal whoosh (non-musical air), glass pass-by, room-tone bloom",
+   "technique": "Three.js camera path + 2.5D hall plates",
+   "notes": "Title appears after hook started (≈ 9.5s)",
+   "animatic_scene": "portal",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S01_04",
+   "chapter": "CH01",
+   "start_frame": 364,
+   "end_frame": 467,
+   "duration_frames": 103,
+   "start_s": 12.133,
+   "end_s": 15.567,
+   "narration": "ما تعرف منو جابك. / ولا تعرف شنو التهمة.",
+   "anchors": [],
+   "camera_position": "High wide, back of hall",
+   "camera_movement": "Very slow dolly-in",
+   "focal_length": "24–28mm",
+   "composition": "Symmetric vanishing point, figure at lower third",
+   "blocking": "Figure still, head lowers on «التهمة»",
+   "layers": {
+    "fg": "Railings / benches",
+    "mg": "Figure on platform",
+    "bg": "Judge bench + witness stand (empty-looking)"
+   },
+   "lighting": {
+    "direction": "Top light, deep shadows",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "walnut / basalt / restrained gold",
+   "symbols": "Gavel resting on bench (small)",
+   "typography": "Impact word «التهمة؟» (IBM Plex 600) brief",
+   "transition_in": "Cut",
+   "sfx": "Room tone, distant echo",
+   "technique": "2.5D parallax plates (style frame) — CPU-cheap",
+   "notes": "",
+   "animatic_scene": "court_wide",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S01_05",
+   "chapter": "CH01",
+   "start_frame": 467,
+   "end_frame": 502,
+   "duration_frames": 35,
+   "start_s": 15.567,
+   "end_s": 16.733,
+   "narration": "القاضي ساكت…",
+   "anchors": [
+    {
+     "text": "القاضي ساكت",
+     "frame": 467,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Low angle from accused platform",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Judge bench towering, faceless judge silhouette backlit",
+   "blocking": "Judge motionless",
+   "layers": {
+    "fg": "Gavel in focus",
+    "mg": "Judge silhouette",
+    "bg": "Window light behind"
+   },
+   "lighting": {
+    "direction": "Strong backlight",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "walnut / gold rim",
+   "symbols": "Gavel",
+   "typography": "—",
+   "transition_in": "Cut on «القاضي»",
+   "sfx": "Silence pocket + faint creak",
+   "technique": "2.5D + rim-lit silhouette card (same body model as accused)",
+   "notes": "Identity hidden: silhouette, height & costume match but no face",
+   "animatic_scene": "court_judge",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S01_06",
+   "chapter": "CH01",
+   "start_frame": 502,
+   "end_frame": 566,
+   "duration_frames": 64,
+   "start_s": 16.733,
+   "end_s": 18.867,
+   "narration": "والشاهد ينتظر دوره…",
+   "anchors": [],
+   "camera_position": "Side angle",
+   "camera_movement": "Rack focus bench → witness stand",
+   "focal_length": "50mm",
+   "composition": "Witness stand right third",
+   "blocking": "Witness silhouette, waiting",
+   "layers": {
+    "fg": "Bench edge (soft)",
+    "mg": "Witness silhouette",
+    "bg": "Columns"
+   },
+   "lighting": {
+    "direction": "Side light",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "walnut / teal shadow",
+   "symbols": "—",
+   "typography": "—",
+   "transition_in": "Rack focus",
+   "sfx": "Wood creak",
+   "technique": "2.5D + depth-of-field blur",
+   "notes": "",
+   "animatic_scene": "court_witness",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S01_07",
+   "chapter": "CH01",
+   "start_frame": 566,
+   "end_frame": 629,
+   "duration_frames": 63,
+   "start_s": 18.867,
+   "end_s": 20.967,
+   "narration": "والأدلة كلها موجودة.",
+   "anchors": [],
+   "camera_position": "Close detail",
+   "camera_movement": "Slow drift upward",
+   "focal_length": "85mm",
+   "composition": "Suspended papers in light shaft",
+   "blocking": "—",
+   "layers": {
+    "fg": "Paper in focus",
+    "mg": "Papers floating",
+    "bg": "Volumetric shaft"
+   },
+   "lighting": {
+    "direction": "Top shaft",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "ivory paper / gold dust",
+   "symbols": "Evidence papers",
+   "typography": "—",
+   "transition_in": "Match-cut on light",
+   "sfx": "Paper flutter",
+   "technique": "2.5D sprites + deterministic particles",
+   "notes": "",
+   "animatic_scene": "evidence",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S01_08",
+   "chapter": "CH01",
+   "start_frame": 629,
+   "end_frame": 770,
+   "duration_frames": 141,
+   "start_s": 20.967,
+   "end_s": 25.667,
+   "narration": "تحاول تتذكّر شنو سويت حتى وصلت لهنا. / بس الغريب بالموضوع…",
+   "anchors": [],
+   "camera_position": "Over-the-shoulder of accused",
+   "camera_movement": "Slow pan following his gaze across hall",
+   "focal_length": "35mm",
+   "composition": "Figure's shoulder fg-left, hall bg",
+   "blocking": "Figure turns head searching memory",
+   "layers": {
+    "fg": "Figure shoulder",
+    "mg": "Benches",
+    "bg": "Bench + witness"
+   },
+   "lighting": {
+    "direction": "Top light",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "walnut / basalt",
+   "symbols": "—",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Footstep shift, room tone",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "court_ots",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S01_09",
+   "chapter": "CH01",
+   "start_frame": 770,
+   "end_frame": 920,
+   "duration_frames": 150,
+   "start_s": 25.667,
+   "end_s": 30.667,
+   "narration": "إنك تعرف هاي المحكمة أكثر مما تتصور.",
+   "anchors": [
+    {
+     "text": "إنك تعرف هاي المحكمة أكثر مما تتصور",
+     "frame": 770,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Behind figure",
+   "camera_movement": "Slow push to a mirror fragment lying on bench",
+   "focal_length": "50mm → 85mm",
+   "composition": "Fragment reflects the hall — familiarity hint",
+   "blocking": "Figure static",
+   "layers": {
+    "fg": "Fragment",
+    "mg": "Figure (soft)",
+    "bg": "Hall"
+   },
+   "lighting": {
+    "direction": "Teal reflection glint",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "teal / walnut",
+   "symbols": "Mirror fragment (callback)",
+   "typography": "—",
+   "transition_in": "Hold into 1.5s silence",
+   "sfx": "Low tonal air (non-musical), silence",
+   "technique": "Three.js reflection or 2.5D card",
+   "notes": "No identity reveal; only a sense of familiarity",
+   "animatic_scene": "mirror_hint",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S02_01",
+   "chapter": "CH02",
+   "start_frame": 920,
+   "end_frame": 1008,
+   "duration_frames": 88,
+   "start_s": 30.667,
+   "end_s": 33.6,
+   "narration": "تبدأ المحاكمة… / ويطلع أول دليل.",
+   "anchors": [
+    {
+     "text": "ويطلع أول دليل",
+     "frame": 964,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Low angle bench",
+   "camera_movement": "Locked; gavel strike",
+   "focal_length": "50mm",
+   "composition": "Gavel center",
+   "blocking": "Judge hand (silhouette) strikes",
+   "layers": {
+    "fg": "Gavel",
+    "mg": "Judge",
+    "bg": "Windows"
+   },
+   "lighting": {
+    "direction": "Backlight",
+    "phase": "P2 Courtroom — focused top light, dark walnut, architectural shadows"
+   },
+   "palette": "walnut / gold ring",
+   "symbols": "Gavel",
+   "typography": "—",
+   "transition_in": "Cut on «تبدأ المحاكمة»",
+   "sfx": "GAVEL IMPACT + short shockwave dust",
+   "technique": "Three.js gavel (walnut + aged gold ring) — inertia curve",
+   "notes": "Trial begins",
+   "animatic_scene": "court_judge",
+   "lighting_phase": 2
+  },
+  {
+   "id": "S02_02",
+   "chapter": "CH02",
+   "start_frame": 1008,
+   "end_frame": 1131,
+   "duration_frames": 123,
+   "start_s": 33.6,
+   "end_s": 37.7,
+   "narration": "ذاك اليوم اللي جرحت بيه إنسان بكلمة. / تتذكره؟",
+   "anchors": [],
+   "camera_position": "Into a rising shard",
+   "camera_movement": "Dolly-in through shard (T02 Memory Immersion)",
+   "focal_length": "85mm → 35mm",
+   "composition": "Memory scene inside glass: two faceless silhouettes, one recoils",
+   "blocking": "Memory figures",
+   "layers": {
+    "fg": "Glass edge",
+    "mg": "Memory scene",
+    "bg": "Fog"
+   },
+   "lighting": {
+    "direction": "Soft cold memory light",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "desaturated teal",
+   "symbols": "Memory shard #1",
+   "typography": "—",
+   "transition_in": "T02",
+   "sfx": "Glass shimmer, distant voice-less murmur (no words)",
+   "technique": "2.5D memory card inside glass shader",
+   "notes": "Evidence #1: wounding word",
+   "animatic_scene": "memory",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_03",
+   "chapter": "CH02",
+   "start_frame": 1131,
+   "end_frame": 1182,
+   "duration_frames": 51,
+   "start_s": 37.7,
+   "end_s": 39.4,
+   "narration": "إنت گُلت: چنت معصّب.",
+   "anchors": [
+    {
+     "text": "چنت معصّب",
+     "frame": 1150,
+     "status": "AUTO_ALIGNED_LOW_CONFIDENCE",
+     "manual": true
+    }
+   ],
+   "camera_position": "Mid shot",
+   "camera_movement": "Locked; block drops in",
+   "focal_length": "50mm",
+   "composition": "Basalt block lands beside figure",
+   "blocking": "Figure flinches",
+   "layers": {
+    "fg": "Block (engraved)",
+    "mg": "Figure",
+    "bg": "Hall"
+   },
+   "lighting": {
+    "direction": "Top light hard",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "basalt / cold",
+   "symbols": "Excuse block #1",
+   "typography": "ENGRAVED «چنت معصّب» on block (Canvas texture)",
+   "transition_in": "T03 Excuse Formation",
+   "sfx": "STONE FORM + heavy impact",
+   "technique": "Three.js block + Canvas text texture",
+   "notes": "Anchor flagged (low confidence) — verify drop timing manually",
+   "animatic_scene": "block",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_04",
+   "chapter": "CH02",
+   "start_frame": 1182,
+   "end_frame": 1316,
+   "duration_frames": 134,
+   "start_s": 39.4,
+   "end_s": 43.867,
+   "narration": "ويطلع دليل ثاني… / موقف چنت تعرف بيه الحق، بس سكتّ.",
+   "anchors": [],
+   "camera_position": "Shard #2",
+   "camera_movement": "Drift",
+   "focal_length": "85mm → 35mm",
+   "composition": "Silent bystander memory",
+   "blocking": "Memory figure turns away",
+   "layers": {
+    "fg": "Glass",
+    "mg": "Memory",
+    "bg": "Fog"
+   },
+   "lighting": {
+    "direction": "Cold",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "teal",
+   "symbols": "Memory shard #2",
+   "typography": "—",
+   "transition_in": "T02",
+   "sfx": "Glass shimmer",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "memory",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_05",
+   "chapter": "CH02",
+   "start_frame": 1316,
+   "end_frame": 1378,
+   "duration_frames": 62,
+   "start_s": 43.867,
+   "end_s": 45.933,
+   "narration": "گُلت: ما چنت أريد مشاكل.",
+   "anchors": [],
+   "camera_position": "Mid",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Second block lands",
+   "blocking": "—",
+   "layers": {
+    "fg": "Block",
+    "mg": "Figure",
+    "bg": "Hall"
+   },
+   "lighting": {
+    "direction": "Top hard",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "basalt",
+   "symbols": "Excuse block #2",
+   "typography": "ENGRAVED «ما چنت أريد مشاكل»",
+   "transition_in": "T03",
+   "sfx": "STONE impact",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "block",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_06",
+   "chapter": "CH02",
+   "start_frame": 1378,
+   "end_frame": 1479,
+   "duration_frames": 101,
+   "start_s": 45.933,
+   "end_s": 49.3,
+   "narration": "ودليل ثالث… / حچيت على إنسان بغيابه.",
+   "anchors": [],
+   "camera_position": "Shard #3",
+   "camera_movement": "Drift",
+   "focal_length": "85mm → 35mm",
+   "composition": "Whispering memory: two figures leaning toward each other",
+   "blocking": "—",
+   "layers": {
+    "fg": "Glass",
+    "mg": "Memory",
+    "bg": "Fog"
+   },
+   "lighting": {
+    "direction": "Cold",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "teal",
+   "symbols": "Memory shard #3",
+   "typography": "—",
+   "transition_in": "T02",
+   "sfx": "Glass shimmer",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "memory",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_07",
+   "chapter": "CH02",
+   "start_frame": 1479,
+   "end_frame": 1563,
+   "duration_frames": 84,
+   "start_s": 49.3,
+   "end_s": 52.1,
+   "narration": "گُلت: مو بس آني… الكل چان يحچي.",
+   "anchors": [
+    {
+     "text": "مو بس آني",
+     "frame": 1496,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Mid",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Third block lands",
+   "blocking": "—",
+   "layers": {
+    "fg": "Block",
+    "mg": "Figure",
+    "bg": "Hall"
+   },
+   "lighting": {
+    "direction": "Top hard",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "basalt",
+   "symbols": "Excuse block #3",
+   "typography": "ENGRAVED «مو بس آني… الكل چان يحچي»",
+   "transition_in": "T03",
+   "sfx": "STONE impact",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "block",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_08",
+   "chapter": "CH02",
+   "start_frame": 1563,
+   "end_frame": 1677,
+   "duration_frames": 114,
+   "start_s": 52.1,
+   "end_s": 55.9,
+   "narration": "وكل مرة تقدم عذر، تحس إنك نجحت بالدفاع عن نفسك.",
+   "anchors": [],
+   "camera_position": "Low angle on figure",
+   "camera_movement": "Slow push-in",
+   "focal_length": "35mm",
+   "composition": "Figure framed between blocks, posture 'victorious'",
+   "blocking": "Figure straightens",
+   "layers": {
+    "fg": "Blocks",
+    "mg": "Figure",
+    "bg": "Hall darkening"
+   },
+   "lighting": {
+    "direction": "Top light narrowing",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "basalt / cold teal",
+   "symbols": "Blocks",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Low stone settle",
+   "technique": "Three.js / 2.5D",
+   "notes": "",
+   "animatic_scene": "blocks_low",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_09",
+   "chapter": "CH02",
+   "start_frame": 1677,
+   "end_frame": 1817,
+   "duration_frames": 140,
+   "start_s": 55.9,
+   "end_s": 60.567,
+   "narration": "بس ما تنتبه إن كل عذر من هاي الأعذار، دا يبني جدار حواليك.",
+   "anchors": [
+    {
+     "text": "دا يبني جدار حواليك",
+     "frame": 1766,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Crane up",
+   "camera_movement": "Crane up and out",
+   "focal_length": "28mm",
+   "composition": "Blocks forming a ring-wall around figure",
+   "blocking": "Figure static",
+   "layers": {
+    "fg": "—",
+    "mg": "Wall ring",
+    "bg": "Hall fading"
+   },
+   "lighting": {
+    "direction": "Top spot shrinking",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "basalt",
+   "symbols": "Wall of excuses",
+   "typography": "—",
+   "transition_in": "Continuous",
+   "sfx": "Stone grind, rising",
+   "technique": "Three.js instanced blocks",
+   "notes": "",
+   "animatic_scene": "wall_rise",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_10",
+   "chapter": "CH02",
+   "start_frame": 1817,
+   "end_frame": 1866,
+   "duration_frames": 49,
+   "start_s": 60.567,
+   "end_s": 62.2,
+   "narration": "حجر فوق حجر…",
+   "anchors": [
+    {
+     "text": "حجر فوق حجر",
+     "frame": 1817,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "High angle",
+   "camera_movement": "Locked; rhythmic block drops",
+   "focal_length": "35mm",
+   "composition": "Stone on stone",
+   "blocking": "—",
+   "layers": {
+    "fg": "Falling blocks",
+    "mg": "Wall",
+    "bg": "Black"
+   },
+   "lighting": {
+    "direction": "Hard top",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "basalt",
+   "symbols": "Wall",
+   "typography": "Impact words «حجر… فوق… حجر» optional",
+   "transition_in": "Cut",
+   "sfx": "2 rhythmic STONE impacts (on each «حجر»)",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "wall_stack",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S02_11",
+   "chapter": "CH02",
+   "start_frame": 1866,
+   "end_frame": 2064,
+   "duration_frames": 198,
+   "start_s": 62.2,
+   "end_s": 68.8,
+   "narration": "لحد ما يصير دفاعك عن نفسك، هو السجن اللي حابس نفسك بيه.",
+   "anchors": [
+    {
+     "text": "هو السجن اللي حابس نفسك بيه",
+     "frame": 1931,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Top-down",
+   "camera_movement": "Slow vertical pull-up then stop",
+   "focal_length": "24mm",
+   "composition": "Figure enclosed; single slit of light",
+   "blocking": "Figure looks up",
+   "layers": {
+    "fg": "—",
+    "mg": "Figure in prison",
+    "bg": "Darkness"
+   },
+   "lighting": {
+    "direction": "Single slit",
+    "phase": "P3 Excuses — narrowing light, cold shift, enclosure"
+   },
+   "palette": "near-black / cold",
+   "symbols": "Prison of excuses",
+   "typography": "—",
+   "transition_in": "Hold into 2.0s silence",
+   "sfx": "Silence (deliberate) + faint air",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "prison",
+   "lighting_phase": 3
+  },
+  {
+   "id": "S03_01",
+   "chapter": "CH03",
+   "start_frame": 2064,
+   "end_frame": 2141,
+   "duration_frames": 77,
+   "start_s": 68.8,
+   "end_s": 71.367,
+   "narration": "بس أكو حقيقة ما تگدر تهرب منها.",
+   "anchors": [],
+   "camera_position": "Inside prison",
+   "camera_movement": "Locked",
+   "focal_length": "35mm",
+   "composition": "Light slit on wall",
+   "blocking": "Figure turns to light",
+   "layers": {
+    "fg": "—",
+    "mg": "Figure",
+    "bg": "Wall"
+   },
+   "lighting": {
+    "direction": "Single warm-cold slit",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "basalt / ivory slit",
+   "symbols": "—",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Air",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "prison_slit",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S03_02",
+   "chapter": "CH03",
+   "start_frame": 2141,
+   "end_frame": 2408,
+   "duration_frames": 267,
+   "start_s": 71.367,
+   "end_s": 80.267,
+   "narration": "القرآن الكريم يگول: / بَلِ الْإِنسَانُ عَلَىٰ نَفْسِهِ بَصِيرَةٌ، وَلَوْ أَلْقَىٰ مَعَاذِيرَهُ.",
+   "anchors": [
+    {
+     "text": "القرآن الكريم يگول",
+     "frame": 2141,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "[Q01 quotation start]",
+     "frame": 2215,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    },
+    {
+     "text": "[Q01 quotation end]",
+     "frame": 2308,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "LOCKED — camera stops",
+   "focal_length": "50mm",
+   "composition": "Cinematic Knowledge Arch (KHAYBAR arch geometry) centered; sacred text inside",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Arch + verse",
+    "bg": "Court dimmed 60%"
+   },
+   "lighting": {
+    "direction": "Stable soft key on arch",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold arch / ivory text / teal deep bg",
+   "symbols": "Knowledge Arch",
+   "typography": "SACRED Q01 — Amiri Quran, static, + reference",
+   "transition_in": "T05 Knowledge Reveal",
+   "sfx": "NO dramatic SFX — ambience ducked",
+   "technique": "Remotion typography layer over dimmed plate",
+   "notes": "Protected interval F2200–2398",
+   "animatic_scene": "arch_text",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S03_03",
+   "chapter": "CH03",
+   "start_frame": 2408,
+   "end_frame": 2461,
+   "duration_frames": 53,
+   "start_s": 80.267,
+   "end_s": 82.033,
+   "narration": "تأمّل هاي الآية.",
+   "anchors": [],
+   "camera_position": "Wide on wall",
+   "camera_movement": "Very slow push",
+   "focal_length": "35mm",
+   "composition": "Hairline fractures appear in excuse wall",
+   "blocking": "Figure watches",
+   "layers": {
+    "fg": "—",
+    "mg": "Wall",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Warm light through hairlines",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "basalt / warm gold line",
+   "symbols": "Fracturing wall (hairline only)",
+   "typography": "—",
+   "transition_in": "Dissolve from arch",
+   "sfx": "Hairline crack (soft)",
+   "technique": "Three.js crack mask",
+   "notes": "Wall must NOT collapse yet",
+   "animatic_scene": "wall_hairline",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S03_04",
+   "chapter": "CH03",
+   "start_frame": 2461,
+   "end_frame": 2748,
+   "duration_frames": 287,
+   "start_s": 82.033,
+   "end_s": 91.6,
+   "narration": "ممكن تقنع الناس بعذرك. / ممكن ترتّب كلامك حتى تطلع إنت المظلوم. / وممكن تخفي جزء من الحقيقة، حتى تحافظ على صورتك گدامهم.",
+   "anchors": [],
+   "camera_position": "Among 3 shards",
+   "camera_movement": "Gentle lateral track",
+   "focal_length": "50mm",
+   "composition": "Three shards: persuading, rearranging words, hiding a piece",
+   "blocking": "Shard figures",
+   "layers": {
+    "fg": "Shards",
+    "mg": "Figure",
+    "bg": "Wall"
+   },
+   "lighting": {
+    "direction": "Cold with warm cracks",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "teal / warm",
+   "symbols": "Shards",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Glass shimmer",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "mask_shards",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S03_05",
+   "chapter": "CH03",
+   "start_frame": 2748,
+   "end_frame": 3043,
+   "duration_frames": 295,
+   "start_s": 91.6,
+   "end_s": 101.433,
+   "narration": "بس بينك وبين نفسك… / إنت تعرف شنو صار. / وتعرف شنو چان قصدك. / وتعرف الفرق بين السبب الحقيقي، والعذر اللي اخترعته حتى ترتاح.",
+   "anchors": [
+    {
+     "text": "بس بينك وبين نفسك",
+     "frame": 2748,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "OTS → face-reflection on polished basalt",
+   "camera_movement": "Slow push-in",
+   "focal_length": "50mm → 85mm",
+   "composition": "Figure facing his own reflection in polished stone",
+   "blocking": "Figure still",
+   "layers": {
+    "fg": "Figure shoulder",
+    "mg": "Reflection",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Warm light from cracks touches reflection",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "basalt / warm gold",
+   "symbols": "Reflection",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Breath-like air (non-musical)",
+   "technique": "2.5D / reflection pass",
+   "notes": "",
+   "animatic_scene": "self_reflection",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S03_06",
+   "chapter": "CH03",
+   "start_frame": 3043,
+   "end_frame": 3339,
+   "duration_frames": 296,
+   "start_s": 101.433,
+   "end_s": 111.3,
+   "narration": "المشكلة مو دائماً إنك ما تعرف الحقيقة. / أحياناً، المشكلة إنك تعرفها… وما تريد تواجهها.",
+   "anchors": [
+    {
+     "text": "إنك تعرفها… وما تريد تواجهها",
+     "frame": 3212,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Close on crack",
+   "camera_movement": "Locked → slow push into light",
+   "focal_length": "85mm",
+   "composition": "Single crack glowing",
+   "blocking": "—",
+   "layers": {
+    "fg": "Crack",
+    "mg": "Light",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Warm through crack",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "warm gold on basalt",
+   "symbols": "Crack of truth",
+   "typography": "—",
+   "transition_in": "Hold into gap",
+   "sfx": "Low resonance, silence",
+   "technique": "Three.js crack emissive",
+   "notes": "",
+   "animatic_scene": "crack_light",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_01",
+   "chapter": "CH04",
+   "start_frame": 3339,
+   "end_frame": 3550,
+   "duration_frames": 211,
+   "start_s": 111.3,
+   "end_s": 118.333,
+   "narration": "خل أسألك سؤال. / لو واحد غيرك سوّى نفس الغلط اللي إنت سويته… / راح تقبل منه نفس العذر؟",
+   "anchors": [
+    {
+     "text": "راح تقبل منه نفس العذر؟",
+     "frame": 3484,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Orbit around scale",
+   "camera_movement": "Slow orbit 30°",
+   "focal_length": "50mm",
+   "composition": "Antique gold scale on black basalt base, centered",
+   "blocking": "—",
+   "layers": {
+    "fg": "Scale chain",
+    "mg": "Scale",
+    "bg": "Hall dark"
+   },
+   "lighting": {
+    "direction": "Top key on scale",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold / basalt",
+   "symbols": "Scale of Justice",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Metal chain settle",
+   "technique": "Three.js scale (gold PBR)",
+   "notes": "",
+   "animatic_scene": "scale",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_02",
+   "chapter": "CH04",
+   "start_frame": 3550,
+   "end_frame": 3729,
+   "duration_frames": 179,
+   "start_s": 118.333,
+   "end_s": 124.3,
+   "narration": "من واحد يجرحك بكلمة، تعتبره قليل احترام. / بس من إنت تجرحه، تگول چنت معصّب.",
+   "anchors": [
+    {
+     "text": "[contrast 1] من واحد يجرحك بكلمة…",
+     "frame": 3550,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Left pan = others (heavy), right pan = self (light)",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Scale tilting",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Top key",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold / basalt",
+   "symbols": "Weights",
+   "typography": "Labels «قليل احترام» vs «چنت معصّب» (IBM Plex)",
+   "transition_in": "Cut",
+   "sfx": "Metal tilt creak",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "scale_contrast",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_03",
+   "chapter": "CH04",
+   "start_frame": 3729,
+   "end_frame": 3919,
+   "duration_frames": 190,
+   "start_s": 124.3,
+   "end_s": 130.633,
+   "narration": "من واحد يسكت عن حقك، تعتبره خذلك. / بس من إنت تسكت عن حق غيرك، تسميها حكمة.",
+   "anchors": [
+    {
+     "text": "[contrast 2] من واحد يسكت عن حقك…",
+     "frame": 3729,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Tilt increases",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Scale",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Top",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold",
+   "symbols": "Weights",
+   "typography": "«خذلك» vs «حكمة»",
+   "transition_in": "Cut",
+   "sfx": "Metal creak",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "scale_contrast",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_04",
+   "chapter": "CH04",
+   "start_frame": 3919,
+   "end_frame": 4090,
+   "duration_frames": 171,
+   "start_s": 130.633,
+   "end_s": 136.333,
+   "narration": "من واحد يحچي عليك، تعتبرها إساءة. / بس من إنت تحچي عليه، تگول مجرد فضفضة.",
+   "anchors": [
+    {
+     "text": "[contrast 3] من واحد يحچي عليك…",
+     "frame": 3919,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Maximum imbalance",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Scale",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Top",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold",
+   "symbols": "Weights",
+   "typography": "«إساءة» vs «فضفضة»",
+   "transition_in": "Cut",
+   "sfx": "Metal creak (strongest)",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "scale_contrast",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_05",
+   "chapter": "CH04",
+   "start_frame": 4090,
+   "end_frame": 4205,
+   "duration_frames": 115,
+   "start_s": 136.333,
+   "end_s": 140.167,
+   "narration": "نفس الفعل… / بس الحكم يختلف، حسب منو اللي سواه.",
+   "anchors": [
+    {
+     "text": "نفس الفعل",
+     "frame": 4090,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal close",
+   "camera_movement": "Locked",
+   "focal_length": "85mm",
+   "composition": "Identical stones in both pans — still imbalanced",
+   "blocking": "—",
+   "layers": {
+    "fg": "Stones",
+    "mg": "Scale",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Top",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold / basalt",
+   "symbols": "Identical weights",
+   "typography": "Impact «نفس الفعل»",
+   "transition_in": "Cut",
+   "sfx": "Silence beat",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "scale_paradox",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_06",
+   "chapter": "CH04",
+   "start_frame": 4205,
+   "end_frame": 4442,
+   "duration_frames": 237,
+   "start_s": 140.167,
+   "end_s": 148.067,
+   "narration": "القرآن الكريم يگول: / كُونُوا قَوَّامِينَ بِالْقِسْطِ شُهَدَاءَ لِلَّهِ وَلَوْ عَلَىٰ أَنفُسِكُمْ.",
+   "anchors": [
+    {
+     "text": "[Q02 quotation start]",
+     "frame": 4252,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    },
+    {
+     "text": "[Q02 quotation end]",
+     "frame": 4364,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "LOCKED",
+   "focal_length": "50mm",
+   "composition": "Knowledge Arch, scale dim behind",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Arch + verse",
+    "bg": "Scale silhouette"
+   },
+   "lighting": {
+    "direction": "Stable soft key",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold arch / ivory",
+   "symbols": "Knowledge Arch",
+   "typography": "SACRED Q02 — Amiri Quran + «النساء: من الآية ١٣٥»",
+   "transition_in": "T05",
+   "sfx": "NO dramatic SFX",
+   "technique": "Remotion typography layer",
+   "notes": "Protected F4237–4425",
+   "animatic_scene": "arch_text",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S04_07",
+   "chapter": "CH04",
+   "start_frame": 4442,
+   "end_frame": 4689,
+   "duration_frames": 247,
+   "start_s": 148.067,
+   "end_s": 156.3,
+   "narration": "فإذا ميزانك يتغيّر كلما صارت القضية تخصّك… / شلون راح تعرف إنك فعلاً منصف؟",
+   "anchors": [
+    {
+     "text": "شلون راح تعرف إنك فعلاً منصف؟",
+     "frame": 4545,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Slow pull-out",
+   "focal_length": "50mm",
+   "composition": "Scale restrained return toward balance (not fully)",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Scale",
+    "bg": "Dark hall"
+   },
+   "lighting": {
+    "direction": "Top",
+    "phase": "P4 Evidence — stable light, readable contrast, calm gold arch"
+   },
+   "palette": "gold",
+   "symbols": "Scale",
+   "typography": "—",
+   "transition_in": "Hold into gap",
+   "sfx": "Soft metal settle",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "scale_return",
+   "lighting_phase": 4
+  },
+  {
+   "id": "S05_01",
+   "chapter": "CH05",
+   "start_frame": 4689,
+   "end_frame": 4768,
+   "duration_frames": 79,
+   "start_s": 156.3,
+   "end_s": 158.933,
+   "narration": "وهنا… / تلتفت للقاضي.",
+   "anchors": [
+    {
+     "text": "تلتفت للقاضي",
+     "frame": 4703,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Accused POV",
+   "camera_movement": "Controlled pan to judge",
+   "focal_length": "35mm",
+   "composition": "Judge silhouette",
+   "blocking": "Judge still",
+   "layers": {
+    "fg": "—",
+    "mg": "Judge",
+    "bg": "Windows"
+   },
+   "lighting": {
+    "direction": "Backlight",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "walnut / gold rim",
+   "symbols": "—",
+   "typography": "—",
+   "transition_in": "Cut on «وهنا»",
+   "sfx": "Low pulse (non-musical)",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "reveal_judge",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_02",
+   "chapter": "CH05",
+   "start_frame": 4768,
+   "end_frame": 4809,
+   "duration_frames": 41,
+   "start_s": 158.933,
+   "end_s": 160.3,
+   "narration": "وتباوع للشاهد.",
+   "anchors": [
+    {
+     "text": "وتباوع للشاهد",
+     "frame": 4768,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Accused POV",
+   "camera_movement": "Pan to witness",
+   "focal_length": "35mm",
+   "composition": "Witness silhouette",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Witness",
+    "bg": "Columns"
+   },
+   "lighting": {
+    "direction": "Side",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "teal",
+   "symbols": "—",
+   "typography": "—",
+   "transition_in": "Whip-free pan",
+   "sfx": "Low pulse",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "reveal_witness",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_03",
+   "chapter": "CH05",
+   "start_frame": 4809,
+   "end_frame": 4978,
+   "duration_frames": 169,
+   "start_s": 160.3,
+   "end_s": 165.933,
+   "narration": "وترجع تباوع للمتهم. / وتكتشف الحقيقة اللي چنت تهرب منها من البداية.",
+   "anchors": [
+    {
+     "text": "وترجع تباوع للمتهم",
+     "frame": 4809,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Around three figures (triangle)",
+   "camera_movement": "Orbit begins (adaptive camera, accelerating)",
+   "focal_length": "35mm",
+   "composition": "Three silhouettes in triangle",
+   "blocking": "All three still",
+   "layers": {
+    "fg": "—",
+    "mg": "Three figures",
+    "bg": "Hall"
+   },
+   "lighting": {
+    "direction": "Rim lights",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "mixed",
+   "symbols": "Three aspects",
+   "typography": "—",
+   "transition_in": "Continuous orbit",
+   "sfx": "Rising air",
+   "technique": "Three.js orbit (same body model ×3)",
+   "notes": "",
+   "animatic_scene": "reveal_orbit",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_04",
+   "chapter": "CH05",
+   "start_frame": 4978,
+   "end_frame": 5052,
+   "duration_frames": 74,
+   "start_s": 165.933,
+   "end_s": 168.4,
+   "narration": "القاضي… إنت.",
+   "anchors": [
+    {
+     "text": "القاضي… إنت",
+     "frame": 4978,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Orbit hits judge",
+   "camera_movement": "Orbit pause; light turns on judge",
+   "focal_length": "50mm",
+   "composition": "Judge revealed with SAME silhouette/costume as accused",
+   "blocking": "Judge mirrors accused gesture",
+   "layers": {
+    "fg": "—",
+    "mg": "Judge",
+    "bg": "—"
+   },
+   "lighting": {
+    "direction": "Key light reveals sameness (still faceless)",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "gold reveal",
+   "symbols": "Identity #1",
+   "typography": "Impact «القاضي… إنت»",
+   "transition_in": "Cut on anchor",
+   "sfx": "Identity hit (low thud, non-musical)",
+   "technique": "Three.js",
+   "notes": "Reveal only here — never earlier",
+   "animatic_scene": "identity",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_05",
+   "chapter": "CH05",
+   "start_frame": 5052,
+   "end_frame": 5113,
+   "duration_frames": 61,
+   "start_s": 168.4,
+   "end_s": 170.433,
+   "narration": "والشاهد… إنت.",
+   "anchors": [
+    {
+     "text": "والشاهد… إنت",
+     "frame": 5052,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Orbit to witness",
+   "camera_movement": "Pause; light",
+   "focal_length": "50mm",
+   "composition": "Witness same silhouette",
+   "blocking": "Same gesture",
+   "layers": {
+    "fg": "—",
+    "mg": "Witness",
+    "bg": "—"
+   },
+   "lighting": {
+    "direction": "Key",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "gold",
+   "symbols": "Identity #2",
+   "typography": "Impact «والشاهد… إنت»",
+   "transition_in": "Cut",
+   "sfx": "Identity hit #2",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "identity",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_06",
+   "chapter": "CH05",
+   "start_frame": 5113,
+   "end_frame": 5176,
+   "duration_frames": 63,
+   "start_s": 170.433,
+   "end_s": 172.533,
+   "narration": "والمتهم… هم إنت.",
+   "anchors": [
+    {
+     "text": "والمتهم… هم إنت",
+     "frame": 5113,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Wide orbit completes",
+   "camera_movement": "Orbit completes 360° → stop",
+   "focal_length": "35mm",
+   "composition": "All three in sync",
+   "blocking": "Three figures perform identical gesture",
+   "layers": {
+    "fg": "—",
+    "mg": "Three figures",
+    "bg": "—"
+   },
+   "lighting": {
+    "direction": "Unified key",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "gold / ivory",
+   "symbols": "Identity #3",
+   "typography": "Impact «والمتهم… هم إنت»",
+   "transition_in": "Cut",
+   "sfx": "Identity hit #3 + silence",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "identity_all",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_07",
+   "chapter": "CH05",
+   "start_frame": 5176,
+   "end_frame": 5306,
+   "duration_frames": 130,
+   "start_s": 172.533,
+   "end_s": 176.867,
+   "narration": "هاي المحكمة ما چانت بمكان غريب. / هاي المحكمة بداخلك.",
+   "anchors": [
+    {
+     "text": "هاي المحكمة بداخلك",
+     "frame": 5255,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Slow pull-back",
+   "camera_movement": "Dolly-out",
+   "focal_length": "35mm → 28mm",
+   "composition": "Judge & witness dissolve into reflections inside shards; one figure remains",
+   "blocking": "Figure alone",
+   "layers": {
+    "fg": "Shards",
+    "mg": "Figure",
+    "bg": "Hall dissolving"
+   },
+   "lighting": {
+    "direction": "Light from cracks",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "teal / gold",
+   "symbols": "Shards",
+   "typography": "Impact «بداخلك» (gold)",
+   "transition_in": "Dissolve",
+   "sfx": "Glass breath",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "reflections",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_08",
+   "chapter": "CH05",
+   "start_frame": 5306,
+   "end_frame": 5577,
+   "duration_frames": 271,
+   "start_s": 176.867,
+   "end_s": 185.9,
+   "narration": "كل مرة حكمت بيها على غيرك، ورفضت تطبّق نفس الحكم على نفسك. / كل مرة عرفت بيها غلطك، واخترت تبرّره بدل ما تصلحه.",
+   "anchors": [],
+   "camera_position": "Wide on wall",
+   "camera_movement": "Slow push",
+   "focal_length": "28mm",
+   "composition": "Cracks spread across all blocks, light leaking",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Wall",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Light through cracks rising",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "basalt / warm",
+   "symbols": "Wall fracturing",
+   "typography": "Engraved excuse words FRACTURE (non-sacred only)",
+   "transition_in": "Continuous",
+   "sfx": "Stone cracking (progressive)",
+   "technique": "Three.js crack masks + Typography Fracture",
+   "notes": "",
+   "animatic_scene": "cracks_spread",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_09",
+   "chapter": "CH05",
+   "start_frame": 5577,
+   "end_frame": 5693,
+   "duration_frames": 116,
+   "start_s": 185.9,
+   "end_s": 189.767,
+   "narration": "بس لحظة الاعتراف بالحقيقة… / مو نهاية المحاكمة.",
+   "anchors": [],
+   "camera_position": "Mid",
+   "camera_movement": "Locked — stillness",
+   "focal_length": "50mm",
+   "composition": "Figure stands; cracks glowing",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Figure",
+    "bg": "Wall"
+   },
+   "lighting": {
+    "direction": "Warm cracks",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "warm",
+   "symbols": "—",
+   "typography": "—",
+   "transition_in": "Hold",
+   "sfx": "DRAMATIC SILENCE (ambience ducked)",
+   "technique": "—",
+   "notes": "Deliberate pause before collapse",
+   "animatic_scene": "stillness",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S05_10",
+   "chapter": "CH05",
+   "start_frame": 5693,
+   "end_frame": 5848,
+   "duration_frames": 155,
+   "start_s": 189.767,
+   "end_s": 194.933,
+   "narration": "هي بداية التحرر من سجن الأعذار.",
+   "anchors": [
+    {
+     "text": "هي بداية التحرر من سجن الأعذار",
+     "frame": 5693,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Wide",
+   "camera_movement": "Crane up & out as wall falls",
+   "focal_length": "24mm",
+   "composition": "Wall collapses outward; courtroom dissolves to open psychological space",
+   "blocking": "Figure intact, standing",
+   "layers": {
+    "fg": "Falling stones",
+    "mg": "Figure",
+    "bg": "Opening sky/space"
+   },
+   "lighting": {
+    "direction": "Light floods in",
+    "phase": "P5 Collapse — light spreads through cracks, controlled contrast rise"
+   },
+   "palette": "ivory / gold",
+   "symbols": "Collapse of excuses",
+   "typography": "—",
+   "transition_in": "Hold 2.5s gap (dust settles)",
+   "sfx": "WALL COLLAPSE → long tail → silence",
+   "technique": "Three.js pre-fractured blocks (no live physics)",
+   "notes": "Character never harmed",
+   "animatic_scene": "collapse",
+   "lighting_phase": 5
+  },
+  {
+   "id": "S06_01",
+   "chapter": "CH06",
+   "start_frame": 5848,
+   "end_frame": 6064,
+   "duration_frames": 216,
+   "start_s": 194.933,
+   "end_s": 202.133,
+   "narration": "بس شلون الإنسان يطلع من هاي الدائرة؟ / شلون يحاسب نفسه، بدون ما يتحول إلى إنسان يائس من نفسه؟",
+   "anchors": [],
+   "camera_position": "Wide",
+   "camera_movement": "Gentle dolly-out",
+   "focal_length": "28mm",
+   "composition": "Figure amid fallen stones in open twilight",
+   "blocking": "Figure kneels/stands quietly",
+   "layers": {
+    "fg": "Stones",
+    "mg": "Figure",
+    "bg": "Open space"
+   },
+   "lighting": {
+    "direction": "Soft dawn-like light",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "teal → warm",
+   "symbols": "Fallen stones",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Quiet resolution air",
+   "technique": "2.5D",
+   "notes": "",
+   "animatic_scene": "open_space",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S06_02",
+   "chapter": "CH06",
+   "start_frame": 6064,
+   "end_frame": 6213,
+   "duration_frames": 149,
+   "start_s": 202.133,
+   "end_s": 207.1,
+   "narration": "الإمام موسى الكاظم، عليه السلام، يرسم إلنا منهج واضح. / يگول:",
+   "anchors": [
+    {
+     "text": "الإمام موسى الكاظم، عليه السلام",
+     "frame": 6064,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Settling to lock",
+   "focal_length": "50mm",
+   "composition": "Knowledge Arch forms; name in respectful typography only",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Arch",
+    "bg": "Soft"
+   },
+   "lighting": {
+    "direction": "Soft key",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "gold / ivory",
+   "symbols": "Knowledge Arch",
+   "typography": "«الإمام موسى الكاظم عليه السلام» (Amiri)",
+   "transition_in": "T05",
+   "sfx": "Ambience low",
+   "technique": "Remotion typography",
+   "notes": "NO depiction of the Imam",
+   "animatic_scene": "arch_name",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S06_03",
+   "chapter": "CH06",
+   "start_frame": 6213,
+   "end_frame": 6592,
+   "duration_frames": 379,
+   "start_s": 207.1,
+   "end_s": 219.733,
+   "narration": "لَيْسَ مِنَّا مَنْ لَمْ يُحَاسِبْ نَفْسَهُ فِي كُلِّ يَوْمٍ، فَإِنْ عَمِلَ حَسَناً اسْتَزَادَ اللهَ، وَإِنْ عَمِلَ سَيِّئاً اسْتَغْفَرَ اللهَ مِنْهُ وَتَابَ إِلَيْهِ.",
+   "anchors": [
+    {
+     "text": "[H01 narration start]",
+     "frame": 6213,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    },
+    {
+     "text": "[H01 narration end]",
+     "frame": 6479,
+     "status": "AUTO_ALIGNED",
+     "manual": true
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "LOCKED",
+   "focal_length": "50mm",
+   "composition": "Arch with narration text + source line",
+   "blocking": "—",
+   "layers": {
+    "fg": "—",
+    "mg": "Arch + text",
+    "bg": "Soft warm"
+   },
+   "lighting": {
+    "direction": "Stable warm key",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "gold / ivory",
+   "symbols": "Knowledge Arch",
+   "typography": "SACRED H01 — Amiri, static + «الكافي — ج٢ — باب محاسبة العمل — ح٢»",
+   "transition_in": "Hold",
+   "sfx": "NO SFX",
+   "technique": "Remotion typography",
+   "notes": "Protected F6198–6581",
+   "animatic_scene": "arch_text",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S06_04",
+   "chapter": "CH06",
+   "start_frame": 6592,
+   "end_frame": 6833,
+   "duration_frames": 241,
+   "start_s": 219.733,
+   "end_s": 227.767,
+   "narration": "لاحظ دقة هذا المنهج. / أولاً: المحاسبة كل يوم. / مو بس من تصير مصيبة، أو من أحد يواجهك بغلطك.",
+   "anchors": [
+    {
+     "text": "أولاً: المحاسبة كل يوم",
+     "frame": 6650,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Slow push",
+   "focal_length": "50mm",
+   "composition": "Stage 1: a daily ring/cycle mark around the arch (day ↔ night)",
+   "blocking": "Figure faces arch",
+   "layers": {
+    "fg": "—",
+    "mg": "Figure + cycle ring",
+    "bg": "Arch"
+   },
+   "lighting": {
+    "direction": "Warmer",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "gold / ivory",
+   "symbols": "Daily cycle",
+   "typography": "«أولاً: المحاسبة كل يوم» (IBM Plex)",
+   "transition_in": "Cut",
+   "sfx": "Soft air",
+   "technique": "2.5D",
+   "notes": "Three-part structure",
+   "animatic_scene": "stage1",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S06_05",
+   "chapter": "CH06",
+   "start_frame": 6833,
+   "end_frame": 6984,
+   "duration_frames": 151,
+   "start_s": 227.767,
+   "end_s": 232.8,
+   "narration": "ثانياً: إذا سويت خير، لا تكتفي بيه. اطلب من الله المزيد.",
+   "anchors": [
+    {
+     "text": "ثانياً: إذا سويت خير",
+     "frame": 6833,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Slow push",
+   "focal_length": "50mm",
+   "composition": "Stage 2: golden particles gather gently (increase in good)",
+   "blocking": "—",
+   "layers": {
+    "fg": "Particles",
+    "mg": "Figure",
+    "bg": "Arch"
+   },
+   "lighting": {
+    "direction": "Warmer",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "gold",
+   "symbols": "Gathering light",
+   "typography": "«ثانياً: إذا سويت خير»",
+   "transition_in": "Cut",
+   "sfx": "Soft shimmer (non-musical)",
+   "technique": "Deterministic particles",
+   "notes": "",
+   "animatic_scene": "stage2",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S06_06",
+   "chapter": "CH06",
+   "start_frame": 6984,
+   "end_frame": 7359,
+   "duration_frames": 375,
+   "start_s": 232.8,
+   "end_s": 245.3,
+   "narration": "وثالثاً: إذا أخطأت، لا تبرّر الخطأ، ولا تيأس من نفسك. / استغفر الله… وتُب إليه. / وإذا ظلمت إنسان، حاول تصلح الظلم وترجع الحق لصاحبه.",
+   "anchors": [
+    {
+     "text": "وثالثاً: إذا أخطأت",
+     "frame": 6984,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "استغفر الله… وتُب إليه",
+     "frame": 7136,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Slow push → stillness",
+   "focal_length": "50mm",
+   "composition": "Stage 3: cracks in a stone fill with gold (repair, not erasure)",
+   "blocking": "Figure places hand on stone",
+   "layers": {
+    "fg": "Stone",
+    "mg": "Figure",
+    "bg": "Arch"
+   },
+   "lighting": {
+    "direction": "Warm",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "gold / ivory",
+   "symbols": "Repair",
+   "typography": "«وثالثاً: إذا أخطأت» / «استغفر الله… وتُب إليه» (calm)",
+   "transition_in": "Cut",
+   "sfx": "Very soft",
+   "technique": "2.5D / shader",
+   "notes": "",
+   "animatic_scene": "stage3",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S06_07",
+   "chapter": "CH06",
+   "start_frame": 7359,
+   "end_frame": 7613,
+   "duration_frames": 254,
+   "start_s": 245.3,
+   "end_s": 253.767,
+   "narration": "المحاسبة مو حتى تكره نفسك. / المحاسبة حتى تعرف وين أخطأت… وتصلح اللي تگدر تصلحه.",
+   "anchors": [
+    {
+     "text": "المحاسبة مو حتى تكره نفسك",
+     "frame": 7359,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "وتصلح اللي تگدر تصلحه",
+     "frame": 7506,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Orbit around gavel",
+   "camera_movement": "Slow orbit 90°",
+   "focal_length": "85mm → 50mm",
+   "composition": "Gavel rises, rotates; head unfolds into arched Mirror of Insight (intact)",
+   "blocking": "Figure faces new mirror",
+   "layers": {
+    "fg": "Gavel/mirror",
+    "mg": "Figure",
+    "bg": "Open space"
+   },
+   "lighting": {
+    "direction": "Warm key",
+    "phase": "P6 Kadhim — soft light, progressive warmth, visual stability"
+   },
+   "palette": "walnut → gold mirror",
+   "symbols": "Gavel → Mirror (T06)",
+   "typography": "—",
+   "transition_in": "T06 Gavel to Mirror (AFTER religious evidence)",
+   "sfx": "Wood → glass transformation tone",
+   "technique": "Three.js morph or hidden cut (POC 03)",
+   "notes": "Starts after H01 ends",
+   "animatic_scene": "gavel_mirror",
+   "lighting_phase": 6
+  },
+  {
+   "id": "S07_01",
+   "chapter": "CH07",
+   "start_frame": 7613,
+   "end_frame": 7751,
+   "duration_frames": 138,
+   "start_s": 253.767,
+   "end_s": 258.367,
+   "narration": "الليلة، قبل لا تنام… / جرّب توقف دقيقة وحدة ويا نفسك.",
+   "anchors": [
+    {
+     "text": "الليلة، قبل لا تنام",
+     "frame": 7613,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Frontal",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "Intact mirror; figure before it at night",
+   "blocking": "Figure stands still",
+   "layers": {
+    "fg": "—",
+    "mg": "Figure + mirror",
+    "bg": "Night"
+   },
+   "lighting": {
+    "direction": "Soft lamp-like warm",
+    "phase": "P7 Gateway — warm gold & ivory, expanding space, heavy shadows recede"
+   },
+   "palette": "teal night / warm",
+   "symbols": "Mirror (intact) — callback to S01_01",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Quiet night air",
+   "technique": "Three.js reflection / 2.5D",
+   "notes": "Visual callback: same framing as S01_01, but intact",
+   "animatic_scene": "mirror_whole",
+   "lighting_phase": 7
+  },
+  {
+   "id": "S07_02",
+   "chapter": "CH07",
+   "start_frame": 7751,
+   "end_frame": 7978,
+   "duration_frames": 227,
+   "start_s": 258.367,
+   "end_s": 265.933,
+   "narration": "منو جرحت اليوم؟ / أكو حق قصّرت بيه؟ / أكو غلط بعدك دا تدافع عنه، رغم إنك تعرفه غلط؟",
+   "anchors": [
+    {
+     "text": "[question 1] منو جرحت اليوم؟",
+     "frame": 7751,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "[question 2] أكو حق قصّرت بيه؟",
+     "frame": 7814,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "[question 3] أكو غلط بعدك دا تدافع عنه…",
+     "frame": 7869,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Close",
+   "camera_movement": "Slow push per question",
+   "focal_length": "85mm",
+   "composition": "Three questions appear one by one beside reflection",
+   "blocking": "Figure lowers gaze",
+   "layers": {
+    "fg": "—",
+    "mg": "Reflection",
+    "bg": "Dark"
+   },
+   "lighting": {
+    "direction": "Warm",
+    "phase": "P7 Gateway — warm gold & ivory, expanding space, heavy shadows recede"
+   },
+   "palette": "ivory text",
+   "symbols": "Questions",
+   "typography": "Resolution typography (IBM Plex) — 3 questions",
+   "transition_in": "Cut",
+   "sfx": "Soft breaths of air",
+   "technique": "Remotion typography",
+   "notes": "",
+   "animatic_scene": "questions",
+   "lighting_phase": 7
+  },
+  {
+   "id": "S07_03",
+   "chapter": "CH07",
+   "start_frame": 7978,
+   "end_frame": 8098,
+   "duration_frames": 120,
+   "start_s": 265.933,
+   "end_s": 269.933,
+   "narration": "لا تبحث عن عذر جديد. / ابحث عن شي تگدر تصلحه.",
+   "anchors": [
+    {
+     "text": "لا تبحث عن عذر جديد",
+     "frame": 7978,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "ابحث عن شي تگدر تصلحه",
+     "frame": 8026,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Mid",
+   "camera_movement": "Locked",
+   "focal_length": "50mm",
+   "composition": "A new basalt block starts forming — then dissolves into light",
+   "blocking": "—",
+   "layers": {
+    "fg": "Forming block",
+    "mg": "Figure",
+    "bg": "Mirror"
+   },
+   "lighting": {
+    "direction": "Warm",
+    "phase": "P7 Gateway — warm gold & ivory, expanding space, heavy shadows recede"
+   },
+   "palette": "basalt → gold dust",
+   "symbols": "Refused excuse",
+   "typography": "—",
+   "transition_in": "Cut",
+   "sfx": "Reverse stone-form → dissolve",
+   "technique": "Three.js",
+   "notes": "",
+   "animatic_scene": "block_dissolve",
+   "lighting_phase": 7
+  },
+  {
+   "id": "S07_04",
+   "chapter": "CH07",
+   "start_frame": 8098,
+   "end_frame": 8279,
+   "duration_frames": 181,
+   "start_s": 269.933,
+   "end_s": 275.967,
+   "narration": "لأن المحكمة اللي بداخلك، مو لازم تبقى سجن إلك. / ممكن تصير بداية لتغيير حياتك.",
+   "anchors": [
+    {
+     "text": "بداية لتغيير حياتك",
+     "frame": 8224,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Behind figure",
+   "camera_movement": "Dolly-out wide as mirror frame expands into open gateway (T07)",
+   "focal_length": "50mm → 24mm",
+   "composition": "Mirror frame → monumental open KHAYBAR arch gateway",
+   "blocking": "Figure walks toward light",
+   "layers": {
+    "fg": "Figure",
+    "mg": "Gateway",
+    "bg": "Bright ivory space"
+   },
+   "lighting": {
+    "direction": "Warm backlight through gateway",
+    "phase": "P7 Gateway — warm gold & ivory, expanding space, heavy shadows recede"
+   },
+   "palette": "gold / ivory",
+   "symbols": "Gateway of Reform",
+   "typography": "—",
+   "transition_in": "T07 Mirror to Gateway",
+   "sfx": "Footsteps on stone, open air",
+   "technique": "Three.js / 2.5D",
+   "notes": "",
+   "animatic_scene": "gateway",
+   "lighting_phase": 7
+  },
+  {
+   "id": "S07_05",
+   "chapter": "CH07",
+   "start_frame": 8279,
+   "end_frame": 8475,
+   "duration_frames": 196,
+   "start_s": 275.967,
+   "end_s": 282.5,
+   "narration": "وتذكّر… / قبل لا تحاسب غيرك… / حاسب نفسك.",
+   "anchors": [
+    {
+     "text": "قبل لا تحاسب غيرك",
+     "frame": 8318,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    },
+    {
+     "text": "حاسب نفسك",
+     "frame": 8380,
+     "status": "AUTO_ALIGNED",
+     "manual": false
+    }
+   ],
+   "camera_position": "Wide gateway",
+   "camera_movement": "Locked",
+   "focal_length": "24mm",
+   "composition": "Gateway; figure small inside light",
+   "blocking": "Figure stops at threshold",
+   "layers": {
+    "fg": "—",
+    "mg": "Gateway",
+    "bg": "Light"
+   },
+   "lighting": {
+    "direction": "Warm",
+    "phase": "P7 Gateway — warm gold & ivory, expanding space, heavy shadows recede"
+   },
+   "palette": "ivory / CINEMATIC GOLD",
+   "symbols": "Gateway",
+   "typography": "FINAL: «قبل لا تحاسب غيرك…» (ivory) then «حاسب نفسك» (gold)",
+   "transition_in": "Hold → T into outro",
+   "sfx": "Silence under final phrase; soft air",
+   "technique": "Remotion typography",
+   "notes": "Callback: arch = opening mirror frame",
+   "animatic_scene": "final_text",
+   "lighting_phase": 7
+  },
+  {
+   "id": "S08_01",
+   "chapter": "OUTRO",
+   "start_frame": 8475,
+   "end_frame": 8550,
+   "duration_frames": 75,
+   "start_s": 282.5,
+   "end_s": 285.0,
+   "narration": "—",
+   "anchors": [],
+   "camera_position": "—",
+   "camera_movement": "—",
+   "focal_length": "—",
+   "composition": "Official KHAYBAR outro (short, 2.5s)",
+   "blocking": "—",
+   "layers": {},
+   "lighting": {
+    "direction": "—",
+    "phase": "Brand"
+   },
+   "palette": "Official tokens",
+   "symbols": "Official logo — unmodified",
+   "typography": "Official",
+   "transition_in": "Gateway light → logo (cut/dissolve TBD in integration test)",
+   "sfx": "Optional KHAYBAR sonic signature (pending decision)",
+   "technique": "Existing KhaybarOutro (public/brand/reference/khaybar-outro-short.mp4)",
+   "notes": "Final timing pending integration test",
+   "animatic_scene": "outro",
+   "lighting_phase": 7
+  }
+ ]
+}
