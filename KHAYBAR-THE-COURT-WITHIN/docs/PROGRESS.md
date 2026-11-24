@@ -3,9 +3,11 @@
 | البند | الحالة |
 |---|---|
 | Project Status | Pre-production |
-| Current Phase | PHASE 1 — SCRIPT AND SOURCES LOCK → **متوقف عند GATE 1: بانتظار النص الكامل للسيناريو V2.1** |
-| Approval Status | GATE 0: ✅ مشروطة. GATE 1: 🟡 **اعتماد جزئي** (المصادر والقرارات فقط — ليس إذناً بالمرحلة الثانية) |
-| Render Status | لا رندر. لا npm install بعد. |
+| Current Phase | PHASE 2 — VOICE-OVER INTAKE (منجز) → **متوقف عند GATE 2 — AWAITING USER APPROVAL** |
+| Approval Status | GATE 0: ✅ · GATE 1: ✅ **مُغلق** (السيناريو V2.2 معتمد رسمياً؛ المصادر متحققة مع قيود موثقة) · GATE 2: ⏳ بانتظار المستخدم |
+| Render Status | لا رندر. لا npm install. |
+| Script | **V2.2 — APPROVED** (`SCRIPT.md`) |
+| Narration | 7 ملفات مستوردة ومفحوصة — 270.419591ث |
 
 ## Approved Decisions
 `CREATIVE_DIRECTION.md` (بما فيها قسم «قرارات GATE 0»).
@@ -21,6 +23,19 @@
    `01_Summons.mp3` · `02_Witness.mp3` · `03_Quran.mp3` · `04_Justice.mp3` · `05_Reveal.mp3` · `06_Imam_Kadhim.mp3` · `07_Final_Verdict.mp3`
 8. ممنوع حالياً: فحص البيئة، تثبيت المكتبات، الرندر، توليد الصوت، كتابة سيناريو بديل.
 
+## PHASE 2 — Results (2026-11-24)
+- استيراد `KHAYBAR_V2.2_VOICEOVER.zip`: 7 ملفات بالضبط، بلا تعديل؛ SHA-256 مطابق بعد النسخ.
+- فحص تقني كامل (`AUDIO_AUDIT.md`): سليم تقنياً؛ لا أخطاء فك ترميز ولا Clipping. MP3 mono 44.1kHz 128kb/s.
+- الفصل 01 أخفض جهارة: −24.4 LUFS (أخفض بـ 3.6 LU من الأعلى) — يُعالج في PHASE 7.
+- `AUDIO_CUES.json`: خط زمني مؤقت = 8550 إطاراً (285.0ث) شامل الخاتمة 2.5ث وفواصل مؤقتة 11.97ث؛ المتبقي حتى 300ث = 15.0ث.
+- كل المراسي الدلالية = `null / PENDING_VERIFICATION` (لا تفريغ آلي ولا استماع).
+
+## Decisions Requiring User Approval (GATE 2)
+1. اعتماد نتائج الفحص التقني.
+2. **مراجعة بشرية** للنطق في 03 و04 و06 واكتمال النص في الملفات السبعة (لم أستمع إليها).
+3. هل تسمح بتفريغ محلي مساعد (Whisper، نموذج متوسط الحجم، مجاني) لاستخراج توقيتات المراسي؟ وإلا تُحدد المراسي يدوياً في Animatic.
+4. اعتماد الفواصل المؤقتة بين الفصول (1.5/2.0/1.5/1.5/2.5/1.5/1.47ث) كنقطة انطلاق لـ Animatic.
+
 ## Completed Tasks
 - PHASE 0: فحص المستودع والبيئة؛ وثائق التدقيق. Push `348dd0a` إلى `ccr-42be31ff-39y1is` (متحقق عبر `git ls-remote`).
 - نسخ مكونات هوية خيبر 2.0 من `ccr-8a7d9a45-oav171` بايت-ببايت (متحقق بالهاش) دون تعديل الشعار.
@@ -28,14 +43,14 @@
 - PHASE 1 (جزئي): `SOURCES.md` — مطابقة القيامة 14–15 (Tanzil) ورواية الكافي ج2 باب محاسبة العمل ح2 (Thaqalayn).
 
 ## Modified / Created Files
+- PHASE 2: `docs/SCRIPT.md`, `docs/AUDIO_AUDIT.md`, `docs/AUDIO_CUES.json`, `docs/ASSET_MANIFEST.md` (جديدة)؛ `docs/SOURCES.md`, `docs/PROGRESS.md` (محدثة)؛ `public/audio/voiceover/*.mp3` (7 ملفات مستوردة).
 - `docs/`: CREATIVE_DIRECTION.md, TECHNICAL_PLAN.md, PROGRESS.md (محدَّثة)، SOURCES.md (جديد)، `docs/brand/*` (منسوخ).
 - `brand/**`, `src/brand/**`, `src/components/KhaybarLogo.tsx`, `src/compositions/KhaybarOutro.tsx`, `tsconfig.json`, `remotion.config.ts`, `public/brand/reference/khaybar-outro-short.mp4` (منسوخة).
 - `package.json`, `.gitignore`, `.gitkeep` للمجلدات الفارغة (جديدة).
 
 ## Pending (من صاحب المشروع)
-1. **النص الكامل للسيناريو V2.1** ← الحاجز الوحيد لإغلاق GATE 1.
-2. بقية الآيات والروايات مع إحالاتها (إن وُجدت في V2.1).
-3. الصور المرجعية الـ17 (قبل PHASE 3).
+1. اعتماد GATE 2 + المراجعة البشرية للنطق.
+2. الصور المرجعية الـ17 (قبل PHASE 3).
 
 ## Known Issues
 - الصفحة 453 غير متحققة — محسوم: لا تُعرض.
@@ -44,9 +59,9 @@
 - `src/index.ts` و`Root.tsx` غير منشأين؛ المشروع غير قابل للتشغيل بعد (متعمد — لا تثبيت قبل PHASE 4).
 
 ## Next Action
-عند استلام V2.1: إنشاء `SCRIPT.md` (النص المنطوق نظيفاً مقسّماً على الملفات السبعة المعتمدة، توجيهات الأداء والوقفات في ملف/قسم منفصل لا يُقرأ في ElevenLabs)، واستكمال SOURCES.md لكل دليل → GATE 1.
+بعد اعتماد GATE 2 فقط: PHASE 3 — Animatic (Storyboard تفصيلي متزامن مع `AUDIO_CUES.json`). لا انتقال تلقائي.
 
 ## Resume Instructions
 1. الفرع `ccr-42be31ff-39y1is`؛ اقرأ هذا الملف ثم `CREATIVE_DIRECTION.md` ثم `SOURCES.md`.
 2. لا تُعِد فحص البيئة (TECHNICAL_PLAN §1) ولا نسخ الهوية (§8.1).
-3. لا تتجاوز GATE 1 دون موافقة.
+3. لا تتجاوز GATE 2 دون موافقة. البيانات الصوتية في `AUDIO_AUDIT.md` و`AUDIO_CUES.json` — لا تُعِد القياس.

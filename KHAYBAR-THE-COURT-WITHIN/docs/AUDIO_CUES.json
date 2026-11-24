@@ -1,0 +1,934 @@
+{
+ "project": "KHAYBAR — THE COURT WITHIN | المحكمة التي بداخلك",
+ "script_version": "V2.2",
+ "cues_version": "0.1.0-phase2",
+ "fps": 30,
+ "resolution": [
+  1080,
+  1920
+ ],
+ "max_duration_frames": 9000,
+ "max_duration_s": 300,
+ "value_classes": {
+  "measured": "Measured from the actual files with ffprobe/ffmpeg (source of truth).",
+  "provisional": "Planning values (gaps, starts) — subject to Animatic approval.",
+  "pending": "null = not yet verified; never filled by estimation."
+ },
+ "rounding_strategy": "Each chapter's audio length in frames = ceil(duration_s*30) so no narration is ever cut; inter-chapter gaps are whole frames; chapter start = previous start + audio frames + gap frames (integer accumulation → zero cumulative drift). Sub-frame remainder (<1 frame) of each audio file is absorbed by the following gap.",
+ "narration": {
+  "measured_total_s": 270.419591,
+  "measured_total_frames_ceil_per_chapter": 8116
+ },
+ "chapters": [
+  {
+   "id": "CH01",
+   "title_ar": "الاستدعاء",
+   "audio_asset": "VO_CH01",
+   "audio_file": "public/audio/voiceover/01_Summons.mp3",
+   "measured": {
+    "duration_s": 29.152653,
+    "duration_samples": 1285632,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.15,
+    "speech_end_s": 28.91,
+    "detected_pauses_s": [
+     {
+      "start": 2.906,
+      "end": 3.309,
+      "duration": 0.403
+     },
+     {
+      "start": 4.605,
+      "end": 5.006,
+      "duration": 0.401
+     },
+     {
+      "start": 6.895,
+      "end": 7.246,
+      "duration": 0.351
+     },
+     {
+      "start": 8.751,
+      "end": 9.284,
+      "duration": 0.533
+     },
+     {
+      "start": 12.16,
+      "end": 12.56,
+      "duration": 0.4
+     },
+     {
+      "start": 15.168,
+      "end": 15.666,
+      "duration": 0.497
+     },
+     {
+      "start": 18.804,
+      "end": 19.23,
+      "duration": 0.426
+     },
+     {
+      "start": 20.859,
+      "end": 21.345,
+      "duration": 0.486
+     },
+     {
+      "start": 23.886,
+      "end": 24.381,
+      "duration": 0.495
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 0,
+    "audio_duration_frames": 875,
+    "end_frame": 875,
+    "start_s": 0.0,
+    "end_s": 29.1667,
+    "gap_after_s": 1.5,
+    "gap_after_frames": 45,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "تخيّل لو كل عذر گُلته بحياتك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "صار دليل ضدّك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "وفجأة",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "القاضي ساكت",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "إنك تعرف هاي المحكمة أكثر مما تتصور",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  },
+  {
+   "id": "CH02",
+   "title_ar": "الشاهد",
+   "audio_asset": "VO_CH02",
+   "audio_file": "public/audio/voiceover/02_Witness.mp3",
+   "measured": {
+    "duration_s": 36.127347,
+    "duration_samples": 1593216,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.08,
+    "speech_end_s": 35.92,
+    "detected_pauses_s": [
+     {
+      "start": 2.994,
+      "end": 3.435,
+      "duration": 0.44
+     },
+     {
+      "start": 8.743,
+      "end": 9.261,
+      "duration": 0.518
+     },
+     {
+      "start": 10.439,
+      "end": 10.79,
+      "duration": 0.351
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 920,
+    "audio_duration_frames": 1084,
+    "end_frame": 2004,
+    "start_s": 30.6667,
+    "end_s": 66.8,
+    "gap_after_s": 2.0,
+    "gap_after_frames": 60,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "ويطلع أول دليل",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "چنت معصّب",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "ما چنت أريد مشاكل",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "مو بس آني",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "دا يبني جدار حواليك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "حجر فوق حجر",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "هو السجن اللي حابس نفسك بيه",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  },
+  {
+   "id": "CH03",
+   "title_ar": "الدليل القرآني",
+   "audio_asset": "VO_CH03",
+   "audio_file": "public/audio/voiceover/03_Quran.mp3",
+   "measured": {
+    "duration_s": 40.986122,
+    "duration_samples": 1807488,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.09,
+    "speech_end_s": 40.81,
+    "detected_pauses_s": [
+     {
+      "start": 2.655,
+      "end": 3.2,
+      "duration": 0.544
+     },
+     {
+      "start": 4.596,
+      "end": 5.184,
+      "duration": 0.588
+     },
+     {
+      "start": 8.064,
+      "end": 8.639,
+      "duration": 0.575
+     },
+     {
+      "start": 10.592,
+      "end": 11.616,
+      "duration": 1.024
+     },
+     {
+      "start": 12.683,
+      "end": 13.324,
+      "duration": 0.641
+     },
+     {
+      "start": 15.089,
+      "end": 15.453,
+      "duration": 0.364
+     },
+     {
+      "start": 18.26,
+      "end": 18.731,
+      "duration": 0.472
+     },
+     {
+      "start": 22.747,
+      "end": 23.245,
+      "duration": 0.498
+     },
+     {
+      "start": 32.719,
+      "end": 33.185,
+      "duration": 0.466
+     },
+     {
+      "start": 36.009,
+      "end": 36.535,
+      "duration": 0.526
+     },
+     {
+      "start": 39.192,
+      "end": 39.694,
+      "duration": 0.501
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 2064,
+    "audio_duration_frames": 1230,
+    "end_frame": 3294,
+    "start_s": 68.8,
+    "end_s": 109.8,
+    "gap_after_s": 1.5,
+    "gap_after_frames": 45,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "القرآن الكريم يگول",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[Q01 quotation start]",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[Q01 quotation end]",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "بس بينك وبين نفسك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "إنك تعرفها… وما تريد تواجهها",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [
+    {
+     "source_id": "Q01",
+     "interval_s": null,
+     "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  },
+  {
+   "id": "CH04",
+   "title_ar": "ميزان العدالة",
+   "audio_asset": "VO_CH04",
+   "audio_file": "public/audio/voiceover/04_Justice.mp3",
+   "measured": {
+    "duration_s": 43.467755,
+    "duration_samples": 1916928,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.08,
+    "speech_end_s": 43.3,
+    "detected_pauses_s": [
+     {
+      "start": 1.14,
+      "end": 1.507,
+      "duration": 0.367
+     },
+     {
+      "start": 4.782,
+      "end": 5.154,
+      "duration": 0.372
+     },
+     {
+      "start": 6.592,
+      "end": 7.098,
+      "duration": 0.506
+     },
+     {
+      "start": 24.977,
+      "end": 25.329,
+      "duration": 0.352
+     },
+     {
+      "start": 30.604,
+      "end": 31.134,
+      "duration": 0.53
+     },
+     {
+      "start": 35.763,
+      "end": 36.989,
+      "duration": 1.226
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 3339,
+    "audio_duration_frames": 1305,
+    "end_frame": 4644,
+    "start_s": 111.3,
+    "end_s": 154.8,
+    "gap_after_s": 1.5,
+    "gap_after_frames": 45,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "راح تقبل منه نفس العذر؟",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[contrast 1] من واحد يجرحك بكلمة…",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[contrast 2] من واحد يسكت عن حقك…",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[contrast 3] من واحد يحچي عليك…",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "نفس الفعل",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[Q02 quotation start]",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[Q02 quotation end]",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "شلون راح تعرف إنك فعلاً منصف؟",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [
+    {
+     "source_id": "Q02",
+     "interval_s": null,
+     "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  },
+  {
+   "id": "CH05",
+   "title_ar": "انكشاف الحقيقة",
+   "audio_asset": "VO_CH05",
+   "audio_file": "public/audio/voiceover/05_Reveal.mp3",
+   "measured": {
+    "duration_s": 36.127347,
+    "duration_samples": 1593216,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.12,
+    "speech_end_s": 35.93,
+    "detected_pauses_s": [
+     {
+      "start": 0.922,
+      "end": 1.63,
+      "duration": 0.708
+     },
+     {
+      "start": 5.813,
+      "end": 6.282,
+      "duration": 0.469
+     },
+     {
+      "start": 9.744,
+      "end": 10.686,
+      "duration": 0.943
+     },
+     {
+      "start": 11.363,
+      "end": 11.743,
+      "duration": 0.38
+     },
+     {
+      "start": 12.179,
+      "end": 12.635,
+      "duration": 0.455
+     },
+     {
+      "start": 13.317,
+      "end": 13.726,
+      "duration": 0.409
+     },
+     {
+      "start": 14.145,
+      "end": 14.528,
+      "duration": 0.383
+     },
+     {
+      "start": 16.252,
+      "end": 16.917,
+      "duration": 0.665
+     },
+     {
+      "start": 18.884,
+      "end": 19.272,
+      "duration": 0.388
+     },
+     {
+      "start": 29.555,
+      "end": 29.945,
+      "duration": 0.39
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 4689,
+    "audio_duration_frames": 1084,
+    "end_frame": 5773,
+    "start_s": 156.3,
+    "end_s": 192.4333,
+    "gap_after_s": 2.5,
+    "gap_after_frames": 75,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "تلتفت للقاضي",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "وتباوع للشاهد",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "وترجع تباوع للمتهم",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "القاضي… إنت",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "والشاهد… إنت",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "والمتهم… هم إنت",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "هاي المحكمة بداخلك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "هي بداية التحرر من سجن الأعذار",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  },
+  {
+   "id": "CH06",
+   "title_ar": "منهج الإمام الكاظم عليه السلام",
+   "audio_asset": "VO_CH06",
+   "audio_file": "public/audio/voiceover/06_Imam_Kadhim.mp3",
+   "measured": {
+    "duration_s": 57.312653,
+    "duration_samples": 2527488,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.11,
+    "speech_end_s": 57.13,
+    "detected_pauses_s": [
+     {
+      "start": 2.429,
+      "end": 2.828,
+      "duration": 0.399
+     },
+     {
+      "start": 6.954,
+      "end": 7.391,
+      "duration": 0.437
+     },
+     {
+      "start": 12.326,
+      "end": 12.921,
+      "duration": 0.594
+     },
+     {
+      "start": 16.275,
+      "end": 16.701,
+      "duration": 0.425
+     },
+     {
+      "start": 23.769,
+      "end": 24.935,
+      "duration": 1.166
+     },
+     {
+      "start": 26.72,
+      "end": 27.167,
+      "duration": 0.446
+     },
+     {
+      "start": 29.327,
+      "end": 29.757,
+      "duration": 0.43
+     },
+     {
+      "start": 32.87,
+      "end": 33.325,
+      "duration": 0.455
+     },
+     {
+      "start": 37.953,
+      "end": 38.414,
+      "duration": 0.461
+     },
+     {
+      "start": 42.93,
+      "end": 43.334,
+      "duration": 0.403
+     },
+     {
+      "start": 44.575,
+      "end": 44.949,
+      "duration": 0.374
+     },
+     {
+      "start": 45.789,
+      "end": 46.239,
+      "duration": 0.449
+     },
+     {
+      "start": 50.369,
+      "end": 50.77,
+      "duration": 0.4
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 5848,
+    "audio_duration_frames": 1720,
+    "end_frame": 7568,
+    "start_s": 194.9333,
+    "end_s": 252.2667,
+    "gap_after_s": 1.5,
+    "gap_after_frames": 45,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "الإمام موسى الكاظم، عليه السلام",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[H01 narration start]",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[H01 narration end]",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "أولاً: المحاسبة كل يوم",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "ثانياً: إذا سويت خير",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "وثالثاً: إذا أخطأت",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "استغفر الله… وتُب إليه",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "المحاسبة مو حتى تكره نفسك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "وتصلح اللي تگدر تصلحه",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [
+    {
+     "source_id": "H01",
+     "interval_s": null,
+     "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  },
+  {
+   "id": "CH07",
+   "title_ar": "الحكم النهائي",
+   "audio_asset": "VO_CH07",
+   "audio_file": "public/audio/voiceover/07_Final_Verdict.mp3",
+   "measured": {
+    "duration_s": 27.245714,
+    "duration_samples": 1201536,
+    "sample_rate": 44100,
+    "speech_onset_s": 0.15,
+    "speech_end_s": 27.06,
+    "detected_pauses_s": [
+     {
+      "start": 0.765,
+      "end": 1.117,
+      "duration": 0.353
+     },
+     {
+      "start": 1.889,
+      "end": 2.477,
+      "duration": 0.589
+     },
+     {
+      "start": 4.641,
+      "end": 5.113,
+      "duration": 0.472
+     },
+     {
+      "start": 6.1,
+      "end": 6.888,
+      "duration": 0.788
+     },
+     {
+      "start": 7.983,
+      "end": 8.606,
+      "duration": 0.623
+     },
+     {
+      "start": 11.857,
+      "end": 12.319,
+      "duration": 0.462
+     },
+     {
+      "start": 13.757,
+      "end": 14.128,
+      "duration": 0.371
+     },
+     {
+      "start": 15.965,
+      "end": 16.333,
+      "duration": 0.369
+     },
+     {
+      "start": 19.392,
+      "end": 19.762,
+      "duration": 0.371
+     },
+     {
+      "start": 22.2,
+      "end": 22.995,
+      "duration": 0.794
+     },
+     {
+      "start": 23.703,
+      "end": 24.196,
+      "duration": 0.492
+     },
+     {
+      "start": 25.625,
+      "end": 26.142,
+      "duration": 0.517
+     }
+    ],
+    "pause_detection": "silencedetect noise=-45dB d=0.35s (candidate sentence boundaries only; NOT word alignment)"
+   },
+   "provisional": {
+    "start_frame": 7613,
+    "audio_duration_frames": 818,
+    "end_frame": 8431,
+    "start_s": 253.7667,
+    "end_s": 281.0333,
+    "gap_after_s": 1.4667,
+    "gap_after_frames": 44,
+    "status": "PROVISIONAL — pending Animatic (GATE 3)"
+   },
+   "semantic_anchors": [
+    {
+     "text": "الليلة، قبل لا تنام",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[question 1] منو جرحت اليوم؟",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[question 2] أكو حق قصّرت بيه؟",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "[question 3] أكو غلط بعدك دا تدافع عنه…",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "لا تبحث عن عذر جديد",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "ابحث عن شي تگدر تصلحه",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "بداية لتغيير حياتك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "قبل لا تحاسب غيرك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    },
+    {
+     "text": "حاسب نفسك",
+     "time_s": null,
+     "frame": null,
+     "status": "PENDING_VERIFICATION"
+    }
+   ],
+   "sacred_text_protection": [],
+   "sfx_cues": [],
+   "ambience_cues": [],
+   "camera_cues": [],
+   "transition_cues": [],
+   "silence_cues": []
+  }
+ ],
+ "outro": {
+  "id": "KHAYBAR_OUTRO",
+  "file": "public/brand/reference/khaybar-outro-short.mp4",
+  "measured_duration_s": 2.5,
+  "frames": 75,
+  "start_frame": 8475,
+  "end_frame": 8550,
+  "has_audio_track": false,
+  "status": "PROVISIONAL — final timing after integration test with the Gateway scene"
+ },
+ "budget": {
+  "preferred_total_s": 285.0,
+  "provisional_total_frames": 8550,
+  "provisional_total_s": 285.0,
+  "provisional_gaps_total_s": 11.9667,
+  "remaining_to_300s_s": 15.0,
+  "remaining_to_9000_frames": 450
+ },
+ "verification_status": {
+  "audio_technical": "MEASURED",
+  "durations": "MEASURED",
+  "semantic_anchors": "PENDING — no word-level alignment tool run (local ASR requires user approval)",
+  "content_vs_script": "PENDING — human listening review required",
+  "sacred_pronunciation": "PENDING — human review required"
+ }
+}
