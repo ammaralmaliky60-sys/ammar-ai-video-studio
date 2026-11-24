@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { FPS, FRAME } from "./brand/tokens";
 import { TypographyTest } from "./animatic/TypographyTest";
 import { Animatic, AnimaticProps } from "./animatic/Animatic";
+import { GavelToMirror } from "./poc/GavelToMirror";
 import shotList from "../docs/SHOT_LIST.json";
 
 const animaticDefaults: AnimaticProps = { showSafeZones: true, showOverlays: true };
@@ -16,5 +17,6 @@ export const Root: React.FC = () => (
     <Composition id="AnimaticOpening" component={Animatic} width={FRAME.width} height={FRAME.height} fps={FPS}
       durationInFrames={OPENING_FRAMES} defaultProps={animaticDefaults} />
     <Composition id="TypographyTest" component={TypographyTest} width={FRAME.width} height={FRAME.height} fps={FPS} durationInFrames={1} />
+    <Composition id="PocGavelToMirror" component={GavelToMirror} width={FRAME.width} height={FRAME.height} fps={FPS} durationInFrames={150} />
   </>
 );
