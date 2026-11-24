@@ -11,6 +11,14 @@
 | VO_CH06 | `public/audio/voiceover/06_Imam_Kadhim.mp3` | `801d77a5584157ceadbe0c60da182105abbd6abee67490e76516890bce5540cc` | 933,939 | 57.312653 | صاحب المشروع — ElevenLabs — أرشيف `KHAYBAR_V2.2_VOICEOVER.zip` | مُنتَج بحساب صاحب المشروع؛ حقوق الاستخدام التجاري تتبع شروط خطة ElevenLabs الخاصة به (لم يُتحقق منها) |
 | VO_CH07 | `public/audio/voiceover/07_Final_Verdict.mp3` | `acbb3675f43a635102c6e5f06af10dbd6d76b3b7347379c8a43e4bd596a3ca3c` | 452,868 | 27.245714 | صاحب المشروع — ElevenLabs — أرشيف `KHAYBAR_V2.2_VOICEOVER.zip` | مُنتَج بحساب صاحب المشروع؛ حقوق الاستخدام التجاري تتبع شروط خطة ElevenLabs الخاصة به (لم يُتحقق منها) |
 
+## Alignment data (PHASE 2 — مولّدة محلياً، بيانات لا أصول)
+| المسار | المحتوى |
+|---|---|
+| `docs/alignment/WHISPER_TRANSCRIPTS.json` | تفريغ Whisper الخام مع توقيت الكلمات واحتمالاتها |
+| `docs/alignment/ANCHORS_ALIGNMENT.json` | 51 مرسى دلالي بالتوقيت المحلي والعام والإطار ودرجة التطابق |
+| `docs/alignment/COMPLETENESS_CHECK.json` | مقارنة 95 سطراً من السيناريو مع التفريغ |
+الأداة: faster-whisper 1.2.1 (MIT) + نموذج Whisper small (MIT، OpenAI؛ تحويل Systran). النموذج والبيئة **خارج المستودع** ولم يُرفعا.
+
 ## Brand (منسوخة من `ccr-8a7d9a45-oav171` — متطابقة بايت-ببايت، انظر TECHNICAL_PLAN §8.1)
 | المسار | الحالة |
 |---|---|

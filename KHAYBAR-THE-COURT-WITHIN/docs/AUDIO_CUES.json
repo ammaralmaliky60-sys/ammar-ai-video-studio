@@ -1,7 +1,7 @@
 {
  "project": "KHAYBAR — THE COURT WITHIN | المحكمة التي بداخلك",
  "script_version": "V2.2",
- "cues_version": "0.1.0-phase2",
+ "cues_version": "0.2.0-phase2-aligned",
  "fps": 30,
  "resolution": [
   1080,
@@ -93,33 +93,83 @@
    "semantic_anchors": [
     {
      "text": "تخيّل لو كل عذر گُلته بحياتك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 0.0,
+     "frame": 0,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "تخيّل لو كل عذر گُلته بحياتك",
+     "detected_phrase": "تخيل لو كل عذر قلت بحياتك",
+     "local_start_s": 0.0,
+     "local_end_s": 2.8,
+     "global_start_s": 0.0,
+     "global_start_frame": 0,
+     "global_end_frame": 84,
+     "match_score": 0.98,
+     "mean_word_prob": 0.897,
+     "manual_verification_required": false
     },
     {
      "text": "صار دليل ضدّك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 2.8,
+     "frame": 84,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "صار دليل ضدّك",
+     "detected_phrase": "صار دليل ضدك",
+     "local_start_s": 2.8,
+     "local_end_s": 4.5,
+     "global_start_s": 2.8,
+     "global_start_frame": 84,
+     "global_end_frame": 135,
+     "match_score": 1.0,
+     "mean_word_prob": 0.901,
+     "manual_verification_required": false
     },
     {
      "text": "وفجأة",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 8.7,
+     "frame": 261,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "وفجأة",
+     "detected_phrase": "وفجأة",
+     "local_start_s": 8.7,
+     "local_end_s": 10.08,
+     "global_start_s": 8.7,
+     "global_start_frame": 261,
+     "global_end_frame": 302,
+     "match_score": 1.0,
+     "mean_word_prob": 0.922,
+     "manual_verification_required": false
     },
     {
      "text": "القاضي ساكت",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 15.58,
+     "frame": 467,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "القاضي ساكت",
+     "detected_phrase": "القاضي ساكت",
+     "local_start_s": 15.58,
+     "local_end_s": 16.72,
+     "global_start_s": 15.5667,
+     "global_start_frame": 467,
+     "global_end_frame": 502,
+     "match_score": 1.0,
+     "mean_word_prob": 0.905,
+     "manual_verification_required": false
     },
     {
      "text": "إنك تعرف هاي المحكمة أكثر مما تتصور",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 25.68,
+     "frame": 770,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "إنك تعرف هاي المحكمة أكثر مما تتصور",
+     "detected_phrase": "انك تعرف هاي المحكمة أكثر من ما تتصور",
+     "local_start_s": 25.68,
+     "local_end_s": 28.82,
+     "global_start_s": 25.6667,
+     "global_start_frame": 770,
+     "global_end_frame": 865,
+     "match_score": 0.972,
+     "mean_word_prob": 0.89,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [],
@@ -172,45 +222,115 @@
    "semantic_anchors": [
     {
      "text": "ويطلع أول دليل",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 1.48,
+     "frame": 964,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ويطلع أول دليل",
+     "detected_phrase": "ويطلع أول دليل",
+     "local_start_s": 1.48,
+     "local_end_s": 2.94,
+     "global_start_s": 32.1333,
+     "global_start_frame": 964,
+     "global_end_frame": 1008,
+     "match_score": 1.0,
+     "mean_word_prob": 0.902,
+     "manual_verification_required": false
     },
     {
      "text": "چنت معصّب",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 7.68,
+     "frame": 1150,
+     "status": "AUTO_ALIGNED_LOW_CONFIDENCE",
+     "expected_phrase": "چنت معصّب",
+     "detected_phrase": "تشنة معصب",
+     "local_start_s": 7.68,
+     "local_end_s": 8.74,
+     "global_start_s": 38.3333,
+     "global_start_frame": 1150,
+     "global_end_frame": 1182,
+     "match_score": 0.706,
+     "mean_word_prob": 0.652,
+     "manual_verification_required": true
     },
     {
      "text": "ما چنت أريد مشاكل",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 13.98,
+     "frame": 1339,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ما چنت أريد مشاكل",
+     "detected_phrase": "ما تشنة تريد مشاكل",
+     "local_start_s": 13.98,
+     "local_end_s": 15.26,
+     "global_start_s": 44.6333,
+     "global_start_frame": 1339,
+     "global_end_frame": 1378,
+     "match_score": 0.8,
+     "mean_word_prob": 0.808,
+     "manual_verification_required": false
     },
     {
      "text": "مو بس آني",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 19.2,
+     "frame": 1496,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "مو بس آني",
+     "detected_phrase": "مو بس آني",
+     "local_start_s": 19.2,
+     "local_end_s": 20.04,
+     "global_start_s": 49.8667,
+     "global_start_frame": 1496,
+     "global_end_frame": 1521,
+     "match_score": 1.0,
+     "mean_word_prob": 0.654,
+     "manual_verification_required": false
     },
     {
      "text": "دا يبني جدار حواليك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 28.2,
+     "frame": 1766,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "دا يبني جدار حواليك",
+     "detected_phrase": "يبني جدار حواليك",
+     "local_start_s": 28.2,
+     "local_end_s": 29.9,
+     "global_start_s": 58.8667,
+     "global_start_frame": 1766,
+     "global_end_frame": 1817,
+     "match_score": 0.914,
+     "mean_word_prob": 0.82,
+     "manual_verification_required": false
     },
     {
      "text": "حجر فوق حجر",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 29.9,
+     "frame": 1817,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "حجر فوق حجر",
+     "detected_phrase": "حجر فوق حجر",
+     "local_start_s": 29.9,
+     "local_end_s": 31.54,
+     "global_start_s": 60.5667,
+     "global_start_frame": 1817,
+     "global_end_frame": 1866,
+     "match_score": 1.0,
+     "mean_word_prob": 0.912,
+     "manual_verification_required": false
     },
     {
      "text": "هو السجن اللي حابس نفسك بيه",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 33.7,
+     "frame": 1931,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "هو السجن اللي حابس نفسك بيه",
+     "detected_phrase": "هو السجن اللي حابس نفسك بي",
+     "local_start_s": 33.7,
+     "local_end_s": 35.94,
+     "global_start_s": 64.3667,
+     "global_start_frame": 1931,
+     "global_end_frame": 1998,
+     "match_score": 0.981,
+     "mean_word_prob": 0.914,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [],
@@ -303,41 +423,116 @@
    "semantic_anchors": [
     {
      "text": "القرآن الكريم يگول",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 2.58,
+     "frame": 2141,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "القرآن الكريم يگول",
+     "detected_phrase": "القرآن الكريم يقول",
+     "local_start_s": 2.58,
+     "local_end_s": 4.36,
+     "global_start_s": 71.3667,
+     "global_start_frame": 2141,
+     "global_end_frame": 2195,
+     "match_score": 1.0,
+     "mean_word_prob": 0.934,
+     "manual_verification_required": false
     },
     {
      "text": "[Q01 quotation start]",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 5.02,
+     "frame": 2215,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "بل الانسان علي نفسه",
+     "detected_phrase": "بل الإنسان على نفسه",
+     "local_start_s": 5.02,
+     "local_end_s": 7.18,
+     "global_start_s": 73.8333,
+     "global_start_frame": 2215,
+     "global_end_frame": 2279,
+     "match_score": 1.0,
+     "mean_word_prob": 0.88,
+     "manual_verification_required": true
     },
     {
      "text": "[Q01 quotation end]",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 8.14,
+     "frame": 2308,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ولو القي معاذيره",
+     "detected_phrase": "ولو القام عافيره",
+     "local_start_s": 8.14,
+     "local_end_s": 10.62,
+     "global_start_s": 76.9333,
+     "global_start_frame": 2308,
+     "global_end_frame": 2383,
+     "match_score": 0.812,
+     "mean_word_prob": 0.734,
+     "manual_verification_required": true
     },
     {
      "text": "بس بينك وبين نفسك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 22.8,
+     "frame": 2748,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "بس بينك وبين نفسك",
+     "detected_phrase": "بس بينك وبين نفسك",
+     "local_start_s": 22.8,
+     "local_end_s": 24.56,
+     "global_start_s": 91.6,
+     "global_start_frame": 2748,
+     "global_end_frame": 2801,
+     "match_score": 1.0,
+     "mean_word_prob": 0.908,
+     "manual_verification_required": false
     },
     {
      "text": "إنك تعرفها… وما تريد تواجهها",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 38.28,
+     "frame": 3212,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "إنك تعرفها… وما تريد تواجهها",
+     "detected_phrase": "انك تعرفها ومتريد تواجهها",
+     "local_start_s": 38.28,
+     "local_end_s": 40.78,
+     "global_start_s": 107.0667,
+     "global_start_frame": 3212,
+     "global_end_frame": 3287,
+     "match_score": 0.962,
+     "mean_word_prob": 0.916,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [
     {
      "source_id": "Q01",
-     "interval_s": null,
+     "interval_s": [
+      4.52,
+      11.12
+     ],
      "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
-     "status": "PENDING_VERIFICATION"
+     "status": "AUTO_ESTIMATE (Whisper word timestamps) — MANDATORY HUMAN LISTENING REVIEW",
+     "label": "بَلِ الْإِنسَانُ … مَعَاذِيرَهُ (القيامة 14–15)",
+     "speech_interval_local_s": [
+      5.02,
+      10.62
+     ],
+     "protected_interval_local_s": [
+      4.52,
+      11.12
+     ],
+     "padding_s": {
+      "pre": 0.5,
+      "post": 0.5
+     },
+     "protected_global_frames": [
+      2200,
+      2398
+     ],
+     "protected_global_s": [
+      73.333,
+      79.933
+     ],
+     "human_review": "PENDING — not approved"
     }
    ],
    "sfx_cues": [],
@@ -404,59 +599,164 @@
    "semantic_anchors": [
     {
      "text": "راح تقبل منه نفس العذر؟",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 4.82,
+     "frame": 3484,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "راح تقبل منه نفس العذر؟",
+     "detected_phrase": "رح تقبل مننا نفس العذر؟",
+     "local_start_s": 4.82,
+     "local_end_s": 7.04,
+     "global_start_s": 116.1333,
+     "global_start_frame": 3484,
+     "global_end_frame": 3550,
+     "match_score": 0.909,
+     "mean_word_prob": 0.746,
+     "manual_verification_required": false
     },
     {
      "text": "[contrast 1] من واحد يجرحك بكلمة…",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 7.04,
+     "frame": 3550,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "من واحد يجرحك بكلمه",
+     "detected_phrase": "من واحد يجرحك بكلمة",
+     "local_start_s": 7.04,
+     "local_end_s": 8.72,
+     "global_start_s": 118.3333,
+     "global_start_frame": 3550,
+     "global_end_frame": 3601,
+     "match_score": 1.0,
+     "mean_word_prob": 0.886,
+     "manual_verification_required": false
     },
     {
      "text": "[contrast 2] من واحد يسكت عن حقك…",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 13.0,
+     "frame": 3729,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "من واحد يسكت عن حقك",
+     "detected_phrase": "من واحد يسكوت عن حقك",
+     "local_start_s": 13.0,
+     "local_end_s": 14.76,
+     "global_start_s": 124.3,
+     "global_start_frame": 3729,
+     "global_end_frame": 3782,
+     "match_score": 0.974,
+     "mean_word_prob": 0.944,
+     "manual_verification_required": false
     },
     {
      "text": "[contrast 3] من واحد يحچي عليك…",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 19.32,
+     "frame": 3919,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "من واحد يحكي عليك",
+     "detected_phrase": "من واحد يحكي عليك",
+     "local_start_s": 19.32,
+     "local_end_s": 20.74,
+     "global_start_s": 130.6333,
+     "global_start_frame": 3919,
+     "global_end_frame": 3961,
+     "match_score": 1.0,
+     "mean_word_prob": 0.921,
+     "manual_verification_required": false
     },
     {
      "text": "نفس الفعل",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 25.04,
+     "frame": 4090,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "نفس الفعل",
+     "detected_phrase": "نفس الفعل",
+     "local_start_s": 25.04,
+     "local_end_s": 26.18,
+     "global_start_s": 136.3333,
+     "global_start_frame": 4090,
+     "global_end_frame": 4124,
+     "match_score": 1.0,
+     "mean_word_prob": 0.982,
+     "manual_verification_required": false
     },
     {
      "text": "[Q02 quotation start]",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 30.42,
+     "frame": 4252,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "كونوا قوامين بالقسط",
+     "detected_phrase": "كون قوامين بالقصة",
+     "local_start_s": 30.42,
+     "local_end_s": 32.9,
+     "global_start_s": 141.7333,
+     "global_start_frame": 4252,
+     "global_end_frame": 4326,
+     "match_score": 0.833,
+     "mean_word_prob": 0.735,
+     "manual_verification_required": true
     },
     {
      "text": "[Q02 quotation end]",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 34.16,
+     "frame": 4364,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ولو علي انفسكم",
+     "detected_phrase": "ولو على أنفسكم",
+     "local_start_s": 34.16,
+     "local_end_s": 35.7,
+     "global_start_s": 145.4667,
+     "global_start_frame": 4364,
+     "global_end_frame": 4410,
+     "match_score": 1.0,
+     "mean_word_prob": 0.825,
+     "manual_verification_required": true
     },
     {
      "text": "شلون راح تعرف إنك فعلاً منصف؟",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 40.2,
+     "frame": 4545,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "شلون راح تعرف إنك فعلاً منصف؟",
+     "detected_phrase": "شلون رح تعرف أنك فعلا منصف",
+     "local_start_s": 40.2,
+     "local_end_s": 43.2,
+     "global_start_s": 151.5,
+     "global_start_frame": 4545,
+     "global_end_frame": 4635,
+     "match_score": 0.981,
+     "mean_word_prob": 0.803,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [
     {
      "source_id": "Q02",
-     "interval_s": null,
+     "interval_s": [
+      29.92,
+      36.2
+     ],
      "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
-     "status": "PENDING_VERIFICATION"
+     "status": "AUTO_ESTIMATE (Whisper word timestamps) — MANDATORY HUMAN LISTENING REVIEW",
+     "label": "كُونُوا … أَنفُسِكُمْ (النساء 135 — مقتطف)",
+     "speech_interval_local_s": [
+      30.42,
+      35.7
+     ],
+     "protected_interval_local_s": [
+      29.92,
+      36.2
+     ],
+     "padding_s": {
+      "pre": 0.5,
+      "post": 0.5
+     },
+     "protected_global_frames": [
+      4237,
+      4425
+     ],
+     "protected_global_s": [
+      141.233,
+      147.5
+     ],
+     "human_review": "PENDING — not approved"
     }
    ],
    "sfx_cues": [],
@@ -543,51 +843,131 @@
    "semantic_anchors": [
     {
      "text": "تلتفت للقاضي",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 0.48,
+     "frame": 4703,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "تلتفت للقاضي",
+     "detected_phrase": "تلتفت لو قاضي",
+     "local_start_s": 0.48,
+     "local_end_s": 2.62,
+     "global_start_s": 156.7667,
+     "global_start_frame": 4703,
+     "global_end_frame": 4768,
+     "match_score": 0.88,
+     "mean_word_prob": 0.882,
+     "manual_verification_required": false
     },
     {
      "text": "وتباوع للشاهد",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 2.62,
+     "frame": 4768,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "وتباوع للشاهد",
+     "detected_phrase": "وتباوع للشاهد",
+     "local_start_s": 2.62,
+     "local_end_s": 4.0,
+     "global_start_s": 158.9333,
+     "global_start_frame": 4768,
+     "global_end_frame": 4809,
+     "match_score": 1.0,
+     "mean_word_prob": 0.841,
+     "manual_verification_required": false
     },
     {
      "text": "وترجع تباوع للمتهم",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 4.0,
+     "frame": 4809,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "وترجع تباوع للمتهم",
+     "detected_phrase": "وترجع تباوع للمتهم",
+     "local_start_s": 4.0,
+     "local_end_s": 5.72,
+     "global_start_s": 160.3,
+     "global_start_frame": 4809,
+     "global_end_frame": 4861,
+     "match_score": 1.0,
+     "mean_word_prob": 0.848,
+     "manual_verification_required": false
     },
     {
      "text": "القاضي… إنت",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 9.64,
+     "frame": 4978,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "القاضي… إنت",
+     "detected_phrase": "القاضي انت",
+     "local_start_s": 9.64,
+     "local_end_s": 12.1,
+     "global_start_s": 165.9333,
+     "global_start_frame": 4978,
+     "global_end_frame": 5052,
+     "match_score": 1.0,
+     "mean_word_prob": 0.78,
+     "manual_verification_required": false
     },
     {
      "text": "والشاهد… إنت",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 12.1,
+     "frame": 5052,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "والشاهد… إنت",
+     "detected_phrase": "و الشاهد انت",
+     "local_start_s": 12.1,
+     "local_end_s": 14.12,
+     "global_start_s": 168.4,
+     "global_start_frame": 5052,
+     "global_end_frame": 5113,
+     "match_score": 0.957,
+     "mean_word_prob": 0.803,
+     "manual_verification_required": false
     },
     {
      "text": "والمتهم… هم إنت",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 14.12,
+     "frame": 5113,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "والمتهم… هم إنت",
+     "detected_phrase": "و المتهم هم انت",
+     "local_start_s": 14.12,
+     "local_end_s": 16.24,
+     "global_start_s": 170.4333,
+     "global_start_frame": 5113,
+     "global_end_frame": 5176,
+     "match_score": 0.966,
+     "mean_word_prob": 0.909,
+     "manual_verification_required": false
     },
     {
      "text": "هاي المحكمة بداخلك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 18.86,
+     "frame": 5255,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "هاي المحكمة بداخلك",
+     "detected_phrase": "هذه المحكمة بداخلك",
+     "local_start_s": 18.86,
+     "local_end_s": 20.58,
+     "global_start_s": 175.1667,
+     "global_start_frame": 5255,
+     "global_end_frame": 5306,
+     "match_score": 0.889,
+     "mean_word_prob": 0.903,
+     "manual_verification_required": false
     },
     {
      "text": "هي بداية التحرر من سجن الأعذار",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 33.46,
+     "frame": 5693,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "هي بداية التحرر من سجن الأعذار",
+     "detected_phrase": "هي بداية التحرر من سجن العدار",
+     "local_start_s": 33.46,
+     "local_end_s": 35.84,
+     "global_start_s": 189.7667,
+     "global_start_frame": 5693,
+     "global_end_frame": 5764,
+     "match_score": 0.949,
+     "mean_word_prob": 0.962,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [],
@@ -690,65 +1070,180 @@
    "semantic_anchors": [
     {
      "text": "الإمام موسى الكاظم، عليه السلام",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 7.2,
+     "frame": 6064,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "الإمام موسى الكاظم، عليه السلام",
+     "detected_phrase": "الإمام موسى الكاثم عليه السلام",
+     "local_start_s": 7.2,
+     "local_end_s": 9.46,
+     "global_start_s": 202.1333,
+     "global_start_frame": 6064,
+     "global_end_frame": 6132,
+     "match_score": 0.967,
+     "mean_word_prob": 0.767,
+     "manual_verification_required": true
     },
     {
      "text": "[H01 narration start]",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 12.18,
+     "frame": 6213,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ليس منا من لم يحاسب",
+     "detected_phrase": "ليس مننا من لم يحاسب",
+     "local_start_s": 12.18,
+     "local_end_s": 14.8,
+     "global_start_s": 207.1,
+     "global_start_frame": 6213,
+     "global_end_frame": 6292,
+     "match_score": 0.974,
+     "mean_word_prob": 0.846,
+     "manual_verification_required": true
     },
     {
      "text": "[H01 narration end]",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 21.02,
+     "frame": 6479,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "استغفر الله منه وتاب اليه",
+     "detected_phrase": "استغفر الله منه وتاب إليه",
+     "local_start_s": 21.02,
+     "local_end_s": 23.92,
+     "global_start_s": 215.9667,
+     "global_start_frame": 6479,
+     "global_end_frame": 6566,
+     "match_score": 1.0,
+     "mean_word_prob": 0.94,
+     "manual_verification_required": true
     },
     {
      "text": "أولاً: المحاسبة كل يوم",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 26.72,
+     "frame": 6650,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "أولاً: المحاسبة كل يوم",
+     "detected_phrase": "أولا المحاسبة كل يوم",
+     "local_start_s": 26.72,
+     "local_end_s": 29.42,
+     "global_start_s": 221.6667,
+     "global_start_frame": 6650,
+     "global_end_frame": 6731,
+     "match_score": 1.0,
+     "mean_word_prob": 0.939,
+     "manual_verification_required": false
     },
     {
      "text": "ثانياً: إذا سويت خير",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 32.84,
+     "frame": 6833,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ثانياً: إذا سويت خير",
+     "detected_phrase": "ثانيا إذا سويت خير",
+     "local_start_s": 32.84,
+     "local_end_s": 35.26,
+     "global_start_s": 227.7667,
+     "global_start_frame": 6833,
+     "global_end_frame": 6906,
+     "match_score": 1.0,
+     "mean_word_prob": 0.879,
+     "manual_verification_required": false
     },
     {
      "text": "وثالثاً: إذا أخطأت",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 37.88,
+     "frame": 6984,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "وثالثاً: إذا أخطأت",
+     "detected_phrase": "وثالثا إذا أخطأت",
+     "local_start_s": 37.88,
+     "local_end_s": 40.28,
+     "global_start_s": 232.8,
+     "global_start_frame": 6984,
+     "global_end_frame": 7056,
+     "match_score": 1.0,
+     "mean_word_prob": 0.897,
+     "manual_verification_required": false
     },
     {
      "text": "استغفر الله… وتُب إليه",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 42.92,
+     "frame": 7136,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "استغفر الله… وتُب إليه",
+     "detected_phrase": "استغفر الله وتب إليه",
+     "local_start_s": 42.92,
+     "local_end_s": 46.04,
+     "global_start_s": 237.8667,
+     "global_start_frame": 7136,
+     "global_end_frame": 7229,
+     "match_score": 1.0,
+     "mean_word_prob": 0.879,
+     "manual_verification_required": false
     },
     {
      "text": "المحاسبة مو حتى تكره نفسك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 50.38,
+     "frame": 7359,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "المحاسبة مو حتى تكره نفسك",
+     "detected_phrase": "المحاسبة مو حتى تكرح نفسك",
+     "local_start_s": 50.38,
+     "local_end_s": 52.72,
+     "global_start_s": 245.3,
+     "global_start_frame": 7359,
+     "global_end_frame": 7430,
+     "match_score": 0.96,
+     "mean_word_prob": 0.81,
+     "manual_verification_required": false
     },
     {
      "text": "وتصلح اللي تگدر تصلحه",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 55.26,
+     "frame": 7506,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "وتصلح اللي تگدر تصلحه",
+     "detected_phrase": "وتصلح اللي تقدر تصلحة",
+     "local_start_s": 55.26,
+     "local_end_s": 57.1,
+     "global_start_s": 250.2,
+     "global_start_frame": 7506,
+     "global_end_frame": 7561,
+     "match_score": 1.0,
+     "mean_word_prob": 0.892,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [
     {
      "source_id": "H01",
-     "interval_s": null,
+     "interval_s": [
+      11.68,
+      24.42
+     ],
      "rule": "Calm camera, minimal VFX, no dramatic SFX, text static & legible; ducking of ambience. Exact interval pending anchor verification — until then the WHOLE chapter is treated as protected around the quotation.",
-     "status": "PENDING_VERIFICATION"
+     "status": "AUTO_ESTIMATE (Whisper word timestamps) — MANDATORY HUMAN LISTENING REVIEW",
+     "label": "لَيْسَ مِنَّا … وَتَابَ إِلَيْهِ (الكافي ج2، باب محاسبة العمل، ح2)",
+     "speech_interval_local_s": [
+      12.18,
+      23.92
+     ],
+     "protected_interval_local_s": [
+      11.68,
+      24.42
+     ],
+     "padding_s": {
+      "pre": 0.5,
+      "post": 0.5
+     },
+     "protected_global_frames": [
+      6198,
+      6581
+     ],
+     "protected_global_s": [
+      206.6,
+      219.367
+     ],
+     "human_review": "PENDING — not approved"
     }
    ],
    "sfx_cues": [],
@@ -845,57 +1340,147 @@
    "semantic_anchors": [
     {
      "text": "الليلة، قبل لا تنام",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 0.0,
+     "frame": 7613,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "الليلة، قبل لا تنام",
+     "detected_phrase": "الليلة و قبل لا تنام",
+     "local_start_s": 0.0,
+     "local_end_s": 1.92,
+     "global_start_s": 253.7667,
+     "global_start_frame": 7613,
+     "global_end_frame": 7671,
+     "match_score": 0.947,
+     "mean_word_prob": 0.573,
+     "manual_verification_required": false
     },
     {
      "text": "[question 1] منو جرحت اليوم؟",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 4.6,
+     "frame": 7751,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "منو جرحت اليوم",
+     "detected_phrase": "من وجه رحت اليوم؟",
+     "local_start_s": 4.6,
+     "local_end_s": 6.08,
+     "global_start_s": 258.3667,
+     "global_start_frame": 7751,
+     "global_end_frame": 7795,
+     "match_score": 0.867,
+     "mean_word_prob": 0.817,
+     "manual_verification_required": false
     },
     {
      "text": "[question 2] أكو حق قصّرت بيه؟",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 6.7,
+     "frame": 7814,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "اكو حق قصرت بيه",
+     "detected_phrase": "أكو حق قصرت بي؟",
+     "local_start_s": 6.7,
+     "local_end_s": 8.08,
+     "global_start_s": 260.4667,
+     "global_start_frame": 7814,
+     "global_end_frame": 7855,
+     "match_score": 0.966,
+     "mean_word_prob": 0.875,
+     "manual_verification_required": false
     },
     {
      "text": "[question 3] أكو غلط بعدك دا تدافع عنه…",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 8.54,
+     "frame": 7869,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "اكو غلط بعدك دا تدافع عنه",
+     "detected_phrase": "أكو غلط بعدك تدافع عنه",
+     "local_start_s": 8.54,
+     "local_end_s": 10.38,
+     "global_start_s": 262.3,
+     "global_start_frame": 7869,
+     "global_end_frame": 7924,
+     "match_score": 0.936,
+     "mean_word_prob": 0.817,
+     "manual_verification_required": false
     },
     {
      "text": "لا تبحث عن عذر جديد",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 12.18,
+     "frame": 7978,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "لا تبحث عن عذر جديد",
+     "detected_phrase": "لا تبحث عن عذر جديد",
+     "local_start_s": 12.18,
+     "local_end_s": 13.76,
+     "global_start_s": 265.9333,
+     "global_start_frame": 7978,
+     "global_end_frame": 8026,
+     "match_score": 1.0,
+     "mean_word_prob": 0.906,
+     "manual_verification_required": false
     },
     {
      "text": "ابحث عن شي تگدر تصلحه",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 13.76,
+     "frame": 8026,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "ابحث عن شي تگدر تصلحه",
+     "detected_phrase": "أبحث عن شي تقدر تصلحة",
+     "local_start_s": 13.76,
+     "local_end_s": 16.18,
+     "global_start_s": 267.5333,
+     "global_start_frame": 8026,
+     "global_end_frame": 8098,
+     "match_score": 1.0,
+     "mean_word_prob": 0.832,
+     "manual_verification_required": false
     },
     {
      "text": "بداية لتغيير حياتك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 20.38,
+     "frame": 8224,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "بداية لتغيير حياتك",
+     "detected_phrase": "بداية لتغير حياتك",
+     "local_start_s": 20.38,
+     "local_end_s": 22.2,
+     "global_start_s": 274.1333,
+     "global_start_frame": 8224,
+     "global_end_frame": 8279,
+     "match_score": 0.971,
+     "mean_word_prob": 0.939,
+     "manual_verification_required": false
     },
     {
      "text": "قبل لا تحاسب غيرك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 23.5,
+     "frame": 8318,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "قبل لا تحاسب غيرك",
+     "detected_phrase": "قبل لا تحاسب غيرك",
+     "local_start_s": 23.5,
+     "local_end_s": 25.56,
+     "global_start_s": 277.2667,
+     "global_start_frame": 8318,
+     "global_end_frame": 8380,
+     "match_score": 1.0,
+     "mean_word_prob": 0.974,
+     "manual_verification_required": false
     },
     {
      "text": "حاسب نفسك",
-     "time_s": null,
-     "frame": null,
-     "status": "PENDING_VERIFICATION"
+     "time_s": 25.56,
+     "frame": 8380,
+     "status": "AUTO_ALIGNED",
+     "expected_phrase": "حاسب نفسك",
+     "detected_phrase": "حاسب نفسك",
+     "local_start_s": 25.56,
+     "local_end_s": 27.04,
+     "global_start_s": 279.3333,
+     "global_start_frame": 8380,
+     "global_end_frame": 8424,
+     "match_score": 1.0,
+     "mean_word_prob": 0.973,
+     "manual_verification_required": false
     }
    ],
    "sacred_text_protection": [],
@@ -927,8 +1512,35 @@
  "verification_status": {
   "audio_technical": "MEASURED",
   "durations": "MEASURED",
-  "semantic_anchors": "PENDING — no word-level alignment tool run (local ASR requires user approval)",
-  "content_vs_script": "PENDING — human listening review required",
-  "sacred_pronunciation": "PENDING — human review required"
+  "semantic_anchors": "AUTO_ALIGNED (51/51 located; 8 require manual verification) — automated, not human-verified",
+  "content_vs_script": "AUTOMATED CHECK PASSED (95/95 lines located, 0 unexpected segments) — human listening still required",
+  "sacred_pronunciation": "PENDING — mandatory human listening review (intervals in sacred_text_protection)"
+ },
+ "alignment": {
+  "tool": "faster-whisper 1.2.1 / ctranslate2 4.9.1 / Python 3.13.18",
+  "model": "small (multilingual), CPU, int8, language=ar, word_timestamps=True, beam_size=5, vad_filter=False, condition_on_previous_text=False, temperature=0, no initial prompt",
+  "processing_s": {
+   "model_load_cached": 1.47,
+   "total_incl_load": 95.96,
+   "per_file": {
+    "01": 9.98,
+    "02": 15.4,
+    "03": 14.71,
+    "04": 15.48,
+    "05": 12.28,
+    "06": 17.79,
+    "07": 8.85
+   },
+   "note": "First (failed) attempt downloaded the model (~486MB); failure was a PyAV API mismatch before inference. Second run: audio decoded with system ffmpeg to 16kHz float32 arrays."
+  },
+  "results": "docs/alignment/ANCHORS_ALIGNMENT.json, docs/alignment/COMPLETENESS_CHECK.json, docs/alignment/WHISPER_TRANSCRIPTS.json",
+  "anchor_stats": {
+   "total": 51,
+   "auto_aligned": 50,
+   "low_confidence": 1,
+   "pending": 0,
+   "manual_verification_required": 8
+  },
+  "caveat": "All anchor timestamps are AUTOMATED ESTIMATES (typical ±0.1–0.3s). None is manually verified. ASR is not evidence of correct Quranic/hadith pronunciation."
  }
 }
