@@ -1,2 +1,11 @@
 node_modules/
 projects/*/build/
+projects/*/cr/renders/
+projects/*/cr/test/
+projects/*/cr/stills/
+projects/*/cr/test_*.json
+projects/*/cr/*.jpg
+projects/*/cr/*.png
+projects/*/cr/audio_edit.wav
+projects/*/media/*.wav
+__pycache__/
