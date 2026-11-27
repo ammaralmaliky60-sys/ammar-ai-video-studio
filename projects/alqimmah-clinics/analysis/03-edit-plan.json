@@ -1,0 +1,42 @@
+{
+  "canvas": { "width": 1080, "height": 1920, "fps": 30, "durationFrames": 404 },
+  "safeZones": { "top": 220, "bottom": 420, "right": 150, "left": 60 },
+  "layout": {
+    "infoBand": "y 230-520 over wallpaper, plum frosted glass cards",
+    "face": "y 500-830, never covered",
+    "captions": "y 900-1080, chest area, between face and hands",
+    "hands_and_plaque": "y 1110-1540, kept clear (on-set clinic branding)"
+  },
+  "font": "Tajawal (Bold 700 captions, ExtraBold 800 keywords, Medium 500 labels)",
+  "palette": { "accent": "#E2178D", "berry": "#932065", "purple": "#582466", "plum": "#481246", "graphite": "#3E3F40", "text": "#FFFFFF" },
+  "global": {
+    "video": "Lanczos upscale 720x1280 -> 1080x1920, light sharpen, no color change",
+    "audio": "highpass 80Hz + light afftdn denoise + loudnorm -14 LUFS; no music",
+    "captions": "Dynamic 2-4 word groups, active word in #E2178D with slight scale-up, synced to word timestamps",
+    "sfx": "Soft whoosh / tick / pop generated locally, -24 dB under voice"
+  },
+  "beats": [
+    { "id": 1, "t": [0.00, 1.50], "speech": "متواجدين إن شاء الله يوميًا",
+      "visual": "HOOK: slow push-in 1.00->1.06 on face; keyword 'يوميًا' kinetic pop in info band with calendar icon, 7 day dots light up in sequence",
+      "motion": "spring scale 0.6->1, dots stagger 3 frames", "sfx": "soft whoosh" },
+    { "id": 2, "t": [1.54, 2.95], "speech": "من الساعة الثالثة إلى الساعة التاسعة",
+      "visual": "Clock card: hand sweeps from 3 to 9 in sync with 'الثالثة' then 'التاسعة'; animated numbers 3:00 -> 9:00",
+      "motion": "hand rotation eased to word timings; numbers count", "sfx": "two light ticks" },
+    { "id": 3, "t": [3.00, 5.20], "speech": "في عيادات القمة في القادسية",
+      "visual": "Location card: logo mark (from supplied JPG, unaltered, on plum glass) + 'عيادات القمة' then map pin drops on 'القادسية'",
+      "motion": "card slides from right with mask reveal; pin bounce", "sfx": "pop on pin" },
+    { "id": 4, "t": [5.34, 7.40], "speech": "وأكيد آني متواجد",
+      "visual": "Lower third in info band: 'د. زيد نوري الشريفي' + 'طبيب أسنان' with magenta accent line",
+      "motion": "line draws, name mask-wipes RTL, title fades up", "sfx": "soft whoosh" },
+    { "id": 5, "t": [7.32, 9.70], "speech": "على متابعة حالات التقويم أول بأول",
+      "visual": "Line-art SVG of upper tooth row with orthodontic brackets + wire drawing on (clean, schematic). Keyword 'التقويم' highlighted. 'أول بأول' = 3 follow-up dots on a timeline filling one by one",
+      "motion": "stroke draw-on 20 frames, brackets pop sequentially, timeline dots on 'أول' and 'بأول'", "sfx": "light tick per dot" },
+    { "id": 6, "t": [9.76, 11.25], "speech": "وأكيد … (pause)",
+      "visual": "BREATHING SPACE: info band clears, captions only, very slow zoom continues",
+      "motion": "none", "sfx": "none" },
+    { "id": 7, "t": [11.30, 13.47], "speech": "القمة اختياركم صحيح",
+      "visual": "End card: logo (original colors/proportions) rises in info band; slogan 'القمة.. اختياركم صحيح' word-synced with magenta sweep under 'اختياركم'. Captions hide",
+      "motion": "logo fade+scale 0.9->1, soft glow; slogan per-word reveal", "sfx": "soft shimmer" }
+  ],
+  "pendingConfirmations": ["آني vs أنه", "متابعة (unclear word)", "حالات التقويم wording", "3 and 9 shown as numbers without عصرًا/مساءً unless you confirm"]
+}
