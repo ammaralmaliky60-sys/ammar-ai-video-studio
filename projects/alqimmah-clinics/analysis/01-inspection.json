@@ -1,0 +1,44 @@
+{
+  "phase": 1,
+  "date": "2026-11-27",
+  "brand": {
+    "name": "ALQIMMAH CLINICS / عيادات القمة",
+    "logo_file": "brand/alqimmah-logo-dark.jpg",
+    "logo_notes": "Tooth outline merged with female profile and petals; supplied on black background as JPG (no transparency, no vector).",
+    "colors": {
+      "magenta_primary": "#E2178D",
+      "magenta_deep": "#D81889",
+      "wordmark_berry": "#932065",
+      "purple_face": "#582466",
+      "plum_dark": "#481246",
+      "graphite_text": "#3E3F40",
+      "background": "#000000"
+    },
+    "typography": {
+      "latin_wordmark": "Humanist rounded sans (ALQIMMAH), wide-tracked light caps (CLINICS); exact font file not supplied",
+      "arabic": "No Arabic font supplied in brand files; on-set name plates use calligraphic Diwani-style lettering"
+    }
+  },
+  "video": {
+    "source": "VID-20261127-WA0057.mp4 (WhatsApp)",
+    "duration_s": 13.47,
+    "stored": "1280x720 H.264 with -90 rotation => displayed 720x1280 (9:16)",
+    "fps": 30,
+    "video_bitrate_kbps": 3000,
+    "audio": { "codec": "aac", "sample_rate": 44100, "channels": 2, "bitrate_kbps": 62, "mean_db": -30.3, "peak_db": -9.5 },
+    "upscale_needed": "720x1280 -> 1080x1920 (1.5x)",
+    "scene": {
+      "speaker": "Dentist in navy scrubs, embroidered 'DR. ZAID NOORI', seated at desk, static camera, single take",
+      "face_region_pct": { "x": [40, 58], "y": [26, 43] },
+      "hands_region_pct": { "x": [35, 65], "y": [58, 70] },
+      "desk_plaque_pct": { "y": [59, 80], "content": "Clinic logo + 'الدكتور زيد نوري' + 'الدكتور مصطفى حسن'" },
+      "free_space": ["Top band y 0-24% (floral wallpaper, busy)", "Left wall x 0-18% y 30-60% (plain tiles)", "Right cabinet x 80-100% y 0-45% (dark glass)"]
+    }
+  },
+  "tools": {
+    "ffmpeg": "installed (afftdn, arnndn, highpass, loudnorm available)",
+    "node": "22.23.5", "remotion_latest": "4.0.547 (npm reachable, not installed yet)",
+    "faster_whisper": "not installed; pip + HuggingFace reachable; CPU only (4 cores, 15 GB RAM, no GPU)",
+    "arabic_fonts": "none installed; Google Fonts CSS reachable"
+  }
+}
